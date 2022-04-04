@@ -3,11 +3,12 @@
 
 int main(void)
 {
-    int n;
+    long n;
+    long n_length;
     //do
     {
         n = get_long("Number: ");
-        n_length = 
+        n_length = n % 100;
     }
     // Reject anything else besides numbers between 1 and 8
     // Amex - 15 digits, starts with 34 or 37
@@ -15,7 +16,8 @@ int main(void)
     // VISA - 13 or 16 digits, starts with 4
     //while (strlen(n) < 13);
     {
-        printf("%li", n);
+        printf("%li\n", n);
+        printf("%li\n", n_length);
 
     }
 
