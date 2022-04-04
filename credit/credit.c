@@ -5,10 +5,12 @@ int main(void)
 {
     long n;
     long n_length;
+    char n_char;
     //do
     {
         n = get_long("Number: ");
         n_length = n % 10000;
+        n_char = get_char("%li", n_length);
     }
     // Reject anything else besides numbers between 1 and 8
     // Amex - 15 digits, starts with 34 or 37
@@ -18,7 +20,7 @@ int main(void)
     {
         printf("%li\n", n);
         printf("%li\n", n_length);
-
+        printf("%c\n", n_char);
     }
 
 }
