@@ -8,7 +8,7 @@ int main(void)
     //do
     {
         n = get_long("Number: ");
-        n_length = n % 100;
+        n_length = n % 10000;
     }
     // Reject anything else besides numbers between 1 and 8
     // Amex - 15 digits, starts with 34 or 37
