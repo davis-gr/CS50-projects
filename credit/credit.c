@@ -6,8 +6,8 @@ int main(void)
     int n;
     do
     {
-        n = get_int("Height: ");
+        n = get_long("Number: ");
     }
     // Reject anything else besides numbers between 1 and 8
-    while (n < 1 || n > 8);
+    while ();
 }
