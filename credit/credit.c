@@ -52,16 +52,16 @@ int main(void)
             {
                 printf("MASTERCARD\n");
             }
-            else
-            {
-                printf("INVALID\n");
-            }
         }
-        printf("%i\n", sumEven);
-        printf("%i\n", sumOdd);
-        printf("%i\n", sum);
-        printf("%i\n", counter);
-        printf("%li\n", credNumberOrig / fifteen);
-        printf("%li\n", credNumberOrig / fourteen);
+        else
+        {
+            printf("INVALID\n");
+        }
+        //printf("%i\n", sumEven);
+        //printf("%i\n", sumOdd);
+        //printf("%i\n", sum);
+        //printf("%i\n", counter);
+        //printf("%li\n", credNumberOrig / fifteen);
+        //printf("%li\n", credNumberOrig / fourteen);
     }
 }
