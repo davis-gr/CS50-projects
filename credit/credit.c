@@ -22,16 +22,15 @@ int main(void)
             credNumber = credNumber / 10;
             if (counter % 2 == 0)
             {
-                int y = x * 2;
-                while (y > 0)
+                x = x * 2;
+                while (x > 0)
                 {
-                    int z = y % 10;
-                    z = z / 10;
-                    sumEven = sumEven + z;
+                    int y = x % 10;
+                    x = x / 10;
+                    sumEven = sumEven + y;
                 }
             }
             counter++;
-            printf("%i\n", x);
             printf("%i\n", sumEven);
         }
 
