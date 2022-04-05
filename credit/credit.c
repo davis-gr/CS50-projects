@@ -1,6 +1,5 @@
 #include <cs50.h>
 #include <stdio.h>
-#include <math.h>
 
 int main(void)
 {
@@ -53,10 +52,10 @@ int main(void)
             {
                 printf("MASTERCARD\n");
             }
-        else
-        {
-            printf("INVALID\n");
-        }
+            else
+            {
+                printf("INVALID\n");
+            }
         }
 //        printf("%i\n", sumEven);
 //        printf("%i\n", sumOdd);
@@ -66,13 +65,3 @@ int main(void)
 //        printf("%li\n", credNumberOrig / fourteen);
     }
 }
-
-
-    // Amex - 15 digits, starts with 34 or 37
-    // MC - 16 digits, starts with 51-55
-    //while (strlen(n) < 13);
-//todo
-//input
-//checksum
-//check length and starting digits
-//print result
