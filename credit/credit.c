@@ -23,6 +23,10 @@ int main(void)
             {
                 x = x * 2;
             }
+            while (x > 0)
+            {
+                
+            }
             counter++;
             printf("%i\n", x);
         }
