@@ -53,10 +53,10 @@ int main(void)
             {
                 printf("MASTERCARD\n");
             }
-        }
         else
         {
             printf("INVALID\n");
+        }
         }
 //        printf("%i\n", sumEven);
 //        printf("%i\n", sumOdd);
