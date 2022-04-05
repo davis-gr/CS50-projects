@@ -13,10 +13,11 @@ int main(void)
         int sumEven = 0;
         int sumOdd = 0;
         int sum = 0;
-        long credNumberNew = credNumber / 10;
-        while (credNumberNew > 0)
+        long credNumberOrig = credNumber;
+        while (credNumber > 0)
         {
-            int x = credNumberNew % 10;
+            int x = credNumber % 10;
+            credNumber = credNumber / 10;
             if (counter % 2 == 0)
             {
                 x = x * 2;
@@ -38,12 +39,15 @@ int main(void)
         {
             printf("INVALID\n");
         }
-        //else if (counter == 14 && credNumber / )
+        else if (counter == 17 && credNumberOrig / 1000000000000000)
+        {
+            printf("VISA\n");
+        }
         printf("%i\n", sumEven);
         printf("%i\n", sumOdd);
         printf("%i\n", sum);
         printf("%i\n", counter);
-        printf("%li\n", credNumber);
+        printf("%li\n", credNumberOrig / 1000000000000000);
     }
 }
 
