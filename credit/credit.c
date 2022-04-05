@@ -57,11 +57,11 @@ int main(void)
                 printf("INVALID\n");
             }
         }
-//        printf("%i\n", sumEven);
-//        printf("%i\n", sumOdd);
-//        printf("%i\n", sum);
-//        printf("%i\n", counter);
-//        printf("%li\n", credNumberOrig / fifteen);
-//        printf("%li\n", credNumberOrig / fourteen);
+        printf("%i\n", sumEven);
+        printf("%i\n", sumOdd);
+        printf("%i\n", sum);
+        printf("%i\n", counter);
+        printf("%li\n", credNumberOrig / fifteen);
+        printf("%li\n", credNumberOrig / fourteen);
     }
 }
