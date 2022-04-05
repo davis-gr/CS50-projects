@@ -5,6 +5,7 @@ int main(void)
 {
     long credNumber;
     {
+        // Prompt for 
         credNumber = get_long("Number: ");
     }
     {
@@ -48,7 +49,8 @@ int main(void)
             {
                 printf("AMEX\n");
             }
-            else if (counter == 17 && (credNumberOrig / fifteen == 51 || credNumberOrig / fifteen == 52 || credNumberOrig / fifteen == 53 || credNumberOrig / fifteen == 54 || credNumberOrig / fifteen == 55))
+            else if (counter == 17 && (credNumberOrig / fifteen == 51 || credNumberOrig / fifteen == 52 || credNumberOrig / fifteen == 53
+                                       || credNumberOrig / fifteen == 54 || credNumberOrig / fifteen == 55))
             {
                 printf("MASTERCARD\n");
             }
