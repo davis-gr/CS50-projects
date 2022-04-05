@@ -33,6 +33,10 @@ int main(void)
                 sumOdd = sumOdd + x;
             }
             sum = sumOdd + sumEven;
+            if (sum % 10 != 0)
+            {
+                printf("INVALID\n")
+            }
             counter++;
         }
         printf("%i\n", sumEven);
