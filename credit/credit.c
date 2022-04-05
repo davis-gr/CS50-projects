@@ -39,15 +39,18 @@ int main(void)
         long fourteen = 10000000000000;
         long fifteen = 100000000000000;
         long sixteen = 1000000000000000;
-        if (sum % 10 != 0 || counter < 14 || counter > 17)
-        {
-            printf("INVALID\n");
-        }
-        else if ((counter == 17 && credNumberOrig / sixteen == 4) || (counter == 14 && credNumberOrig / thirteen == 4))
+        if (sum % 10 == 0 && (counter == 17 && credNumberOrig / sixteen == 4) || (counter == 14 && credNumberOrig / thirteen == 4))
         {
             printf("VISA\n");
         }
-        else if (counter == 16 && credNumberOrig / fifteen == 3 && (credNumberOrig / fourteen == 4 || credNumberOrig / fourteen == 7) )
+        else if (sum % 10 == 0 && counter == 16 && credNumberOrig / fifteen == 3 && (credNumberOrig / fourteen == 4 || credNumberOrig / fourteen == 7))
+        {
+            printf("AMEX\n");
+        }
+        else
+        {
+            printf("INVALID\n");
+        }
         printf("%i\n", sumEven);
         printf("%i\n", sumOdd);
         printf("%i\n", sum);
