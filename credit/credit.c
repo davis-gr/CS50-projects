@@ -5,14 +5,9 @@
 int main(void)
 {
     long credNumber;
-    //do
     {
         credNumber = get_long("Number: ");
     }
-    // Amex - 15 digits, starts with 34 or 37
-    // MC - 16 digits, starts with 51-55
-    // VISA - 13 or 16 digits, starts with 4
-    //while (strlen(n) < 13);
     {
         int counter = 1;
         int sumEven = 0;
@@ -44,9 +39,13 @@ int main(void)
         printf("%i\n", sumOdd);
         printf("%i\n", sum);
     }
-
 }
 
+
+    // Amex - 15 digits, starts with 34 or 37
+    // MC - 16 digits, starts with 51-55
+    // VISA - 13 or 16 digits, starts with 4
+    //while (strlen(n) < 13);
 //todo
 //input
 //checksum
