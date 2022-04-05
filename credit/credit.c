@@ -17,7 +17,6 @@ int main(void)
         while (credNumber > 0)
         {
             int x = credNumber % 10;
-            printf("%li\n", credNumber);
             printf("%i\n", x);
             credNumber = credNumber / 10;
         }
