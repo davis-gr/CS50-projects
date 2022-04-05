@@ -25,3 +25,9 @@ int main(void)
     }
 
 }
+
+//todo
+//input
+//checksum
+//check length and starting digits
+//print result
