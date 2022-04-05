@@ -49,24 +49,27 @@ int main(void)
             {
                 printf("AMEX\n");
             }
+            else if (counter == 17 && (credNumberOrig / fifteen == 51 || credNumberOrig / fifteen == 52 || credNumberOrig / fifteen == 53 || credNumberOrig / fifteen == 54 || credNumberOrig / fifteen == 55))
+            {
+                printf("MASTERCARD\n");
+            }
         }
         else
         {
             printf("INVALID\n");
         }
-        printf("%i\n", sumEven);
-        printf("%i\n", sumOdd);
-        printf("%i\n", sum);
-        printf("%i\n", counter);
-        printf("%li\n", credNumberOrig / fifteen);
-        printf("%li\n", credNumberOrig / fourteen);
+//        printf("%i\n", sumEven);
+//        printf("%i\n", sumOdd);
+//        printf("%i\n", sum);
+//        printf("%i\n", counter);
+//        printf("%li\n", credNumberOrig / fifteen);
+//        printf("%li\n", credNumberOrig / fourteen);
     }
 }
 
 
     // Amex - 15 digits, starts with 34 or 37
     // MC - 16 digits, starts with 51-55
-    // VISA - 13 or 16 digits, starts with 4
     //while (strlen(n) < 13);
 //todo
 //input
