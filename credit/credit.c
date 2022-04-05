@@ -9,7 +9,7 @@ int main(void)
     //do
     {
         n = get_long("Number: ");
-        n_length = n % 10000;
+        n_length = n % 10;
        // n_char = n_length[1];
     }
     // Reject anything else besides numbers between 1 and 8
