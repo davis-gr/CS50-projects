@@ -58,7 +58,8 @@ int main(void)
         printf("%i\n", sumOdd);
         printf("%i\n", sum);
         printf("%i\n", counter);
-        printf("%li\n", credNumberOrig / sixteen);
+        printf("%li\n", credNumberOrig / fifteen);
+        printf("%li\n", credNumberOrig / fourteen);
     }
 }
 
