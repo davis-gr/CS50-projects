@@ -14,12 +14,17 @@ int main(void)
     // VISA - 13 or 16 digits, starts with 4
     //while (strlen(n) < 13);
     {
+        int counter = 1;
         while (credNumber > 0)
         {
             int x = credNumber % 10;
-            for (int i = 1; i <= 16; i++)
-            printf("%i\n", x);
             credNumber = credNumber / 10;
+            if (counter % 2 == 0)
+            {
+                x = x * 2;
+            }
+            counter++;
+            printf("%i\n", x);
         }
 
     }
