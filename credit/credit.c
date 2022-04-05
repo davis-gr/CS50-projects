@@ -32,7 +32,6 @@ int main(void)
                 }
             }
             counter++;
-            printf("%i\n", x);
             printf("%i\n", sumEven);
         }
 
