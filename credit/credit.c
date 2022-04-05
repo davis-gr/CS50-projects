@@ -38,6 +38,7 @@ int main(void)
         {
             printf("INVALID\n");
         }
+        else if (counter == 14 && credNumber )
         printf("%i\n", sumEven);
         printf("%i\n", sumOdd);
         printf("%i\n", sum);
