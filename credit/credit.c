@@ -15,20 +15,25 @@ int main(void)
     //while (strlen(n) < 13);
     {
         int counter = 1;
+        int sumEven = 0;
         while (credNumber > 0)
         {
             int x = credNumber % 10;
+            printf("%i\n", x);
             credNumber = credNumber / 10;
             if (counter % 2 == 0)
             {
                 x = x * 2;
-            }
-            while (x > 0)
-            {
-                
+                while (x > 0)
+                {
+                    int y = x % 10;
+                    x = x / 10;
+                    sumEven = sumEven + y;
+                }
             }
             counter++;
             printf("%i\n", x);
+            printf("%i\n", sumEven);
         }
 
     }
