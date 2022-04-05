@@ -35,19 +35,24 @@ int main(void)
             sum = sumOdd + sumEven;
             counter++;
         }
+        long thirteen = 1000000000000;
+        long fourteen = 10000000000000;
+        long fifteen = 100000000000000;
+        long sixteen = 1000000000000000;
         if (sum % 10 != 0 || counter < 14 || counter > 17)
         {
             printf("INVALID\n");
         }
-        else if (counter == 17 && credNumberOrig / 1000000000000000)
+        else if ((counter == 17 && credNumberOrig / sixteen == 4) || (counter == 14 && credNumberOrig / thirteen == 4))
         {
             printf("VISA\n");
         }
+        else if (counter == 16 && credNumberOrig / fifteen == 3 && (credNumberOrig / fourteen == 4 || credNumberOrig / fourteen == 7) )
         printf("%i\n", sumEven);
         printf("%i\n", sumOdd);
         printf("%i\n", sum);
         printf("%i\n", counter);
-        printf("%li\n", credNumberOrig / 1000000000000000);
+        printf("%li\n", credNumberOrig / sixteen);
     }
 }
 
