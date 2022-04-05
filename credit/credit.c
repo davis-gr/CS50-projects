@@ -34,13 +34,14 @@ int main(void)
             sum = sumOdd + sumEven;
             counter++;
         }
-        if (sum % 10 != 0)
+        if (sum % 10 != 0 || counter < 14 || counter > 17)
         {
             printf("INVALID\n");
         }
         printf("%i\n", sumEven);
         printf("%i\n", sumOdd);
         printf("%i\n", sum);
+        printf("%i\n", counter);
     }
 }
 
