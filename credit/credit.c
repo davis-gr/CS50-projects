@@ -5,8 +5,7 @@
 int main(void)
 {
     long n;
-    long n2;
-    long n3;
+    int n2, n3;
     //do
     {
         n = get_long("Number: ");
@@ -20,8 +19,8 @@ int main(void)
     //while (strlen(n) < 13);
     {
         printf("%li\n", n);
-        printf("%li\n", n2);
-        printf("%li\n", n3);
+        printf("%i\n", n2);
+        printf("%i\n", n3);
     }
 
 }
