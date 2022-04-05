@@ -16,9 +16,12 @@ int main(void)
     {
         int counter = 1;
         int sumEven = 0;
+        int sumOdd = 0;
+        int sum = 0;
         while (credNumber > 0)
         {
             int x = credNumber % 10;
+            printf("%i\n", x);
             credNumber = credNumber / 10;
             if (counter % 2 == 0)
             {
@@ -30,10 +33,16 @@ int main(void)
                     sumEven = sumEven + y;
                 }
             }
+            else
+            {
+                sumOdd = sumOdd + x;
+            }
+            sum = sumOdd + sumEven;
             counter++;
-            printf("%i\n", sumEven);
         }
-
+        printf("%i\n", sumEven);
+        printf("%i\n", sumOdd);
+        printf("%i\n", sum);
     }
 
 }
