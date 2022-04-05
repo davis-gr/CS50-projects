@@ -45,7 +45,7 @@ int main(void)
             {
                 printf("VISA\n");
             }
-            else if (counter == 16 && credNumberOrig / fifteen == 3 && (credNumberOrig / fourteen == 4 || credNumberOrig / fourteen == 7))
+            else if (counter == 16 && (credNumberOrig / fourteen == 34 || credNumberOrig / fourteen == 37))
             {
                 printf("AMEX\n");
             }
