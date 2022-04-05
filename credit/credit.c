@@ -4,13 +4,12 @@
 
 int main(void)
 {
-    long n;
-    int n2, n3;
+    long n, n2, n3;
     //do
     {
         n = get_long("Number: ");
         n2 = n % 100;
-        n3 = n2 % 10;
+        n3 = n2 / 10 % 10;
     }
     // Reject anything else besides numbers between 1 and 8
     // Amex - 15 digits, starts with 34 or 37
@@ -19,8 +18,8 @@ int main(void)
     //while (strlen(n) < 13);
     {
         printf("%li\n", n);
-        printf("%i\n", n2);
-        printf("%i\n", n3);
+        printf("%li\n", n2);
+        printf("%li\n", n3);
     }
 
 }
