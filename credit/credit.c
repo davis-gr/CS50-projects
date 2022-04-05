@@ -17,6 +17,7 @@ int main(void)
         while (credNumber > 0)
         {
             int x = credNumber % 10;
+            for (int i = 1; i <= 16; i++)
             printf("%i\n", x);
             credNumber = credNumber / 10;
         }
