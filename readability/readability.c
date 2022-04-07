@@ -31,3 +31,15 @@ int count_letters(string text)
 }
 
 int count_words(string text)
+{
+    int count = 0;
+    for (int i = 0, n = strlen(text); i < n; i++)
+    {
+        int c = text[i];
+        if (isspace(c))
+            {
+                count++;
+            }
+    }
+    return count;
+}
