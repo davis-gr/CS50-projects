@@ -12,13 +12,25 @@ int main(void)
 {
     // Get input words from both players
     string word1 = get_string("Player 1: ");
-    //string word2 = get_string("Player 2: ");
+    string word2 = get_string("Player 2: ");
 
     // Score both words
     int score1 = compute_score(word1);
-    //int score2 = compute_score(word2);
+    int score2 = compute_score(word2);
 
-    // TODO: Print the winner
+    // Print the winner
+    if (score1 > score2)
+    {
+        printf("Player 1 wins!\n");
+    }
+    else if (score1 < score2)
+    {
+        printf("Player 2 wins!\n");
+    }
+    else
+    {
+        printf("Tie!\n");
+    }
 }
 
 int compute_score(string word)
@@ -27,15 +39,21 @@ int compute_score(string word)
     int totalPts = 0;
     for (int i = 0, n = strlen(word); i < n; i++)
     {
-        int charNum = word[i];
+        int charNum = tolower(word[i]);
         //printf("%i", tolower(charNum));
         int pts = POINTS[charNum-97];
         //printf(" - %i", pts);
         //printf("\n");
-        totalPts = totalPts + pts;
-
+        if (charNum >= 97 && charNum <= 122)
+        {
+            totalPts = totalPts + pts;
+        }
+        else
+        {
+            totalPts = totalPts + 0;
+        }
     }
-    printf("%i", totalPts);
-    printf("\n");
+//    printf("%i", totalPts);
+//    printf("\n");
     return totalPts;
 }
