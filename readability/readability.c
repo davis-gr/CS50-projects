@@ -41,7 +41,21 @@ int count_words(string text)
                 count++;
             }
     }
-    //Treat for the last word of the text - it won't have whitespace after it.
+    //Treat for the last word of the text - it won't have whitespace after so it won't be counted in by the algo above.
     count++;
+    return count;
+}
+
+int count_sentences(string text)
+{
+    int count = 0;
+    for (int i = 0, n = strlen(text); i < n; i++)
+    {
+        int c = text[i];
+        if (isspace(c))
+            {
+                count++;
+            }
+    }
     return count;
 }
