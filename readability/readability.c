@@ -20,11 +20,11 @@ int main(void)
     printf("%i sentences\n", sentenceCount);
 
     // L is the average number of letters per 100 words in the text
-    float L = letterCount / wordCount * 100;
+    float L = letterCount / wordCount * 100.0;
     printf("%f L \n", L);
 
     // S is the average number of sentences per 100 words in the text.
-    float S = sentenceCount / wordCount * 100;
+    float S = sentenceCount / wordCount * 100.0;
     printf("%f S \n", S);
 
     int index = round(0.0588 * L - 0.296 * S - 15.8);
