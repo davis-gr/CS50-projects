@@ -18,20 +18,27 @@ int main(void)
 //    printf("%i words\n", wordCount);
     int sentenceCount = count_sentences(fullText);
 //    printf("%i sentences\n", sentenceCount);
-    int index = round(0.0588 * L - 0.296 * S - 15.8);
-// L is the average number of letters per 100 words in the text
+
+    // L is the average number of letters per 100 words in the text
     float L = letterCount / wordCount * 100;
-// S is the average number of sentences per 100 words in the text.
-    float S = sentenceCount / wordCount * 100
+    // S is the average number of sentences per 100 words in the text.
+    float S = sentenceCount / wordCount * 100;
+
+    int index = round(0.0588 * L - 0.296 * S - 15.8);
+
     if (index < 1)
     {
         printf("Before Grade 1");
     }
-    else if (index > 1 || index < 16)
+    else if (index > 1 && index < 16)
     {
-
+        printf("Grade %i", index);
     }
-
+    else if (index >= 16)
+    {
+        printf("Grade 16+");
+    }
+    printf("\n");
 }
 
 int count_letters(string text)
