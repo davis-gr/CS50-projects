@@ -18,8 +18,8 @@ int count_letters(string text)
     int count = 0;
     for (int i = 0, n = strlen(text); i < n; i++)
     {
-        int charNum = tolower(text[i]);
-        if (charNum >= 97 && charNum <= 122)
+        int c = text[i];
+        if (isalpha(c))
             {
                 count++;
             }
