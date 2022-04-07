@@ -24,5 +24,13 @@ int main(void)
 int compute_score(string word)
 {
     //Compute and return score for string
-    
+    for (int i = 0, n = strlen(word); i < n; i++)
+    {
+        if (s[i] >= 'a' && s[i] <= 'z')
+        {
+            printf("%c", s[i] - 32);
+        }
+        else
+        {
+            printf("%c", s[i]);
 }
