@@ -12,6 +12,8 @@ int main(void)
     printf("%s\n", fullText);
     int letterCount = count_letters(fullText);
     printf("%i letters\n", letterCount);
+    int wordCount = count_words(fullText);
+    printf("%i words\n", wordCount);
 }
 
 int count_letters(string text)
@@ -28,4 +30,4 @@ int count_letters(string text)
     return count;
 }
 
-int count_letters(string text)
+int count_words(string text)
