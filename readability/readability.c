@@ -13,11 +13,13 @@ int main(void)
     string fullText = get_string("Text: ");
     printf("%s\n", fullText);
     int letterCount = count_letters(fullText);
-    printf("%i letters\n", letterCount);
+//    printf("%i letters\n", letterCount);
     int wordCount = count_words(fullText);
-    printf("%i words\n", wordCount);
+//    printf("%i words\n", wordCount);
     int sentenceCount = count_sentences(fullText);
-    printf("%i sentences\n", sentenceCount);
+//    printf("%i sentences\n", sentenceCount);
+
+
 }
 
 int count_letters(string text)
