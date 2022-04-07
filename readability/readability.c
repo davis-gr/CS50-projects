@@ -41,5 +41,7 @@ int count_words(string text)
                 count++;
             }
     }
+    //Treat for the last word of the text - it won't have whitespace after it.
+    count++;
     return count;
 }
