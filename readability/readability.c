@@ -18,8 +18,11 @@ int main(void)
 //    printf("%i words\n", wordCount);
     int sentenceCount = count_sentences(fullText);
 //    printf("%i sentences\n", sentenceCount);
+    int index = round(0.0588 * L - 0.296 * S - 15.8)
+// L is the average number of letters per 100 words in the text
+    double 
 
-
+// S is the average number of sentences per 100 words in the text.
 }
 
 int count_letters(string text)
