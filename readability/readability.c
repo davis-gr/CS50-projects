@@ -2,9 +2,11 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <math.h>
 
 int count_letters(string text);
 int count_words(string text);
+int count_sentences(string text);
 
 int main(void)
 {
@@ -14,6 +16,8 @@ int main(void)
     printf("%i letters\n", letterCount);
     int wordCount = count_words(fullText);
     printf("%i words\n", wordCount);
+    int sentenceCount = count_sentences(fullText);
+    printf("%i sentences\n", sentenceCount);
 }
 
 int count_letters(string text)
@@ -52,7 +56,7 @@ int count_sentences(string text)
     for (int i = 0, n = strlen(text); i < n; i++)
     {
         int c = text[i];
-        if (isspace(c))
+        if (c == 46 || c == 33 || c == 63)
             {
                 count++;
             }
