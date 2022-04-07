@@ -41,7 +41,7 @@ int compute_score(string word)
     {
         int charNum = tolower(word[i]);
         //printf("%i", tolower(charNum));
-        int pts = POINTS[charNum-97];
+        int pts = POINTS[charNum - 97];
         //printf(" - %i", pts);
         //printf("\n");
         if (charNum >= 97 && charNum <= 122)
