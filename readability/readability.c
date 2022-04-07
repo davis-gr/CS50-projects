@@ -52,9 +52,9 @@ int count_letters(string text)
     {
         int c = text[i];
         if (isalpha(c))
-            {
-                count++;
-            }
+        {
+            count++;
+        }
     }
     return count;
 }
@@ -66,9 +66,9 @@ int count_words(string text)
     {
         int c = text[i];
         if (isspace(c))
-            {
-                count++;
-            }
+        {
+            count++;
+        }
     }
     //Treat for the last word of the text - it won't have whitespace after so it won't be counted in by the algo above.
     count++;
@@ -82,9 +82,9 @@ int count_sentences(string text)
     {
         int c = text[i];
         if (c == 46 || c == 33 || c == 63)
-            {
-                count++;
-            }
+        {
+            count++;
+        }
     }
     return count;
 }
