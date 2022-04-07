@@ -24,12 +24,18 @@ int main(void)
 int compute_score(string word)
 {
     //Compute and return score for string
+    int totalPts = 0;
     for (int i = 0, n = strlen(word); i < n; i++)
     {
         int charNum = word[i];
-        printf("%i", tolower(charNum));
-        printf("\n");
+        //printf("%i", tolower(charNum));
+        int pts = POINTS[charNum-97];
+        //printf(" - %i", pts);
+        //printf("\n");
+        totalPts = totalPts + pts;
+
     }
+    printf("%i", totalPts);
     printf("\n");
-    return 1;
+    return totalPts;
 }
