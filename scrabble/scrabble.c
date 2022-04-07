@@ -48,10 +48,6 @@ int compute_score(string word)
         {
             totalPts = totalPts + pts;
         }
-        else
-        {
-            totalPts = totalPts + 0;
-        }
     }
 //    printf("%i", totalPts);
 //    printf("\n");
