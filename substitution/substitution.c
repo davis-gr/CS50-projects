@@ -17,7 +17,7 @@ int main(int argc, string argv[])
     cipher = argv[1];
     if (strlen(cipher) < 26)
     {
-        printf("Enter a key of exactly 26 letters!\n");
+        printf("Enter a key of exactly 26 unique English letters!\n");
         return 1;
     }
     string plaintext = get_string("plaintext: ");
