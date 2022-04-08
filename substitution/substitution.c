@@ -32,3 +32,10 @@ string encrypt(string text)
 //    printf("\n");
     return newtext;
 }
+
+
+// get key
+// validate key
+// get plaintext
+// encipher
+// print ciphertext
