@@ -24,7 +24,7 @@ string encrypt(string text)
         int charNum = text[i];
         if (islower(text[i]) && isalpha(text[i]))
         {
-            char newChar = cipher[charNum - 'a'];
+            char newChar = tolower(cipher[charNum - 'a']);
             newtext[i] = newChar;
         }
         else if (isupper(text[i]) && isalpha(text[i]))
