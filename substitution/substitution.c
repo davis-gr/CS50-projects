@@ -24,7 +24,7 @@ int main(int argc, string argv[])
     }
     for (int i = 0, n = strlen(cipher); i < n; i++)
     {
-        int singleLetter = lower(cipher[i])
+        int singleLetter = lower(cipher[i]);
         if (isalpha(cipher[i]) == 0)
         {
             //printf("%i", suds);
