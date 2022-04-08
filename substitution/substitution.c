@@ -23,9 +23,9 @@ int main(int argc, string argv[])
     }
     for (int i = 0, n = strlen(cipher); i < n; i++)
     {
-        
+        int suds = isalpha(cipher[i]);
         if (isalpha(cipher[i]) != 0)
-        printf("%c", cipher[i]);
+        printf("%i", suds);
         printf("Enter a key of exactly 26 unique English letters!\n");
         return 1;
     }
