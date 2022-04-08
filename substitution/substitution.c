@@ -39,6 +39,3 @@ string encrypt(string text)
 
 // get key
 // validate key
-// get plaintext
-// encipher
-// print ciphertext
