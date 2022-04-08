@@ -66,6 +66,3 @@ string encrypt(string text)
     }
     return newtext;
 }
-
-// get key
-// validate key
