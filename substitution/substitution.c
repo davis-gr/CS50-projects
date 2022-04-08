@@ -11,5 +11,20 @@ int main(int argc, string argv[])
 
 string encrypt(string text)
 {
-
+    string newtext = text
+    for (int i = 0, n = strlen(text); i < n; i++)
+    {
+        int charNum = tolower(word[i]);
+        //printf("%i", tolower(charNum));
+        int pts = POINTS[charNum - 97];
+        //printf(" - %i", pts);
+        //printf("\n");
+        if (charNum >= 97 && charNum <= 122)
+        {
+            totalPts = totalPts + pts;
+        }
+    }
+//    printf("%i", totalPts);
+//    printf("\n");
+    return totalPts;
 }
