@@ -24,7 +24,7 @@ int main(int argc, string argv[])
     }
     for (int i = 0, n = strlen(cipher); i < n; i++)
     {
-        int singleLetter = lower(cipher[i]);
+        int singleLetterI = tolower(cipher[i]);
         if (isalpha(cipher[i]) == 0)
         {
             //printf("%i", suds);
@@ -33,7 +33,8 @@ int main(int argc, string argv[])
         }
         for(int j = i + 1; j < strlen(cipher); j++)
         {
-            if (array[i] == array[j])
+            int singleLetterJ = tolower(cipher[j]);
+            if (singleLetterI == singleLetterJ)
             {
                 printf("Enter a key of exactly 26 unique English letters!\n");
                 return 1;
