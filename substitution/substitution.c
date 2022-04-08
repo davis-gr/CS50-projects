@@ -9,11 +9,16 @@ string cipher = "";
 
 int main(int argc, string argv[])
 {
+    if (argc != 2)
+    {
+        printf("Enter a key and only one key!")
+        return 1
+    }
     cipher = argv[1];
     if (strlen(cipher) < 26)
     {
-        
-
+        printf("Enter a key of exactly 26 letters!")
+        return 1
     }
     string plaintext = get_string("plaintext: ");
     printf("%s\n", cipher);
