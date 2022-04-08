@@ -21,7 +21,7 @@ string encrypt(string text)
         //printf("\n");
         if (charNum >= 97 && charNum <= 122)
         {
-            totalPts = totalPts + pts;
+            newtext[i] = newChar;
         }
     }
 //    printf("%i", totalPts);
