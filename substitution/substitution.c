@@ -31,7 +31,7 @@ int main(int argc, string argv[])
             printf("Enter a key of exactly 26 unique English letters!\n");
             return 1;
         }
-        else if (singleLetter in cipherArray)
+        else if
         {
 
         }
