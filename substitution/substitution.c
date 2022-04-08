@@ -8,7 +8,7 @@ string encrypt(string text);
 int main(int argc, string argv[])
 {
     string plaintext = get_string("plaintext: ");
-    printf("%s", argv);
+    printf("%s", argv[0]);
 //    string ciphertext = encrypt(plaintext);
 //    string cipher = argv[];
 //    printf("%s", ciphertext);
