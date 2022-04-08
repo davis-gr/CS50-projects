@@ -6,7 +6,6 @@
 string encrypt(string text);
 
 string cipher = "";
-//int cipherArray[] = {}
 
 int main(int argc, string argv[])
 {
@@ -42,7 +41,7 @@ int main(int argc, string argv[])
         }
     }
     string plaintext = get_string("plaintext: ");
-    printf("%s\n", cipher);
+//    printf("%s\n", cipher);
     string ciphertext = encrypt(plaintext);
     printf("ciphertext: %s\n", ciphertext);
 }
