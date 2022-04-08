@@ -22,24 +22,17 @@ string encrypt(string text)
     for (int i = 0, n = strlen(text); i < n; i++)
     {
         int charNum = text[i];
-        //printf("%i", tolower(charNum));
-        if (islower(text[i]))
+        if (islower(text[i]) && isalpha(text[i]))
         {
             char newChar = cipher[charNum - 'a'];
+            newtext[i] = newChar;
         }
-        else if (isupper(text[i]))
+        else if (isupper(text[i]) && isalpha(text[i]))
         {
             char newChar = cipher[charNum - 'A'];
-        }
-        //printf(" - %i", pts);
-        //printf("\n");
-        if isalpha(charNum)
-        {
             newtext[i] = newChar;
         }
     }
-//    printf("%i", totalPts);
-//    printf("\n");
     return newtext;
 }
 
