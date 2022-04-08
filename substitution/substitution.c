@@ -10,10 +10,10 @@ string cipher = "";
 int main(int argc, string argv[])
 {
     string plaintext = get_string("plaintext: ");
-    printf("%s", argv[0]);
+    cipher = argv[1];
+    printf("%s\n", cipher);
     string ciphertext = encrypt(plaintext);
-    cipher = argv[0];
-    printf("%s", ciphertext);
+    printf("%s\n", ciphertext);
 }
 
 string encrypt(string text)
