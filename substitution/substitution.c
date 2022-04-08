@@ -16,7 +16,7 @@ string encrypt(string text)
     {
         int charNum = tolower(text[i]);
         //printf("%i", tolower(charNum));
-        char newChar = POINTS[charNum - 97];
+        char newChar = argv[charNum - 97];
         //printf(" - %i", pts);
         //printf("\n");
         if (charNum >= 97 && charNum <= 122)
