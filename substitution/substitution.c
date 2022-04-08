@@ -6,7 +6,7 @@
 string encrypt(string text);
 
 string cipher = "";
-int cipherArray[] = {}
+//int cipherArray[] = {}
 
 int main(int argc, string argv[])
 {
@@ -31,9 +31,13 @@ int main(int argc, string argv[])
             printf("Enter a key of exactly 26 unique English letters!\n");
             return 1;
         }
-        else if
+        for(int j = i + 1; j < strlen(cipher); j++)
         {
-
+            if (array[i] == array[j])
+            {
+                printf("Enter a key of exactly 26 unique English letters!\n");
+                return 1;
+            }
         }
     }
     string plaintext = get_string("plaintext: ");
