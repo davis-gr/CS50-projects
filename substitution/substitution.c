@@ -21,12 +21,19 @@ string encrypt(string text)
     string newtext = text;
     for (int i = 0, n = strlen(text); i < n; i++)
     {
-        int charNum = tolower(text[i]);
+        int charNum = text[i];
         //printf("%i", tolower(charNum));
-        char newChar = tolower(cipher[charNum - 97]);
+        if (islower(text[i]))
+        {
+            char newChar = cipher[charNum - 'a'];
+        }
+        else if (isupper(text[i]))
+        {
+            char newChar = cipher[charNum - 'A'];
+        }
         //printf(" - %i", pts);
         //printf("\n");
-        if (charNum >= 97 && charNum <= 122)
+        if isalpha(charNum)
         {
             newtext[i] = newChar;
         }
