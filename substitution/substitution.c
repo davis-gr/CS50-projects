@@ -5,13 +5,14 @@
 
 string encrypt(string text);
 
-string cipher = argv[0];
+string cipher = "";
 
 int main(int argc, string argv[])
 {
     string plaintext = get_string("plaintext: ");
     printf("%s", argv[0]);
     string ciphertext = encrypt(plaintext);
+    cipher = argv[0];
     printf("%s", ciphertext);
 }
 
