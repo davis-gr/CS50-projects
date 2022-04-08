@@ -14,9 +14,9 @@ string encrypt(string text)
     string newtext = text
     for (int i = 0, n = strlen(text); i < n; i++)
     {
-        int charNum = tolower(word[i]);
+        int charNum = tolower(text[i]);
         //printf("%i", tolower(charNum));
-        int pts = POINTS[charNum - 97];
+        char newChar = POINTS[charNum - 97];
         //printf(" - %i", pts);
         //printf("\n");
         if (charNum >= 97 && charNum <= 122)
