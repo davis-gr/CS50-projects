@@ -3,15 +3,17 @@
 #include <ctype.h>
 #include <string.h>
 
+string encrypt(string text);
+
 int main(int argc, string argv[])
 {
     string plaintext = get_string("plaintext: ");
-    //string ciphertext =
+    string ciphertext = printf("%s", newtext);
 }
 
 string encrypt(string text)
 {
-    string newtext = text
+    string newtext = text;
     for (int i = 0, n = strlen(text); i < n; i++)
     {
         int charNum = tolower(text[i]);
@@ -26,5 +28,5 @@ string encrypt(string text)
     }
 //    printf("%i", totalPts);
 //    printf("\n");
-    return newText;
+    return newtext;
 }
