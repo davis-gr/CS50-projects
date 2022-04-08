@@ -10,6 +10,11 @@ string cipher = "";
 int main(int argc, string argv[])
 {
     cipher = argv[1];
+    if (strlen(cipher) < 26)
+    {
+        
+
+    }
     string plaintext = get_string("plaintext: ");
     printf("%s\n", cipher);
     string ciphertext = encrypt(plaintext);
@@ -35,7 +40,6 @@ string encrypt(string text)
     }
     return newtext;
 }
-
 
 // get key
 // validate key
