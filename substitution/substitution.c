@@ -9,6 +9,7 @@ int main(int argc, string argv[])
 {
     string plaintext = get_string("plaintext: ");
     string ciphertext = encrypt(plaintext);
+    string cipher = argv[];
     printf("%s", ciphertext);
 }
 
