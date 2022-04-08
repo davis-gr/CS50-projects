@@ -9,11 +9,11 @@ string cipher = "";
 
 int main(int argc, string argv[])
 {
-    string plaintext = get_string("plaintext: ");
     cipher = argv[1];
+    string plaintext = get_string("plaintext: ");
     printf("%s\n", cipher);
     string ciphertext = encrypt(plaintext);
-    printf("%s\n", ciphertext);
+    printf("ciphertext: %s\n", ciphertext);
 }
 
 string encrypt(string text)
@@ -23,7 +23,7 @@ string encrypt(string text)
     {
         int charNum = tolower(text[i]);
         //printf("%i", tolower(charNum));
-        char newChar = cipher[charNum - 97];
+        char newChar = tolower(cipher[charNum - 97]);
         //printf(" - %i", pts);
         //printf("\n");
         if (charNum >= 97 && charNum <= 122)
