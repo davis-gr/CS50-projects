@@ -20,6 +20,10 @@ int main(int argc, string argv[])
         printf("Enter a key of exactly 26 unique English letters!\n");
         return 1;
     }
+    for (int i = 0, n = strlen(cipher); i < n; i++)
+    {
+        
+    }
     string plaintext = get_string("plaintext: ");
     printf("%s\n", cipher);
     string ciphertext = encrypt(plaintext);
