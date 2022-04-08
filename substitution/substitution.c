@@ -29,7 +29,7 @@ string encrypt(string text)
         }
         else if (isupper(text[i]) && isalpha(text[i]))
         {
-            char newChar = cipher[charNum - 'A'];
+            char newChar = toupper(cipher[charNum - 'A']);
             newtext[i] = newChar;
         }
     }
