@@ -26,5 +26,5 @@ string encrypt(string text)
     }
 //    printf("%i", totalPts);
 //    printf("\n");
-    return totalPts;
+    return newText;
 }
