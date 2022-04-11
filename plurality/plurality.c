@@ -80,6 +80,12 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    printf()
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for int j = 0; j < i + 1; j++
+        {
+            
+        }
+    }
     return;
 }
