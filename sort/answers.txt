@@ -1,11 +1,11 @@
-sort1 uses:
+sort1 uses: Bubble sort
 
-How do you know?: TODO
+How do you know?: It was significantly faster sorting sorted50000 than Sort3 and took around the same time as Sort2. So when we check further with random50000 that Sort2 uses Merge sort, we can assume that this one uses Bubble sort as Bubble sort is fast with sorted lists, but not so fast with random lists.
 
 sort2 uses: Merge sort
 
 How do you know?: This algorithm performs the best with randomized samples. When benchmarking random50000 sorting time against other sorting algorithms, this one was the quickest.
 
-sort3 uses: TODO
+sort3 uses: Selection sort
 
-How do you know?: TODO
+How do you know?: Because of what is written above. 
