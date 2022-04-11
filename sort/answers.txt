@@ -1,10 +1,10 @@
-sort1 uses: TODO
+sort1 uses:
 
 How do you know?: TODO
 
-sort2 uses: TODO
+sort2 uses: Merge sort
 
-How do you know?: TODO
+How do you know?: This algorithm performs the best with randomized samples. When benchmarking random50000 sorting time against other sorting algorithms, this one was the quickest.
 
 sort3 uses: TODO
 
