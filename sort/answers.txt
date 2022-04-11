@@ -8,4 +8,4 @@ How do you know?: This algorithm performs the best with randomized samples. When
 
 sort3 uses: Selection sort
 
-How do you know?: Because of what is written above. 
+How do you know?: This sorting algorithm took around the same time to sort all text groups (randomized, reversed, sorted) and we know that it should be the case for Selection sort. In addition, it was slower than Merge sort (Sort2) in all cases and significantly slower than Bubble sort (Sort1) for sorted50000 list, therefore we can conclude that this is Selection sort.
