@@ -70,7 +70,7 @@ bool vote(string name)
     {
         if (strcmp(name, candidates[i].name) == 0)
         {
-            candidates[i].votes++
+            candidates[i].votes++;
             return true;
         }
     }
@@ -81,6 +81,19 @@ bool vote(string name)
 void print_winner(void)
 {
     int maxVotes = 0;
-    
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes >= maxVotes)
+        {
+            maxVotes = candidates[i].votes;
+        }
+    }
+    for (int j = 0; j < candidate_count; j++)
+    {
+        if (candidates[j].votes == maxVotes)
+        {
+            printf("%s\n", candidates[j].name);
+        }
+    }
     return;
 }
