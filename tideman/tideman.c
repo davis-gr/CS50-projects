@@ -162,7 +162,7 @@ void sort_pairs(void)
     int maxPoints, i;
     for (i = 0; i < pair_count; i++)
     {
-        maxPoints = preferences[pairs[i].winner][pairs[i].loser];
+        points = preferences[pairs[i].winner][pairs[i].loser];
         for (int j = i+1; j < pair_count; j++)
         {
             if (preferences[pairs[j].winner][pairs[j].loser] > maxPoints)
