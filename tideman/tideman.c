@@ -157,7 +157,7 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    int points;
+    int points, twin, tlose, tpair;
     for (int i = 0; i < pair_count -1; i++)
         {
             points = preferences[pairs[i].winner][pairs[i].loser];
@@ -167,6 +167,14 @@ void sort_pairs(void)
             for (int j = i + 1; j < pair_count; j++)
             {
                 if(preferences[pairs[j].winner][pairs[j].loser] > points)
+                {
+                    twin = pairs[j].winner
+                    tlose = pairs[j].loser
+                    tpair = pairs[j]
+                    pairs[j].winner = pairs[i].winner
+                    pairs[j].loser = pairs[i].loser
+                    pairs[i] = pairs[j]
+                }
             }
         }
     return;
