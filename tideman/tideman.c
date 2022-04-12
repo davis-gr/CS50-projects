@@ -176,9 +176,9 @@ void sort_pairs(void)
     {
         if (preferences[pairs[k].winner][pairs[k].loser] == maxPoints)
         {
+            pairs[i] = pairs[k];
             pairs[k].winner = pairs[i].winner;
             pairs[k].loser = pairs[i].loser;
-            pairs[k] = pairs[i];
         }
     printf("%i winner \n", pairs[k].winner);
     printf("%i loser \n", pairs[k].loser);
