@@ -159,7 +159,7 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    int maxPoints;
+    int maxPoints, i, swapped;
     int i;
     for (i = 0; i < pair_count; i++)
     {
@@ -172,7 +172,14 @@ void sort_pairs(void)
                 }
         }
     }
-    for (int k = 0; k < pair_count; k++)
+    while(1)
+    {
+
+    }
+
+
+
+/*    for (int k = 0; k < pair_count; k++)
     {
         if (preferences[pairs[k].winner][pairs[k].loser] == maxPoints)
         {
@@ -183,7 +190,7 @@ void sort_pairs(void)
     printf("%i winner \n", pairs[0].winner);
     printf("%i loser \n", pairs[0].loser);
     }
-    return;
+    return;*/
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
