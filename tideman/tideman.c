@@ -190,8 +190,9 @@ bool cycle (int winner, int loser)
 {
     if (locked[loser][winner] == true)
     {
-        return;
+        return true;
     }
+    for(int i = 0)
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
