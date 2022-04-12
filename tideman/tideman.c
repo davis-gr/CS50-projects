@@ -166,31 +166,8 @@ void sort_pairs(void)
         printf("%i winner\n", pairs[i].winner);
         printf("%i loser\n", pairs[i].loser);
         printf("%i i points\n", points);
-        for (int j = i+1; j < pair_count; j++)
-        {
-            if (preferences[pairs[j].winner][pairs[j].loser] > points)
-            {
-                //points = preferences[pairs[j].winner][pairs[j].loser];
-                //pairs[i].winner = pairs[j].winner;
-                //pairs[i].loser = pairs[j].loser;
-                //pairs[i] = pairs[j];
-            }
-        }
     }
     return;
-
-/*    for (int k = 0; k < pair_count; k++)
-    {
-        if (preferences[pairs[k].winner][pairs[k].loser] == maxPoints)
-        {
-            pairs[i] = pairs[k];
-            pairs[k].winner = pairs[i].winner;
-            pairs[k].loser = pairs[i].loser;
-        }
-    printf("%i winner \n", pairs[0].winner);
-    printf("%i loser \n", pairs[0].loser);
-    }
-    return;*/
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
