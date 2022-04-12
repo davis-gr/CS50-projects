@@ -171,7 +171,12 @@ void sort_pairs(void)
                 }
         }
     }
-    
+    for (int k = 0; k < pair_count, k++)
+    {
+        pairs[k] = pairs[i]
+        
+    }
+
     return;
 }
 
