@@ -160,7 +160,8 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     int maxPoints;
-    for (int i = 0; i < pair_count; i++)
+    int i;
+    for (i = 0; i < pair_count; i++)
     {
         maxPoints = preferences[pairs[i].winner][pairs[i].loser];
         for (int j = i+1; j < pair_count; j++)
@@ -171,17 +172,17 @@ void sort_pairs(void)
                 }
         }
     }
-    for (int k = 0; k < pair_count, k++)
+    for (int k = 0; k < pair_count; k++)
     {
-        if (preferences[pairs[k].winner][pairs[k].loser] = maxPoints)
+        if (preferences[pairs[k].winner][pairs[k].loser] == maxPoints)
         {
-            pairs[k].winner = pairs[i].winner
-            pairs[k].loser = pairs[i].loser
-            pairs[k] = pairs[i]
+            pairs[k].winner = pairs[i].winner;
+            pairs[k].loser = pairs[i].loser;
+            pairs[k] = pairs[i];
         }
-
+    printf("%i\n", pairs[k].winner);
+    printf("%i\n", pairs[k].loser);
     }
-
     return;
 }
 
