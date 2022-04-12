@@ -166,7 +166,7 @@ void sort_pairs(void)
 //            printf("%i loser\n", pairs[i].loser);
             for (int j = i + 1; j < pair_count; j++)
             {
-                if(preferences[pairs[j].winner][pairs[j].loser] > points)
+                if (preferences[pairs[j].winner][pairs[j].loser] > points)
                 {
                     twin = pairs[j].winner
                     tlose = pairs[j].loser
