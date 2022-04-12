@@ -140,16 +140,19 @@ void add_pairs(void)
             {
                 pairs[i].winner = i;
                 pairs[i].loser = j;
+                pair_count++;
             }
             else if (preferences[i][j] < preferences[j][i])
             {
                 pairs[i].winner = j;
                 pairs[i].loser = i;
+                pair_count++;
             }
             //printf("%i winner\n", pairs[i].winner);
             //printf("%i loser\n", pairs[i].loser);
         }
     }
+//    printf("%i pairs\n", pair_count);
     return;
 }
 
