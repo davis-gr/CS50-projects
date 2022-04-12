@@ -152,7 +152,7 @@ void add_pairs(void)
             printf("%i loser\n", pairs[i].loser);
         }
     }
-    printf("%i pairs\n", pair_count);
+    printf("\n%i pairs\n\n", pair_count);
     return;
 }
 
