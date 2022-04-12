@@ -166,14 +166,16 @@ void sort_pairs(void)
         for (int j = i+1; j < pair_count; j++)
         {
             if (preferences[pairs[j].winner][pairs[j].loser] > points)
-                {
-                    points = preferences[pairs[j].winner][pairs[j].loser];
-                    dirsluks1 = pairs[j].winner;
-                    dirsluks2 = pairs[j].loser;
-                    pairs[i] = pairs[j];
-                    printf("%i winner\n", dirsluks1);
-                    printf("%i loser\n", dirsluks2);
-                }
+            {
+                points = preferences[pairs[j].winner][pairs[j].loser];
+                pairs[i].winner = pairs[j].winner;
+                pairs[i].loser = pairs[j].loser;
+                pairs[i] = pairs[j];
+                printf("%i winner i\n", pairs[i].winner);
+                printf("%i loser i\n", pairs[i].loser);
+                printf("%i winner j\n", pairs[j].winner);
+                printf("%i loser j\n", pairs[j].loser);
+            }
         }
     }
     return;
