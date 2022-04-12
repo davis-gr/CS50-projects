@@ -171,6 +171,7 @@ void sort_pairs(void)
                 points[i+1] = temp;
                 swapped = 1;
             }
+            printf("%i points\n", points[i]);
         }
         if (swapped == 0)
         {
