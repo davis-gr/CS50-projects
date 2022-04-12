@@ -66,7 +66,7 @@ int main(int argc, string argv[])
     }
 
     pair_count = 0;
-    int voter_count = 3;//get_int("Number of voters: ");
+    int voter_count = get_int("Number of voters: ");
 
     // Query for votes
     for (int i = 0; i < voter_count; i++)
@@ -228,12 +228,11 @@ void print_winner(void)
             {
                 break;
             }
-            else if (j == candidates - 1)
+            else if (j == candidate_count - 1)
             {
-                printf("%s\n", candidates[j])
+                printf("%s\n", candidates[j]);
             }
         }
     }
-    printf("%s\n", candidates[i])
     return;
 }
