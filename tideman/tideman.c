@@ -172,6 +172,10 @@ void sort_pairs(void)
                 swapped = 1;
             }
         }
+        if (swapped == 0)
+        {
+            break;
+        }
     }
 
         {
