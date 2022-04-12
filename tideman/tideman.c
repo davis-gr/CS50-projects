@@ -162,8 +162,6 @@ void sort_pairs(void)
     int maxPoints = 0;
     for (int i = 0; i < pair_count; i++)
     {
-
-
         for (int j = i+1; j < candidate_count; j++)
         {
 
