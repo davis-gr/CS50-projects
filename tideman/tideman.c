@@ -158,7 +158,6 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     int points[pair_count], i, temp, swapped;
-
     while(1)
     {
         swapped = 0;
