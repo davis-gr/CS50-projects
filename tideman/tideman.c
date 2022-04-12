@@ -188,6 +188,10 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
+    //base case?
+    if (pairs[i].winner = pairs[i].loser)
+    return;
+    //recursive case?
     for (int i = 0; i < pair_count; i++)
     {
         int winner = pairs[i].winner;
