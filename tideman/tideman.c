@@ -172,9 +172,7 @@ void sort_pairs(void)
                     twin = pairs[j].winner
                     tlose = pairs[j].loser
                     tpair = pairs[j]
-                    pairs[j].winner = pairs[i].winner
-                    pairs[j].loser = pairs[i].loser
-                    pairs[i] = pairs[j]
+                    
                 }
             }
         }
