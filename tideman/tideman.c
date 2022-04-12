@@ -191,13 +191,18 @@ void lock_pairs(void)
     int winner, loser, i;
     //base case?
     if (pairs[i].winner = pairs[i].loser)
-    return;
-    //recursive case?
-    for (i = 0; i < pair_count; i++)
     {
-        winner = pairs[i].winner;
-        loser = pairs[i].loser;
-        locked[winner][loser] = true;
+        return;
+    }
+    //recursive case?
+    else
+    {
+        for (i = 0; i < pair_count; i++)
+        {
+            winner = pairs[i].winner;
+            loser = pairs[i].loser;
+            locked[winner][loser] = true;
+        }
     }
     return;
 }
