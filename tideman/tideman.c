@@ -165,6 +165,12 @@ void sort_pairs(void)
         {
             points[i] = preferences[pairs[i].winner][pairs[i].loser];
             if (points[i] < points[i+1])
+            {
+                temp = points[i];
+                points[i] = points[i+1];
+                points[i+1] = temp;
+                swapped = 1;
+            }
         }
     }
 
