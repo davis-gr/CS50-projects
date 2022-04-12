@@ -158,9 +158,19 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     int points[pair_count], i, temp, swapped;
-    for (i = 0; i < pair_count -1; i++)
+
+    while(1)
+    {
+        swapped = 0;
+        for (i = 0; i < pair_count -1; i++)
         {
             points[i] = preferences[pairs[i].winner][pairs[i].loser];
+            if (points[i] < points[i+1])
+        }
+    }
+
+        {
+
         }
     return;
 }
