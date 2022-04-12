@@ -128,14 +128,14 @@ int main(int argc, string argv[])
 // Record preference if vote is valid
 bool vote(int voter, int rank, string name)
 {
-    for (int i = 0; i < voter_count; i++)
+    for (voter = 0; voter < voter_count; voter++)
     {
-        for (int j = 0; j < candidate_count; j++)
+        for (rank = 0; rank < candidate_count; rank++)
         {
             if (strcmp(name, candidates[j].name) == 0)
             {
-                candidates[j].votes++;
-                preferences[i][j] = candidates[j]
+                candidates[rank].votes++;
+                preferences[voter][rank] = candidates[rank]
                 return true;
             }
         }
