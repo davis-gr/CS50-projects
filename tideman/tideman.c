@@ -168,7 +168,8 @@ void sort_pairs(void)
             if (preferences[pairs[j].winner][pairs[j].loser] > points)
                 {
                     points = preferences[pairs[j].winner][pairs[j].loser];
-                }
+                    preferences[pairs[i].winner][pairs[i].loser] = preferences[pairs[j].winner][pairs[j].loser]
+                {
         }
     }
 
