@@ -188,20 +188,25 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    int winner, loser, i;
+    int winner, loser, i, j;
     //base case?
-    if (pairs[i].winner = pairs[i].loser)
+    if (pairs[i].winner = pairs[j].loser)
     {
         return;
     }
     //recursive case?
     else
     {
-        for (i = 0; i < pair_count; i++)
+        for (i = 0; i < pair_count - 1; i++)
         {
             winner = pairs[i].winner;
             loser = pairs[i].loser;
             locked[winner][loser] = true;
+            for (j = i+1; j < pair_count; j++)
+            {
+                winner = pairs[j].winner;
+                loser = pairs[j].loser;
+            }
         }
     }
     return;
