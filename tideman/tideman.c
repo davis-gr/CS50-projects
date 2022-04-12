@@ -180,8 +180,8 @@ void sort_pairs(void)
             pairs[k].loser = pairs[i].loser;
             pairs[k] = pairs[i];
         }
-    printf("%i\n", pairs[k].winner);
-    printf("%i\n", pairs[k].loser);
+    printf("%i winner \n", pairs[k].winner);
+    printf("%i loser \n", pairs[k].loser);
     }
     return;
 }
