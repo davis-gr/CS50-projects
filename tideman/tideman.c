@@ -157,26 +157,30 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    int points[pair_count], i, temp, swapped;
-    while(1)
+    for (int i = 0; i < pair_count; i++)
     {
-        swapped = 0;
-        for (i = 0; i < pair_count -1; i++)
+        int twin, tlose;
+        int points = preferences[pairs[i].winner][pairs[i].loser];
+        for (int j = i + 1; j < pair_count; j++)
         {
-            points[i] = preferences[pairs[i].winner][pairs[i].loser];
-            if (points[i] < points[i+1])
+            if (points < preferences[pairs[j].winner][pairs[j].loser])
             {
-                temp = points[i];
-                points[i] = points[i+1];
-                points[i+1] = temp;
-                swapped = 1;
+                points = preferences[pairs[j].winner][pairs[j].loser];
             }
-            printf("%i points\n", points[i]);
         }
-        if (swapped == 0)
+        for (int k = 0; k < pair_count; k++)
         {
-            break;
+            if(preferences[pairs[k].winner][pairs[k].loser] == points)
+            {
+                twin = pairs[i].winner;
+                tlose = pairs[i].loser;
+                pairs[i] = pairs[k];
+                pairs[k].winner = twin;
+                pairs[k].loser = tlose;
+            }
         }
+//    printf("%i winner\n", pairs[i].winner);
+//    printf("%i loser\n", pairs[i].loser);
     }
     return;
 }
@@ -184,7 +188,12 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    // TODO
+    for (int i = 0; i < pair_count; i++)
+    {
+        int winner = pairs[i].winner;
+        int loser = pairs[i].loser;
+        locked[winner][loser] = true;
+    }
     return;
 }
 
