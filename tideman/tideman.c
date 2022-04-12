@@ -148,11 +148,11 @@ void add_pairs(void)
                 pairs[pair_count].loser = i;
                 pair_count++;
             }
-            printf("%i winner\n", pairs[i].winner);
-            printf("%i loser\n", pairs[i].loser);
+//            printf("%i winner\n", pairs[pair_count].winner);
+//            printf("%i loser\n", pairs[pair_count].loser);
         }
     }
-    printf("\n%i pairs\n\n", pair_count);
+//    printf("\n%i pairs\n\n", pair_count);
     return;
 }
 
