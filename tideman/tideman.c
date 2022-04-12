@@ -148,8 +148,8 @@ void add_pairs(void)
                 pairs[i].loser = i;
                 pair_count++;
             }
-            printf("%i winner\n", pairs[i].winner);
-            printf("%i loser\n", pairs[i].loser);
+//            printf("%i winner\n", pairs[i].winner);
+//            printf("%i loser\n", pairs[i].loser);
         }
     }
     printf("\n%i pairs\n\n", pair_count);
@@ -163,6 +163,8 @@ void sort_pairs(void)
     for (int i = 0; i < pair_count; i++)
     {
         points = preferences[pairs[i].winner][pairs[i].loser];
+        printf("%i winner\n", pairs[i].winner);
+        printf("%i loser\n", pairs[i].loser);
         printf("%i i points\n", points);
         for (int j = i+1; j < pair_count; j++)
         {
