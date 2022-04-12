@@ -151,7 +151,7 @@ void add_pairs(void)
             }
         }
     }
-    printf("\n%i pairs\n\n", pair_count);
+//    printf("\n%i pairs\n\n", pair_count);
     return;
 }
 
@@ -230,10 +230,10 @@ void print_winner(void)
                 winner = false;
                 break;
             }
+        }
         if (winner == true)
         {
-            printf("%s\n", candidates[j]);
-        }
+            printf("%s\n", candidates[i]);
         }
     }
     return;
