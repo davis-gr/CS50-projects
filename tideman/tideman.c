@@ -169,12 +169,10 @@ void sort_pairs(void)
             {
                 if (preferences[pairs[j].winner][pairs[j].loser] > points)
                 {
-                    twin = pairs[j].winner
-                    tlose = pairs[j].loser
-                    tpair = pairs[j]
-                    
+                    points = preferences[pairs[j].winner][pairs[j].loser]
                 }
             }
+        printf("%i points\n", points);
         }
     return;
 }
