@@ -160,7 +160,6 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     int maxPoints, i, swapped;
-    int i;
     for (i = 0; i < pair_count; i++)
     {
         maxPoints = preferences[pairs[i].winner][pairs[i].loser];
@@ -174,7 +173,8 @@ void sort_pairs(void)
     }
     while(1)
     {
-
+        swapped = 0;
+        for(i=0 ; i < pair_count-1; i++)
     }
 
 
