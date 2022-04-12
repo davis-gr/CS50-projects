@@ -174,7 +174,8 @@ void sort_pairs(void)
     for (int k = 0; k < pair_count, k++)
     {
         pairs[k] = pairs[i]
-
+        pairs[k].winner = pairs[l].winner
+        pairs[k].loser = pairs[l].loser
     }
 
     return;
