@@ -175,7 +175,7 @@ void sort_pairs(void)
     {
         if (preferences[pairs[k].winner][pairs[k].loser] = maxPoints)
         {
-
+            pairs[k].winner = pairs[i].winner
         }
 
     }
