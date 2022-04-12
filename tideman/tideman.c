@@ -177,10 +177,6 @@ void sort_pairs(void)
             break;
         }
     }
-
-        {
-
-        }
     return;
 }
 
