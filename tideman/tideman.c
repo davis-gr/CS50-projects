@@ -104,9 +104,9 @@ bool vote(int rank, string name, int ranks[])
     {
         if (strcmp(name, candidates[i]) == 0)
         {
-            ranks[i] += rank;
-            rank++;
-            printf("%i rank\n", ranks[candidate_count]);
+            rank = i;
+            ranks[rank] = candidate_count;
+            printf("%i rank\n", ranks[rank]);
             printf("%i i\n", rank);
             return true;
         }
