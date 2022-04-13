@@ -158,9 +158,6 @@ void tabulate(void)
                 }
             }
         }
-    printf("%i\n", candidates[0].votes);
-    printf("%i\n", candidates[1].votes);
-    printf("%i\n", candidates[2].votes);
     return;
 }
 
