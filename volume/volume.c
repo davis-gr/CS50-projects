@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     {
         buffer += buffer;
     }
-    fwrite(&buffer, sizeof(int16_t), , output);
+    fwrite(&buffer, sizeof(int16_t), 1, output);
 
     // Close files
     fclose(input);
