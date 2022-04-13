@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
     uint8_t inputHeader[HEADER_SIZE];
 
-    fread()
+    fread(*inputHeader, sizeof(uint8_t), HEADER_SIZE, *input);
 
 
     // TODO: Read samples from input file and write updated data to output file
