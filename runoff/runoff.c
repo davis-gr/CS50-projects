@@ -139,6 +139,7 @@ bool vote(int voter, int rank, string name)
                 rank++;
                 return true;
             }
+        voter++;
         }
     }
     return false;
