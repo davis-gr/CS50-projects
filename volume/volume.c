@@ -44,8 +44,11 @@ int main(int argc, char *argv[])
 
     int16_t buffer;
 
-    fread(&buffer, sizeof(int16_t), HEADER_SIZE, input);
-    fwrite(&buffer, sizeof(int16_t), HEADER_SIZE, output);
+    while (fread(&buffer, sizeof(int16_t), 1, input))
+    {
+        buffer += buffer;
+    }
+    fwrite(&buffer, sizeof(int16_t), , output);
 
     // Close files
     fclose(input);
