@@ -182,11 +182,16 @@ int find_min(void)
     int minVotes;
     for (int i = 0; i < candidate_count - 1; i++)
         {
-            minVotes = candidates[i].votes;
             for (int j = i+1; j < candidate_count; j++)
             {
-                if (candidates[j].votes < minVotes)
-                minVotes = candidates[j].votes;
+                if (candidates[j].votes < candidates[i].votes)
+                {
+                    minVotes = candidates[j].votes;
+                }
+                else
+                {
+                    minVotes = candidates[i].votes;
+                }
             }
         }
     return minVotes;
