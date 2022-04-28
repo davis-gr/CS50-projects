@@ -102,7 +102,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     printf("0:1 red: %i\n", image[0][1].rgbtRed);
     printf("0:1 green: %i\n", image[0][1].rgbtGreen);
     printf("0:1 blue: %i\n", image[0][1].rgbtBlue);
-    printf("1:0 red: %i\n", image[1][0]].rgbtRed);
+    printf("1:0 red: %i\n", image[1][0].rgbtRed);
     printf("1:0 green: %i\n", image[1][0].rgbtGreen);
     printf("1:0 blue: %i\n", image[1][0].rgbtBlue);
     printf("1:1 red: %i\n", image[1][1].rgbtRed);
