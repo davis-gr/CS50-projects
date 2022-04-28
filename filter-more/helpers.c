@@ -60,7 +60,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int l = -1; l < 2; l++)
                 {
-                    if (( i + k >= 0 && )
+                    if (( i + k >= 0 && j + l < width) && (i + k < height && j + l >= 0)
                 }
             }
             // for all the non-edge pixels
