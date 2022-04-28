@@ -4,7 +4,7 @@
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
-    float gValue;
+    double gValue;
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -47,13 +47,22 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE temparray[height][width];
-    float rBlur, gBlur, bBlur;
+
     // for every row
     for (int i = 0; i < height; i++)
     {
         // for every column
         for (int j = 0; j < width; j++)
         {
+            double rBlur, gBlur, bBlur;
+            int counter;
+            for (int k = -1; k < 2; k++)
+            {
+                for (int l = -1; l < 2; l++)
+                {
+                    if (( i + k >= 0 && )
+                }
+            }
             // for all the non-edge pixels
             if (i > 0 && j > 0 && i < height - 1 && j < width -1)
             {
