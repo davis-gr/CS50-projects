@@ -102,10 +102,15 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         // for every column
         for (int j = 0; j < height; j++)
         {
-            double rBlur = 0;
-            double gBlur = 0;
-            double bBlur = 0;
-            int counter = 0;
+            double xRed = 0;
+            double xGreen = 0;
+            double xBlue = 0;
+            double yRed = 0;
+            double yGreen = 0;
+            double yBlue = 0;
+            int min1 = -1;
+            int min2 = -2;
+            int plus2 = 2;
             // 2 loops for catching the nearby pixels of every pixel
             for (int k = -1; k < 2; k++)
             {
@@ -114,15 +119,25 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     // if statement checking if nearby pixels are not beyond the edges of the picture
                     if (( i + k >= 0 && i + k < width) && (j + l >= 0 && j + l < height))
                     {
-                        if ( (k == -1 && l != 0) && 
+                        // multiplying by coefficients -> left edges
+                        if (k == -1 && l != 0)
                         {
-
+                        xRed = image[l+j][i+k].rgbtRed * min1;
+                        xGreen = image[l+j][i+k].rgbtGreen * min1;
+                        xBlue = image[l+j][i+k].rgbtBlue * min1;
                         }
-                        // adding RGB values to variables and counter for every addition
-                        rBlur += image[l+j][i+k].rgbtRed;
-                        gBlur += image[l+j][i+k].rgbtGreen;
-                        bBlur += image[l+j][i+k].rgbtBlue;
-                        counter++;
+                        else if (k == 1 && l != 0)
+                        {
+                        xRed = image[l+j][i+k].rgbtRed;
+                        xGreen = image[l+j][i+k].rgbtGreen;
+                        xBlue = image[l+j][i+k].rgbtBlue;
+                        }
+                        else if (k == 0 && l == -1)
+                        {
+                        xRed = image[l+j][i+k].rgbtRed;
+                        xGreen = image[l+j][i+k].rgbtGreen;
+                        xBlue = image[l+j][i+k].rgbtBlue;
+                        }
                     }
                 }
             }
