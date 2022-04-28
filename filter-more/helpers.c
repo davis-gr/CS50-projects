@@ -226,5 +226,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             image[m][n].rgbtBlue = temparray[m][n].rgbtBlue;
         }
     }
+    printf("0:0 red: %i\n", image[0][0].rgbtRed);
+    printf("0:0 green: %i\n", image[0][0].rgbtGreen);
+    printf("0:0 blue: %i\n", image[0][0].rgbtBlue);
     return;
 }
