@@ -31,6 +31,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             temparray[i][width-1-j].rgbtBlue = image[i][j].rgbtBlue;
         }
     }
+    
     return;
 }
 
