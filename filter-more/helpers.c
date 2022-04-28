@@ -27,9 +27,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            temparray[i][width-1-j].rgbtRed = image[i][j].rgbtRed;
-            temparray[i][width-1-j].rgbtGreen = image[i][j].rgbtGreen;
-            temparray[i][width-1-j].rgbtBlue = image[i][j].rgbtBlue;
+            temparray[i][width - 1 - j].rgbtRed = image[i][j].rgbtRed;
+            temparray[i][width - 1 - j].rgbtGreen = image[i][j].rgbtGreen;
+            temparray[i][width - 1 - j].rgbtBlue = image[i][j].rgbtBlue;
         }
     }
     for (int k = 0; k < height; k++)
@@ -64,12 +64,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 for (int l = -1; l < 2; l++)
                 {
                     // if statement checking if nearby pixels are not beyond the edges of the picture
-                    if (( i + k >= 0 && i + k < width) && (j + l >= 0 && j + l < height))
+                    if ((i + k >= 0 && i + k < width) && (j + l >= 0 && j + l < height))
                     {
                         // adding RGB values to variables and counter for every addition
-                        rBlur += image[l+j][i+k].rgbtRed;
-                        gBlur += image[l+j][i+k].rgbtGreen;
-                        bBlur += image[l+j][i+k].rgbtBlue;
+                        rBlur += image[l + j][i + k].rgbtRed;
+                        gBlur += image[l + j][i + k].rgbtGreen;
+                        bBlur += image[l + j][i + k].rgbtBlue;
                         counter++;
                     }
                 }
@@ -115,90 +115,96 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 for (int l = -1; l < 2; l++)
                 {
                     // if statement checking if nearby pixels are not beyond the edges of the picture
-                    if (( i + k >= 0 && i + k < width) && (j + l >= 0 && j + l < height))
+                    if ((i + k >= 0 && i + k < width) && (j + l >= 0 && j + l < height))
                     {
                         // left top
                         if (k == -1 && l == -1)
                         {
-                        yRed += image[l+j][i+k].rgbtRed * -1;
-                        yGreen += image[l+j][i+k].rgbtGreen * -1;
-                        yBlue += image[l+j][i+k].rgbtBlue * -1;
-                        xRed += image[l+j][i+k].rgbtRed * -1;
-                        xGreen += image[l+j][i+k].rgbtGreen * -1;
-                        xBlue += image[l+j][i+k].rgbtBlue * -1;
+                            yRed += image[l + j][i + k].rgbtRed * -1;
+                            yGreen += image[l + j][i + k].rgbtGreen * -1;
+                            yBlue += image[l + j][i + k].rgbtBlue * -1;
+                            xRed += image[l + j][i + k].rgbtRed * -1;
+                            xGreen += image[l + j][i + k].rgbtGreen * -1;
+                            xBlue += image[l + j][i + k].rgbtBlue * -1;
                         }
                         // left middle
                         else if (k == -1 && l == 0)
                         {
-                        xRed += image[l+j][i+k].rgbtRed * -2;
-                        xGreen += image[l+j][i+k].rgbtGreen * -2;
-                        xBlue += image[l+j][i+k].rgbtBlue * -2;
+                            xRed += image[l + j][i + k].rgbtRed * -2;
+                            xGreen += image[l + j][i + k].rgbtGreen * -2;
+                            xBlue += image[l + j][i + k].rgbtBlue * -2;
                         }
                         // left bottom
                         else if (k == -1 && l == 1)
                         {
-                        xRed += image[l+j][i+k].rgbtRed * -1;
-                        xGreen += image[l+j][i+k].rgbtGreen * -1;
-                        xBlue += image[l+j][i+k].rgbtBlue * -1;
-                        yRed += image[l+j][i+k].rgbtRed;
-                        yGreen += image[l+j][i+k].rgbtGreen;
-                        yBlue += image[l+j][i+k].rgbtBlue;
+                            xRed += image[l + j][i + k].rgbtRed * -1;
+                            xGreen += image[l + j][i + k].rgbtGreen * -1;
+                            xBlue += image[l + j][i + k].rgbtBlue * -1;
+                            yRed += image[l + j][i + k].rgbtRed;
+                            yGreen += image[l + j][i + k].rgbtGreen;
+                            yBlue += image[l + j][i + k].rgbtBlue;
                         }
                         // middle top
                         else if (k == 0 && l == -1)
                         {
-                        yRed += image[l+j][i+k].rgbtRed * -2;
-                        yGreen += image[l+j][i+k].rgbtGreen * -2;
-                        yBlue += image[l+j][i+k].rgbtBlue * -2;
+                            yRed += image[l + j][i + k].rgbtRed * -2;
+                            yGreen += image[l + j][i + k].rgbtGreen * -2;
+                            yBlue += image[l + j][i + k].rgbtBlue * -2;
                         }
                         // middle bottom
                         else if (k == 0 && l == 1)
                         {
-                        yRed += image[l+j][i+k].rgbtRed * 2;
-                        yGreen += image[l+j][i+k].rgbtGreen * 2;
-                        yBlue += image[l+j][i+k].rgbtBlue * 2;
+                            yRed += image[l + j][i + k].rgbtRed * 2;
+                            yGreen += image[l + j][i + k].rgbtGreen * 2;
+                            yBlue += image[l + j][i + k].rgbtBlue * 2;
                         }
                         // right top
                         else if (k == 1 && l == -1)
                         {
-                        xRed += image[l+j][i+k].rgbtRed;
-                        xGreen += image[l+j][i+k].rgbtGreen;
-                        xBlue += image[l+j][i+k].rgbtBlue;
-                        yRed += image[l+j][i+k].rgbtRed * -1;
-                        yGreen += image[l+j][i+k].rgbtGreen * -1;
-                        yBlue += image[l+j][i+k].rgbtBlue * -1;
+                            xRed += image[l + j][i + k].rgbtRed;
+                            xGreen += image[l + j][i + k].rgbtGreen;
+                            xBlue += image[l + j][i + k].rgbtBlue;
+                            yRed += image[l + j][i + k].rgbtRed * -1;
+                            yGreen += image[l + j][i + k].rgbtGreen * -1;
+                            yBlue += image[l + j][i + k].rgbtBlue * -1;
                         }
                         // right middle
                         else if (k == 1 && l == 0)
                         {
-                        xRed += image[l+j][i+k].rgbtRed * 2;
-                        xGreen += image[l+j][i+k].rgbtGreen * 2;
-                        xBlue += image[l+j][i+k].rgbtBlue * 2;
+                            xRed += image[l + j][i + k].rgbtRed * 2;
+                            xGreen += image[l + j][i + k].rgbtGreen * 2;
+                            xBlue += image[l + j][i + k].rgbtBlue * 2;
                         }
                         // right bottom
                         else if (k == 1 && l == 1)
                         {
-                        xRed += image[l+j][i+k].rgbtRed;
-                        xGreen += image[l+j][i+k].rgbtGreen;
-                        xBlue += image[l+j][i+k].rgbtBlue;
-                        yRed += image[l+j][i+k].rgbtRed;
-                        yGreen += image[l+j][i+k].rgbtGreen;
-                        yBlue += image[l+j][i+k].rgbtBlue;
+                            xRed += image[l + j][i + k].rgbtRed;
+                            xGreen += image[l + j][i + k].rgbtGreen;
+                            xBlue += image[l + j][i + k].rgbtBlue;
+                            yRed += image[l + j][i + k].rgbtRed;
+                            yGreen += image[l + j][i + k].rgbtGreen;
+                            yBlue += image[l + j][i + k].rgbtBlue;
                         }
                     }
                 }
             }
             // calculating blurred pixel values and storing them in temp pixel array
             double redSob, greenSob, blueSob;
-            redSob = round(sqrt((xRed*xRed)+(yRed*yRed)));
-            greenSob = round(sqrt((xGreen*xGreen)+(yGreen*yGreen)));
-            blueSob = round(sqrt((xBlue*xBlue)+(yBlue*yBlue)));
+            redSob = round(sqrt((xRed * xRed) + (yRed * yRed)));
+            greenSob = round(sqrt((xGreen * xGreen) + (yGreen * yGreen)));
+            blueSob = round(sqrt((xBlue * xBlue) + (yBlue * yBlue)));
             if (redSob > 255)
+            {
                 redSob = 255;
+            }
             if (greenSob > 255)
+            {
                 greenSob = 255;
+            }
             if (blueSob > 255)
+            {
                 blueSob = 255;
+            }
             temparray[j][i].rgbtRed = redSob;
             temparray[j][i].rgbtGreen = greenSob;
             temparray[j][i].rgbtBlue = blueSob;
@@ -214,8 +220,5 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             image[m][n].rgbtBlue = temparray[m][n].rgbtBlue;
         }
     }
-    printf("0:0 red: %i\n", image[0][0].rgbtRed);
-    printf("0:0 green: %i\n", image[0][0].rgbtGreen);
-    printf("0:0 blue: %i\n", image[0][0].rgbtBlue);
     return;
 }
