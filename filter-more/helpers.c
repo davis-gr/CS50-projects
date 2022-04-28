@@ -47,50 +47,41 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE temparray[height][width];
-
     // for every row
-    for (int i = 0; i < height; i++)
+    for (int i = 0; i < width; i++)
     {
         // for every column
-        for (int j = 0; j < width; j++)
+        for (int j = 0; j < height; j++)
         {
-            double rBlur, gBlur, bBlur;
-            int counter;
+            double rBlur = 0;
+            double gBlur = 0;
+            double bBlur = 0;
+            int counter = 0;
             for (int k = -1; k < 2; k++)
             {
                 for (int l = -1; l < 2; l++)
                 {
-                    if (( i + k >= 0 && j + l < width) && (i + k < height && j + l >= 0)
+                    if (( i + k >= 0 && i + k < width) && (j + l >= 0 && j + l < height))
+                    {
+                        rBlur += image[k][l].rgbtRed;
+                        gBlur += image[k][l].rgbtGreen;
+                        bBlur += image[k][l].rgbtBlue;
+                        counter++;
+                    }
                 }
             }
-            // for all the non-edge pixels
-            if (i > 0 && j > 0 && i < height - 1 && j < width -1)
-            {
-                rBlur = round((image[i-1][j-1].rgbtRed + image[i-1][j].rgbtRed + image[i-1][j+1].rgbtRed +
-                        image[i][j-1].rgbtRed + image[i][j].rgbtRed + image[i][j+1].rgbtRed +
-                        image[i+1][j-1].rgbtRed + image[i+1][j].rgbtRed + image[i+1][j+1].rgbtRed) / 9);
-                gBlur = round((image[i-1][j-1].rgbtGreen + image[i-1][j].rgbtGreen + image[i-1][j+1].rgbtGreen +
-                        image[i][j-1].rgbtGreen + image[i][j].rgbtGreen + image[i][j+1].rgbtGreen +
-                        image[i+1][j-1].rgbtGreen + image[i+1][j].rgbtGreen + image[i+1][j+1].rgbtGreen) / 9);
-                bBlur = round((image[i-1][j-1].rgbtBlue + image[i-1][j].rgbtBlue + image[i-1][j+1].rgbtBlue +
-                        image[i][j-1].rgbtBlue + image[i][j].rgbtBlue + image[i][j+1].rgbtBlue +
-                        image[i+1][j-1].rgbtBlue + image[i+1][j].rgbtBlue + image[i+1][j+1].rgbtBlue) / 9);
-                temparray[i][j].rgbtRed = rBlur;
-                temparray[i][j].rgbtGreen = gBlur;
-                temparray[i][j].rgbtBlue = bBlur;
-            }
-            // for all the left edge pixels, except corners
-            // for all the right edge pixels
-            // for all the
+            temparray[i][j].rgbtRed = round(rBlur / counter);
+            temparray[i][j].rgbtGreen = round(gBlur / counter);
+            temparray[i][j].rgbtBlue = round(bBlur / counter);
         }
     }
-    for (int k = 0; k < height; k++)
+    for (int m = 0; m < height; m++)
     {
-        for (int l = 0; l < width; l++)
+        for (int n = 0; n < width; n++)
         {
-            image[k][l].rgbtRed = temparray[k][l].rgbtRed;
-            image[k][l].rgbtGreen = temparray[k][l].rgbtGreen;
-            image[k][l].rgbtBlue = temparray[k][l].rgbtBlue;
+            image[m][n].rgbtRed = temparray[m][n].rgbtRed;
+            image[m][n].rgbtGreen = temparray[m][n].rgbtGreen;
+            image[m][n].rgbtBlue = temparray[m][n].rgbtBlue;
         }
     }
     return;
