@@ -57,12 +57,15 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             double gBlur = 0;
             double bBlur = 0;
             int counter = 0;
+            // 2 loops for catching the nearby pixels of every pixel
             for (int k = -1; k < 2; k++)
             {
                 for (int l = -1; l < 2; l++)
                 {
+                    // if statement checking if nearby pixels are not beyond the edges of the picture
                     if (( i + k >= 0 && i + k < width) && (j + l >= 0 && j + l < height))
                     {
+                        // adding RGB values to variables and counter for every addition
                         rBlur += image[l+j][i+k].rgbtRed;
                         gBlur += image[l+j][i+k].rgbtGreen;
                         bBlur += image[l+j][i+k].rgbtBlue;
@@ -70,11 +73,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
+            // calculating blurred pixel values and storing them in temp pixel array
             temparray[j][i].rgbtRed = round(rBlur / counter);
             temparray[j][i].rgbtGreen = round(gBlur / counter);
             temparray[j][i].rgbtBlue = round(bBlur / counter);
         }
     }
+    // swapping temp image array to the real one
     for (int m = 0; m < height; m++)
     {
         for (int n = 0; n < width; n++)
