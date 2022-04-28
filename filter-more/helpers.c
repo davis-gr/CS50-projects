@@ -114,7 +114,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     // if statement checking if nearby pixels are not beyond the edges of the picture
                     if (( i + k >= 0 && i + k < width) && (j + l >= 0 && j + l < height))
                     {
-                        if (k != 0 )
+                        if (k != 0)
                         {
 
                         }
