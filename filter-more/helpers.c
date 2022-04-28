@@ -1,5 +1,6 @@
 #include "helpers.h"
 #include <math.h>
+#include <stdio.h>
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -95,6 +96,18 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+    printf("0:0 red: %i\n", image[0][0].rgbtRed);
+    printf("0:0 green: %i\n", image[0][0].rgbtGreen);
+    printf("0:0 blue: %i\n", image[0][0].rgbtBlue);
+    printf("0:1 red: %i\n", image[0][1].rgbtRed);
+    printf("0:1 green: %i\n", image[0][1].rgbtGreen);
+    printf("0:1 blue: %i\n", image[0][1].rgbtBlue);
+    printf("1:0 red: %i\n", image[1][0]].rgbtRed);
+    printf("1:0 green: %i\n", image[1][0].rgbtGreen);
+    printf("1:0 blue: %i\n", image[1][0].rgbtBlue);
+    printf("1:1 red: %i\n", image[1][1].rgbtRed);
+    printf("1:1 green: %i\n", image[1][1].rgbtGreen);
+    printf("1:1 blue: %i\n", image[1][1].rgbtBlue);
     RGBTRIPLE temparray[height][width];
     // for every row
     for (int i = 0; i < width; i++)
