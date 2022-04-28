@@ -108,9 +108,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             double yRed = 0;
             double yGreen = 0;
             double yBlue = 0;
-            int min1 = -1;
-            int min2 = -2;
-            int plus2 = 2;
             // 2 loops for catching the nearby pixels of every pixel
             for (int k = -1; k < 2; k++)
             {
@@ -119,30 +116,39 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     // if statement checking if nearby pixels are not beyond the edges of the picture
                     if (( i + k >= 0 && i + k < width) && (j + l >= 0 && j + l < height))
                     {
-                        // multiplying by coefficients -> left edges
-                        if (k == -1 && l != 0)
+                        // left top
+                        if (k == -1 && l == -1)
                         {
-                        xRed = image[l+j][i+k].rgbtRed * min1;
-                        xGreen = image[l+j][i+k].rgbtGreen * min1;
-                        xBlue = image[l+j][i+k].rgbtBlue * min1;
+                        xRed = image[l+j][i+k].rgbtRed * -1;
+                        xGreen = image[l+j][i+k].rgbtGreen * -1;
+                        xBlue = image[l+j][i+k].rgbtBlue * -1;
+                        yRed = xRed;
+                        yGreen = xGreen;
+                        yBlue = xBlue;
                         }
-                        else if (k == 1 && l != 0)
+                        // left middle
+                        else if (k == -1 && l == 0)
                         {
-                        xRed = image[l+j][i+k].rgbtRed;
-                        xGreen = image[l+j][i+k].rgbtGreen;
-                        xBlue = image[l+j][i+k].rgbtBlue;
+                        xRed = image[l+j][i+k].rgbtRed * -2;
+                        xGreen = image[l+j][i+k].rgbtGreen * -2;
+                        xBlue = image[l+j][i+k].rgbtBlue * -2;
                         }
+                        // left bottom
+                        else if (k == -1 && l == 1)
+                        {
+                        xRed = image[l+j][i+k].rgbtRed * -1;
+                        xGreen = image[l+j][i+k].rgbtGreen * -1;
+                        xBlue = image[l+j][i+k].rgbtBlue * -1;
+                        yRed = image[l+j][i+k].rgbtRed;
+                        yGreen = image[l+j][i+k].rgbtGreen;
+                        yBlue = image[l+j][i+k].rgbtBlue;
+                        }
+                        // middle top
                         else if (k == 0 && l == -1)
                         {
-                        xRed = image[l+j][i+k].rgbtRed * min2;
-                        xGreen = image[l+j][i+k].rgbtGreen * min2;
-                        xBlue = image[l+j][i+k].rgbtBlue * min2;
-                        }
-                        else if (k == 0 && l == 1)
-                        {
-                        xRed = image[l+j][i+k].rgbtRed * plus2;
-                        xGreen = image[l+j][i+k].rgbtGreen * plus2;
-                        xBlue = image[l+j][i+k].rgbtBlue * plus2;
+                        yRed = image[l+j][i+k].rgbtRed * -2;
+                        yGreen = image[l+j][i+k].rgbtGreen * -2;
+                        yBlue = image[l+j][i+k].rgbtBlue * -2;
                         }
                     }
                 }
