@@ -52,12 +52,30 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            rBlur = round((image[i-1][j-1].rgbtRed + image[i-1][j].rgbtRed + image[i-1][j+1].rgbtRed +
-                    image[i][j-1].rgbtRed + image[i][j].rgbtRed + image[i][j+1].rgbtRed +
-                    image[i+1][j-1].rgbtRed + image[i+1][j].rgbtRed + image[i+1][j+1].rgbtRed) / 9);
-            rBlur = round((image[i-1][j-1].rgbtRed + image[i-1][j].rgbtRed + image[i-1][j+1].rgbtRed +
-                    image[i][j-1].rgbtRed + image[i][j].rgbtRed + image[i][j+1].rgbtRed +
-                    image[i+1][j-1].rgbtRed + image[i+1][j].rgbtRed + image[i+1][j+1].rgbtRed) / 9);
+            if (i > 0 && j > 0 && i < height - 1 && j < width -1)
+            {
+                rBlur = round((image[i-1][j-1].rgbtRed + image[i-1][j].rgbtRed + image[i-1][j+1].rgbtRed +
+                        image[i][j-1].rgbtRed + image[i][j].rgbtRed + image[i][j+1].rgbtRed +
+                        image[i+1][j-1].rgbtRed + image[i+1][j].rgbtRed + image[i+1][j+1].rgbtRed) / 9);
+                gBlur = round((image[i-1][j-1].rgbtGreen + image[i-1][j].rgbtGreen + image[i-1][j+1].rgbtGreen +
+                        image[i][j-1].rgbtGreen + image[i][j].rgbtGreen + image[i][j+1].rgbtGreen +
+                        image[i+1][j-1].rgbtGreen + image[i+1][j].rgbtGreen + image[i+1][j+1].rgbtGreen) / 9);
+                bBlur = round((image[i-1][j-1].rgbtBlue + image[i-1][j].rgbtBlue + image[i-1][j+1].rgbtBlue +
+                        image[i][j-1].rgbtBlue + image[i][j].rgbtBlue + image[i][j+1].rgbtBlue +
+                        image[i+1][j-1].rgbtBlue + image[i+1][j].rgbtBlue + image[i+1][j+1].rgbtBlue) / 9);
+                temparray[i][j].rgbtRed = rBlur;
+                temparray[i][j].rgbtGreen = gBlur;
+                temparray[i][j].rgbtBlue = bBlur;
+            }
+        }
+    }
+    for (int k = 0; k < height; k++)
+    {
+        for (int l = 0; l < width; l++)
+        {
+            image[k][l].rgbtRed = temparray[k][l].rgbtRed;
+            image[k][l].rgbtGreen = temparray[k][l].rgbtGreen;
+            image[k][l].rgbtBlue = temparray[k][l].rgbtBlue;
         }
     }
     return;
