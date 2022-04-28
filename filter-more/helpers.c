@@ -48,10 +48,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE temparray[height][width];
     float rBlur, gBlur, bBlur;
+    // for every row
     for (int i = 0; i < height; i++)
     {
+        // for every column
         for (int j = 0; j < width; j++)
         {
+            // for all the non-edge pixels
             if (i > 0 && j > 0 && i < height - 1 && j < width -1)
             {
                 rBlur = round((image[i-1][j-1].rgbtRed + image[i-1][j].rgbtRed + image[i-1][j+1].rgbtRed +
@@ -67,6 +70,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 temparray[i][j].rgbtGreen = gBlur;
                 temparray[i][j].rgbtBlue = bBlur;
             }
+            // for all the left edge pixels, except corners
+            // for all the right edge pixels
+            // for all the
         }
     }
     for (int k = 0; k < height; k++)
