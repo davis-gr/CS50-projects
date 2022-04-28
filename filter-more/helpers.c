@@ -22,18 +22,13 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE temparray[height][width];
-    int rValue, gValue, bValue;
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            temparray[height][width] = image[i][j].rgbtRed;
-            gValue = image[i][j].rgbtGreen;
-            bValue = image[i][j].rgbtBlue;
-        }
-        for (int k = width - 1; k >= 0; k--)
-        {
-
+            temparray[i][width-1-j].rgbtRed = image[i][j].rgbtRed;
+            temparray[i][width-1-j].rgbtGreen = image[i][j].rgbtGreen;
+            temparray[i][width-1-j].rgbtBlue = image[i][j].rgbtBlue;
         }
     }
     return;
