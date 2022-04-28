@@ -188,9 +188,19 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
             // calculating blurred pixel values and storing them in temp pixel array
-            temparray[j][i].rgbtRed = round(rBlur / counter);
-            temparray[j][i].rgbtGreen = round(gBlur / counter);
-            temparray[j][i].rgbtBlue = round(bBlur / counter);
+            double redSob, greenSob, blueSob;
+            redSob = round(sqrt((xRed*xRed)+(yRed*yRed)));
+            greenSob = round(sqrt((xGreen*xGreen)+(yGreen*yGreen)));
+            blueSob = round(sqrt((xBlue*xBlue)+(yBlue*yBlue)));
+            if (redSob > 255)
+                redSob = 255;
+            if (greenSob > 255)
+                greenSob = 255;
+            if (blueSob > 255)
+                blueSob = 255;
+            temparray[j][i].rgbtRed = redSob;
+            temparray[j][i].rgbtGreen = greenSob;
+            temparray[j][i].rgbtBlue = blueSob;
         }
     }
     // swapping temp image array to the real one
