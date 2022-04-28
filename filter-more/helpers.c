@@ -114,6 +114,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     // if statement checking if nearby pixels are not beyond the edges of the picture
                     if (( i + k >= 0 && i + k < width) && (j + l >= 0 && j + l < height))
                     {
+                        if (k != 0 )
+                        {
+
+                        }
                         // adding RGB values to variables and counter for every addition
                         rBlur += image[l+j][i+k].rgbtRed;
                         gBlur += image[l+j][i+k].rgbtGreen;
