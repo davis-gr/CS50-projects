@@ -70,9 +70,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            temparray[i][j].rgbtRed = round(rBlur / counter);
-            temparray[i][j].rgbtGreen = round(gBlur / counter);
-            temparray[i][j].rgbtBlue = round(bBlur / counter);
+            temparray[j][i].rgbtRed = round(rBlur / counter);
+            temparray[j][i].rgbtGreen = round(gBlur / counter);
+            temparray[j][i].rgbtBlue = round(bBlur / counter);
         }
     }
     for (int m = 0; m < height; m++)
