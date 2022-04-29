@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     BYTE buffer[];
     while (fread(buffer, sizeof(BYTE), 512, file) == BLOCK_SIZE)
     {
-
+        if ( )
 
     }
     sprintf(filename, "%03i.jpg", 2);
