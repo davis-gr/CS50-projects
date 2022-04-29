@@ -26,9 +26,10 @@ int main(int argc, char *argv[])
     int BLOCK_SIZE = 512;
     while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, file) == BLOCK_SIZE)
     {
-        //check if start of 1st JPEG
+        //check if start of JPEG
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
+            // Check if 1st JPEG
             if (counter == 0)
             {
                 FILE *img = fopen(filename, "w");
@@ -40,6 +41,7 @@ int main(int argc, char *argv[])
                 FILE *img = fclose(filename);
                 sprintf(filename, "%03i.jpg", counter);
                 FILE *img = fopen(filename, "w");
+                fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, filename);
             }
         }
     }
