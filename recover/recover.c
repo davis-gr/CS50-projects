@@ -38,10 +38,11 @@ int main(int argc, char *argv[])
             else
             {
                 FILE *img = fclose(filename);
+                sprintf(filename, "%03i.jpg", counter);
             }
         }
     }
-    sprintf(filename, "%03i.jpg", 2);
+
 
 
 }
