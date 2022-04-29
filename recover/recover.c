@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 typedef uint8_t BYTE;
 
@@ -50,7 +51,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            if (found = true)
+            if (found == true)
             fwrite(buffer, 1, BLOCK_SIZE, img);
         }
     }
