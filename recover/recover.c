@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
     int BLOCK_SIZE = 512;
     BYTE buffer[BLOCK_SIZE];
-    char* filename[8];
+    char filename[8];
     int counter = 0;
     FILE *img = NULL;
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
