@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
     int buffer[BLOCK_SIZE];
     char* filename = "000.jpg";
     int counter = 0;
+    bool found = F;
     FILE *img = fopen(filename, "w");
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
     {
@@ -36,6 +37,7 @@ int main(int argc, char *argv[])
             {
                 fwrite(buffer, 1, BLOCK_SIZE, img);
                 counter++;
+                found = T;
             }
             else
             {
@@ -48,7 +50,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            if ()
+            if (found = T)
             fwrite(buffer, 1, BLOCK_SIZE, img);
         }
     }
