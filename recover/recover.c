@@ -34,15 +34,16 @@ int main(int argc, char *argv[])
             if (counter == 0)
             {
                 FILE *img = fopen(filename, "w");
-                fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, filename);
+                fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, img);
                 counter++;
             }
             else
             {
-                FILE *img = fclose(filename);
+                fclose(img);
                 sprintf(filename, "%03i.jpg", counter);
                 FILE *img = fopen(filename, "w");
                 fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, filename);
+                counter++;
             }
         }
         else
@@ -50,7 +51,7 @@ int main(int argc, char *argv[])
             fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, filename);
         }
     }
-    FILE *img = fclose(filename);
+    fclose(img);
 }
 
 
