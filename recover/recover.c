@@ -49,9 +49,7 @@ int main(int argc, char *argv[])
             fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, filename);
         }
     }
-
-
-
+    FILE *img = fclose(filename);
 }
 
 
