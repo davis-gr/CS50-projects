@@ -21,17 +21,20 @@ int main(int argc, char *argv[])
     }
 
     BYTE buffer[];
+    char* filename = "000.jpg";
     while (fread(buffer, sizeof(BYTE), 512, file) == BLOCK_SIZE)
     {
         for (int i = 0; i < buffer; i++)
         {
             //check if start of 1st JPEG
             if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
-        }
+            {
 
+            }
+        }
     }
     sprintf(filename, "%03i.jpg", 2);
-    FILE *img = fopen(filename, "w");
+
     fwrite(buffer, sizeof(BYTE), 512, filename);
     FILE *img = fclose(filename);
 }
