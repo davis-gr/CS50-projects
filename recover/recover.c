@@ -29,14 +29,21 @@ int main(int argc, char *argv[])
         //check if start of 1st JPEG
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            FILE *img = fopen(filename, "w");
-            fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, filename);
+            if (counter == 0)
+            {
+                FILE *img = fopen(filename, "w");
+                fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, filename);
+                counter++;
+            }
+            else
+            {
+                FILE *img = fclose(filename);
+            }
         }
     }
     sprintf(filename, "%03i.jpg", 2);
 
 
-    FILE *img = fclose(filename);
 }
 
 
