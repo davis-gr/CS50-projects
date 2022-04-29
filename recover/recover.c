@@ -15,4 +15,6 @@ int main(int argc, char *argv[])
     }
     sprintf(filename, "%03i.jpg", 2);
     FILE *img = fopen(filename, "w");
+    fwrite(buffer, sizeof(BYTE), 512, filename);
+    FILE *img = fclose(filename);
 }
