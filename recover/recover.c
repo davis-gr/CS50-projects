@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
     int BLOCK_SIZE = 512;
     BYTE buffer[BLOCK_SIZE];
-    char* filename[8];
+    char* filename = "000.jpg";
     int counter = 0;
     bool found = false;
     FILE *img = fopen(filename, "w");
