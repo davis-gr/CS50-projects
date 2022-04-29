@@ -22,7 +22,6 @@ int main(int argc, char *argv[])
 
     FILE *file = fopen(argv[1], "r");
 
-    //define buffer;
     BYTE buffer[];
     while (fread(buffer, sizeof(BYTE), 512, file) == BLOCK_SIZE)
     {
