@@ -24,10 +24,9 @@ int main(int argc, char *argv[])
 
     int BLOCK_SIZE = 512;
     BYTE buffer[BLOCK_SIZE];
-    char* filename = "000.jpg";
+    char* filename[8];
     int counter = 0;
-    bool found = false;
-    FILE *img = fopen(filename, "w");
+    FILE *img = NULL;
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
     {
         //check if start of JPEG
@@ -36,9 +35,10 @@ int main(int argc, char *argv[])
             // Check if 1st JPEG
             if (counter == 0)
             {
+                sprintf(filename, "%03i.jpg", counter);
+                img = fopen(filename, "w");
                 fwrite(buffer, 1, BLOCK_SIZE, img);
                 counter++;
-                found = true;
             }
             else
             {
