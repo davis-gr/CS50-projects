@@ -44,6 +44,10 @@ int main(int argc, char *argv[])
                 fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, filename);
             }
         }
+        else
+        {
+            fwrite(buffer, sizeof(BYTE), BLOCK_SIZE, filename);
+        }
     }
 
 
