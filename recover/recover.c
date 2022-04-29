@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     }
 
     int BLOCK_SIZE = 512;
-    int buffer[BLOCK_SIZE];
+    BYTE buffer[BLOCK_SIZE];
     char* filename = "000.jpg";
     int counter = 0;
     bool found = false;
