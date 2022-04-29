@@ -5,6 +5,21 @@ typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
 {
+    // Check command-line arguments
+    if (argc != 2)
+    {
+        printf("Usage: ./recover filename\n");
+        return 1;
+    }
+
+    // Open files and determine error
+    FILE *input = fopen(argv[1], "r");
+    if (input == NULL)
+    {
+        printf("Could not open file.\n");
+        return 1;
+    }
+  
     FILE *file = fopen(argv[1], "r");
 
     //deffine buffer;
