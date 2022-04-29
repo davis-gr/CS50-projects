@@ -19,10 +19,11 @@ int main(int argc, char *argv[])
         printf("Could not open file.\n");
         return 1;
     }
-  
+
     FILE *file = fopen(argv[1], "r");
 
-    //deffine buffer;
+    //define buffer;
+    BYTE buffer;
     while (fread(buffer, sizeof(BYTE), 512, file) == BLOCK_SIZE)
     {
 
