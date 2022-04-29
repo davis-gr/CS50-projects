@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
 
     BYTE buffer[];
     char* filename = "000.jpg";
+    int counter = 0;
     while (fread(buffer, sizeof(BYTE), 512, file) == BLOCK_SIZE)
     {
         for (int i = 0; i < buffer; i++)
