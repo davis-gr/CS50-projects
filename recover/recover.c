@@ -21,12 +21,13 @@ int main(int argc, char *argv[])
         printf("Could not open file.\n");
         return 1;
     }
-
     int BLOCK_SIZE = 512;
     BYTE buffer[BLOCK_SIZE];
+    // this a bit stupid, but you have to define empty array and initialize it with sprintf
     char filename[8];
     int counter = 0;
-    FILE *img = NULL;
+    sprintf(filename, "%03i.jpg", counter);
+    FILE *img = fopen(filename, "w");
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
     {
         //check if start of JPEG
@@ -35,8 +36,6 @@ int main(int argc, char *argv[])
             // Check if 1st JPEG
             if (counter == 0)
             {
-                sprintf(filename, "%03i.jpg", counter);
-                img = fopen(filename, "w");
                 fwrite(buffer, 1, BLOCK_SIZE, img);
                 counter++;
             }
@@ -49,6 +48,7 @@ int main(int argc, char *argv[])
                 counter++;
             }
         }
+        // this check is needed because before first IMG there's a bunch of garbage in the raw file
         else if (counter != 0)
         {
             fwrite(buffer, 1, BLOCK_SIZE, img);
@@ -56,17 +56,3 @@ int main(int argc, char *argv[])
     }
     fclose(img);
 }
-
-
-// open memory card
-// repeat until end of card:
-    //read 512 bytes in buffer
-    // If start of new JPEG
-        // If first JPEG
-        //...
-        // Else
-        //...
-    //Else
-        // If already found JPEG
-        //...
-//Close any remaining files
