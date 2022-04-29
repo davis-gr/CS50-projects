@@ -48,6 +48,7 @@ int main(int argc, char *argv[])
         }
         else
         {
+            if ()
             fwrite(buffer, 1, BLOCK_SIZE, img);
         }
     }
