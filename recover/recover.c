@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 typedef uint8_t BYTE;
 
@@ -20,10 +21,10 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    BYTE buffer[];
+    int BLOCK_SIZE = 512;
+    int buffer[BLOCK_SIZE];
     char* filename = "000.jpg";
     int counter = 0;
-    int BLOCK_SIZE = 512;
     while (fread(buffer, sizeof(BYTE), BLOCK_SIZE, file) == BLOCK_SIZE)
     {
         //check if start of JPEG
