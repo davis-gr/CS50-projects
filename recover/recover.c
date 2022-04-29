@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
     int BLOCK_SIZE = 512;
     BYTE buffer[BLOCK_SIZE];
-    char* filename = "000.jpg";
+    char* filename[8];
     int counter = 0;
     bool found = false;
     FILE *img = fopen(filename, "w");
@@ -49,9 +49,8 @@ int main(int argc, char *argv[])
                 counter++;
             }
         }
-        else
-        {
-            if (found == true)
+        else if (counter != 0)
+        )
             fwrite(buffer, 1, BLOCK_SIZE, img);
         }
     }
