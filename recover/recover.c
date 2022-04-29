@@ -5,6 +5,7 @@ typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
 {
+    FILE *file = fopen(argv[1], "r");
     // Check command-line arguments
     if (argc != 2)
     {
@@ -13,21 +14,18 @@ int main(int argc, char *argv[])
     }
 
     // Open files and determine error
-    FILE *input = fopen(argv[1], "r");
-    if (input == NULL)
+    if (file == NULL)
     {
         printf("Could not open file.\n");
         return 1;
     }
-
-    FILE *file = fopen(argv[1], "r");
 
     BYTE buffer[];
     while (fread(buffer, sizeof(BYTE), 512, file) == BLOCK_SIZE)
     {
         for (int i = 0; i < buffer; i++)
         {
-            
+
         }
 
     }
