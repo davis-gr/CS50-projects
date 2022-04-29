@@ -25,7 +25,8 @@ int main(int argc, char *argv[])
     {
         for (int i = 0; i < buffer; i++)
         {
-            if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff 
+            //check if start of 1st JPEG
+            if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         }
 
     }
