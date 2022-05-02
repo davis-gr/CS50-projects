@@ -63,8 +63,8 @@ person *create_family(int generations)
         // TODO: Set parent pointers to NULL
 
         // Randomly assign alleles
-        person.alleles[0] = random_allele();
-        person.alleles[1] = random_allele();
+        p.alleles[0] = random_allele();
+        p.alleles[1] = random_allele();
     }
 
     // TODO: Return newly created person
