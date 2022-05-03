@@ -52,15 +52,15 @@ bool load(const char *dictionary)
 {
     // TODO
     // Open up dict file
-    FILE *inptr = fopen(dictionary, "r");
-    if (inptr == NULL)
+    FILE *f = fopen(dictionary, "r");
+    if (f == NULL)
     {
         printf("Could not open %s.\n", dictionary);
         return false;
     }
     // Read strings one at a time
     char *buffer[LENGTH + 1];
-    while (fscanf(inptr, "%s", *buffer) != EOF)
+    while (fscanf(f, "%s", *buffer) != EOF)
     {
         // Create new no;de for each word
         node *n = malloc(sizeof(node));
