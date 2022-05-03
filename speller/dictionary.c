@@ -77,7 +77,7 @@ bool load(const char *dictionary)
         // Insert node into hash table at that location
         if (table[hvalue] == NULL)
         {
-            table[hvalue]->next = n;
+            table[hvalue] = n;
             n->next = NULL;
         }
         else
