@@ -56,7 +56,6 @@ bool load(const char *dictionary)
     if (inptr == NULL)
     {
         printf("Could not open %s.\n", dictionary);
-        fclose(inptr);
         return false;
     }
     // Read strings one at a time
@@ -85,7 +84,7 @@ bool load(const char *dictionary)
         }
         wordCount++;
     }
-    fclose(inptr);
+    fclose(f);
     return true;
 }
 
