@@ -2,6 +2,7 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 #include "dictionary.h"
 
@@ -44,7 +45,7 @@ bool load(const char *dictionary)
         printf("Could not open %s.\n", argv[1]);
         return false;
     }
-    while (fscanf(inptr, "%s", word) != EOF)
+    while (fscanf(inptr, "%s", word) != "EOF")
     {
         node *n = malloc(sizeof(node));
         if (n == NULL)
