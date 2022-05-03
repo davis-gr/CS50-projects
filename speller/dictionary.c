@@ -66,9 +66,10 @@ bool load(const char *dictionary)
             table[hvalue] = n;
             n->next = NULL;
         }
-        else 
-
-
+        else
+        {
+            
+        }
     }
     return true;
 }
