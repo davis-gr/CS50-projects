@@ -27,7 +27,7 @@ bool check(const char *word)
 {
     int hvalue = hash(word);
     //Access linked list at that index in the hash table
-    //Tracverse linked list, looking for the word
+    //Traverse linked list, looking for the word (strcasecmp)
     return false;
 }
 
