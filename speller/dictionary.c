@@ -52,15 +52,15 @@ bool load(const char *dictionary)
 {
     // TODO
     // Open up dict file
-    FILE *f = fopen(dictionary, "r");
-    if (f == NULL)
+    FILE *inptr = fopen(dictionary, "r");
+    if (inptr == NULL)
     {
         printf("Could not open %s.\n", dictionary);
         return false;
     }
     // Read strings one at a time
     char buffer[LENGTH + 1];
-    while (fscanf(f, "%s", buffer) != EOF)
+    while (fscanf(inptr, "%s", buffer) != EOF)
     {
         // Create new no;de for each word
         node *n = malloc(sizeof(node));
@@ -84,7 +84,7 @@ bool load(const char *dictionary)
         }
         wordCount++;
     }
-    fclose(f);
+    fclose(inptr);
     return true;
 }
 
