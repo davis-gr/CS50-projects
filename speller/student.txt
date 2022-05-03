@@ -17850,9 +17850,9 @@ eBooks
 WORDS MISSPELLED:     17845
 WORDS IN DICTIONARY:  143091
 WORDS IN TEXT:        1150970
-TIME IN load:         0.02
-TIME IN check:        29.88
+TIME IN load:         0.03
+TIME IN check:        5.72
 TIME IN size:         0.00
 TIME IN unload:       0.00
-TIME IN TOTAL:        29.90
+TIME IN TOTAL:        5.75
 
