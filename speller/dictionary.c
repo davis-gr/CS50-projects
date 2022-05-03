@@ -61,7 +61,7 @@ bool load(const char *dictionary)
         // Hash word to obtain a hash value
         int hvalue = hash(n->word);
         // Insert node into hash table at that location
-        n->word = *buffer;
+        
     }
     return true;
 }
