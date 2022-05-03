@@ -59,8 +59,8 @@ bool load(const char *dictionary)
         return false;
     }
     // Read strings one at a time
-    char *buffer[LENGTH + 1];
-    while (fscanf(f, "%s", *buffer) != EOF)
+    char buffer[LENGTH + 1];
+    while (fscanf(f, "%s", buffer) != EOF)
     {
         // Create new no;de for each word
         node *n = malloc(sizeof(node));
@@ -68,7 +68,7 @@ bool load(const char *dictionary)
         {
             return false;
         }
-        strcpy(n->word, *buffer);
+        strcpy(n->word, buffer);
         // Hash word to obtain a hash value
         int hvalue = hash(n->word);
         // Insert node into hash table at that location
