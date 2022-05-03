@@ -108,5 +108,5 @@ bool unload(void)
             table[i] = tmp;
         }
     }
-return true;
+    return true;
 }
