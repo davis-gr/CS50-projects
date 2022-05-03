@@ -68,7 +68,8 @@ bool load(const char *dictionary)
         }
         else
         {
-            
+            n->next = table[hvalue]->next;
+            table[hvalue] = n;
         }
     }
     return true;
