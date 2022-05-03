@@ -107,6 +107,7 @@ bool unload(void)
             free(table[i]);
             table[i] = tmp;
         }
+    return true;
     }
-    return false;
+return false;
 }
