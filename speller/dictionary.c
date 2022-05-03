@@ -32,7 +32,7 @@ bool check(const char *word)
     {
         printf("%s\n", word);
         //printf("%s\n", tmp->word);
-        printf("%s\n", table[0]->word);
+        printf("%s\n", table[0]->next->word);
         //Traverse linked list, looking for the word (strcasecmp)
         if (strcasecmp(word, tmp->word) == 0)
         {
