@@ -74,7 +74,6 @@ bool load(const char *dictionary)
         }
         wordCount++;
     }
-    printf("%i\n", wordCount);
     return true;
 }
 
