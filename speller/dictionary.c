@@ -30,7 +30,7 @@ bool check(const char *word)
     for (node *tmp = table[hvalue]; tmp != NULL; tmp = tmp->next)
     {
         //Traverse linked list, looking for the word (strcasecmp)
-        if (strcasecmp(word, tmp->word))
+        if (strcasecmp(word, word))
         {
             return true;
         }
