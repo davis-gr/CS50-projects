@@ -40,10 +40,10 @@ bool load(const char *dictionary)
 {
     // TODO
     // Open up dict file
-    FILE *inptr = fopen(argv[1], "r");
+    FILE *inptr = fopen(dictionary, "r");
     if (inptr == NULL)
     {
-        printf("Could not open %s.\n", argv[1]);
+        printf("Could not open %s.\n", dictionary);
         return false;
     }
     while (fscanf(inptr, "%s", word) != "EOF")
