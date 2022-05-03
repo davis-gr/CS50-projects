@@ -55,14 +55,13 @@ bool load(const char *dictionary)
         node *n = malloc(sizeof(node));
         if (n == NULL)
         {
-            return false
+            return false;
         }
         strcpy(n->word, *buffer);
         // Hash word to obtain a hash value
         int hvalue = hash(n->word);
         // Insert node into hash table at that location
-        table->word = *buffer;
-        else
+        n->word = *buffer;
     }
     return true;
 }
