@@ -100,5 +100,9 @@ bool unload(void)
 {
     // TODO
     for (node *tmp = table[hvalue]; tmp != NULL; tmp = tmp->next)
+    {
+        free(tmp->next);
+        free(tmp);
+    }
     return false;
 }
