@@ -64,6 +64,7 @@ bool load(const char *dictionary)
         if (table[hvalue] == NULL)
         {
             table[hvalue] = n;
+            
         }
 
 
