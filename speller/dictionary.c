@@ -38,6 +38,12 @@ bool load(const char *dictionary)
 {
     // TODO
     // Open up dict file
+    FILE *inptr = fopen(infile, "r");
+    if (inptr == NULL)
+    {
+        printf("Could not open %s.\n", infile);
+        return 4;
+    }
     // Read strings one at a time
     // Create new node for each word
     // Hash word to obtain a hash value
