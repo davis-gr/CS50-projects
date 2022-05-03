@@ -36,6 +36,7 @@ unsigned int hash(const char *word)
     return toupper(word[0]) - 'A';
 }
 
+int wordCount = 0;
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
@@ -71,6 +72,7 @@ bool load(const char *dictionary)
             n->next = table[hvalue]->next;
             table[hvalue] = n;
         }
+        wordCount++;
     }
     return true;
 }
@@ -79,7 +81,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    return 0;
+    return wordCount;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
