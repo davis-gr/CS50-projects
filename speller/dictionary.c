@@ -84,6 +84,7 @@ bool load(const char *dictionary)
         }
         wordCount++;
     }
+    fclose(dictionary);
     return true;
 }
 
@@ -98,5 +99,6 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+
     return false;
 }
