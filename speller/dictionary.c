@@ -103,7 +103,7 @@ bool unload(void)
     {
         if (table[i] == NULL)
         {
-            return true;
+            return false;
         }
         while (table[i] != NULL)
         {
