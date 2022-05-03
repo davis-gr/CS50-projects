@@ -106,8 +106,8 @@ bool unload(void)
             node *tmp = cursor;
 //            cursor = cursor->next;
             free(tmp);
-            return true;
         }
+        return true;
     }
     return false;
 }
