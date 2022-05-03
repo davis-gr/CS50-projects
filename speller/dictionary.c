@@ -38,12 +38,14 @@ bool load(const char *dictionary)
 {
     // TODO
     // Open up dict file
-    FILE *inptr = fopen(infile, "r");
+    FILE *inptr = fopen(argv[1], "r");
     if (inptr == NULL)
     {
-        printf("Could not open %s.\n", infile);
-        return 4;
+        printf("Could not open %s.\n", argv[1]);
+        return false;
     }
+    fscanf(inptr, "%s", word)
+    
     // Read strings one at a time
     // Create new node for each word
     // Hash word to obtain a hash value
@@ -51,7 +53,7 @@ bool load(const char *dictionary)
     node *n = malloc(sizeof(node));
     strcpy(n->word, "Hello");
     n->next = NULL;
-    return false;
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
