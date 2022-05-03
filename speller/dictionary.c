@@ -46,7 +46,7 @@ unsigned int hash(const char *word)
 
     int hujovinka = 0;
     int n = 26;
-    if (strlen(word) < 2)
+    if (strlen(word) < 2 || isalpha(word[1] != true)
     {
         hujovinka += toupper(word[0]) - 'A';
     }
