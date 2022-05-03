@@ -82,7 +82,7 @@ bool load(const char *dictionary)
         }
         else
         {
-            n->next = table[hvalue]->next;
+            n->next = table[hvalue]->word;
             table[hvalue] = n;
         }
         wordCount++;
