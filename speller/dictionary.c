@@ -46,8 +46,8 @@ unsigned int hash(const char *word)
 
     int hujovinka = 0;
     int n = 26;
-    hujovinka += toupper(word[0]) - 'A');
-    hujovinka += toupper(word[1])*n - 'A'*n);
+    hujovinka += toupper(word[0]) - 'A';
+    hujovinka += toupper(word[1])*n - 'A'*n;
     return hujovinka;
 }
 
