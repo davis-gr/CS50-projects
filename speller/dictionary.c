@@ -39,6 +39,7 @@ bool load(const char *dictionary)
     // TODO
     node *n = malloc(sizeof(node));
     strcpy(n->word, "Hello");
+    n->next = NULL;
     return false;
 }
 
