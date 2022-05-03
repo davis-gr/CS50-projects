@@ -59,15 +59,10 @@ bool load(const char *dictionary)
         }
         strcpy(n->word, *buffer);
         // Hash word to obtain a hash value
-        int hvalue;
-
+        int hvalue = hash(n->word);
+        // Insert node into hash table at that location
+        
     }
-
-
-
-
-    // Insert node into has table at that location
-
     return true;
 }
 
