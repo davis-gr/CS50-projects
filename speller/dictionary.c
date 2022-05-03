@@ -51,11 +51,11 @@ bool load(const char *dictionary)
     char *buffer[LENGTH + 1];
     while (fscanf(inptr, "%s", *buffer) != EOF)
     {
-        // Create new node for each word
+        // Create new no;de for each word
         node *n = malloc(sizeof(node));
         if (n == NULL)
         {
-            return false;
+            return false
         }
         strcpy(n->word, *buffer);
         // Hash word to obtain a hash value
