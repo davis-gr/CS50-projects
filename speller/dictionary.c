@@ -84,7 +84,7 @@ bool load(const char *dictionary)
         }
         wordCount++;
     }
-    fclose(dictionary);
+//    fclose(*dictionary);
     return true;
 }
 
@@ -99,11 +99,11 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    for (int i = 0; i < N; i++);
+    for (int i = 0; i < N; i++)
     {
-        for (node *cursor = table[i]; cursor != NULL; cursor = cursor->next);
+        for (node *cursor = table[i]; cursor != NULL; cursor = cursor->next)
         {
-            tmp = cursor;
+            node *tmp = cursor;
             free(tmp);
             return true;
         }
