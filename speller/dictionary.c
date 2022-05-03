@@ -56,6 +56,7 @@ bool load(const char *dictionary)
     if (inptr == NULL)
     {
         printf("Could not open %s.\n", dictionary);
+        fclose(inptr);
         return false;
     }
     // Read strings one at a time
