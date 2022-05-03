@@ -84,7 +84,7 @@ bool load(const char *dictionary)
         }
         wordCount++;
     }
-    fclose(dictionary);
+    fclose(inptr);
     return true;
 }
 
