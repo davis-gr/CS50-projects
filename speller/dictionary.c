@@ -101,10 +101,6 @@ bool unload(void)
     // TODO
     for (int i = 0; i < N; i++)
     {
-        if (table[i] == NULL)
-        {
-            return false;
-        }
         while (table[i] != NULL)
         {
             node *tmp = table[i]->next;
