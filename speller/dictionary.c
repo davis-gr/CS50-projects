@@ -27,8 +27,11 @@ bool check(const char *word)
 {
     int hvalue = hash(word);
     //Access linked list at that index in the hash table
-    for (node *tmp = list; tmp != NULL; tmp = tmp->next)
-    //Traverse linked list, looking for the word (strcasecmp)
+    for (node *tmp = table[hvalue]; tmp != NULL; tmp = tmp->next)
+    {
+        //Traverse linked list, looking for the word (strcasecmp)
+        if strcasecmp()
+    }
     return false;
 }
 
