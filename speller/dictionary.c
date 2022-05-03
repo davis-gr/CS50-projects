@@ -44,15 +44,22 @@ bool load(const char *dictionary)
         printf("Could not open %s.\n", argv[1]);
         return false;
     }
-    fscanf(inptr, "%s", word)
+    while (fscanf(inptr, "%s", word) != EOF)
+    {
+        node *n = malloc(sizeof(node));
+        if (n == NULL)
+        {
+            return false;
+        }
+        strcpy(n->word, word);
+    }
 
     // Read strings one at a time
     // Create new node for each word
     // Hash word to obtain a hash value
     // Insert node into has table at that location
-    node *n = malloc(sizeof(node));
+
     strcpy(n->word, "Hello");
-    n->next = NULL;
     return true;
 }
 
