@@ -46,14 +46,15 @@ bool load(const char *dictionary)
         printf("Could not open %s.\n", dictionary);
         return false;
     }
-    while (fscanf(inptr, "%s", n->word) != "EOF")
+    char *buffer[LENGTH + 1];
+    while (fscanf(inptr, "%s", buffer) != "EOF")
     {
         node *n = malloc(sizeof(node));
         if (n == NULL)
         {
             return false;
         }
-        strcpy(n->word, word);
+        strcpy(n->word, buffer);
     }
 
     // Read strings one at a time
