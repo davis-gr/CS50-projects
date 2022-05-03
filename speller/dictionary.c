@@ -99,6 +99,6 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    unload()
+    for (node *tmp = table[hvalue]; tmp != NULL; tmp = tmp->next)
     return false;
 }
