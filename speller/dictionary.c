@@ -73,7 +73,9 @@ bool load(const char *dictionary)
             table[hvalue] = n;
         }
         wordCount++;
+        printf("%s\n" , n->word);
     }
+    printf("%i\n", wordCount);
     return true;
 }
 
