@@ -44,9 +44,10 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
 
-    int hujovinka = 0;
+    return toupper(word[0]) - 'A';
+    /*int hujovinka = 0;
     int n = 26;
-    if (strlen(word) < 2 || isalpha(word[1] != true)
+    if (strlen(word) < 2 || isalpha(word[1]) == 0)
     {
         hujovinka += toupper(word[0]) - 'A';
     }
@@ -54,7 +55,7 @@ unsigned int hash(const char *word)
     {
         hujovinka += (toupper(word[0]) - 'A')*26 + (toupper(word[1]) - 'A')*26;
     }
-    return hujovinka;
+    return hujovinka;*/
 }
 
 int wordCount = 0;
