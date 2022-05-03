@@ -99,10 +99,14 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    for (node *tmp = table[hvalue]; tmp != NULL; tmp = tmp->next)
+    for (int i = 0; i < N; i++);
     {
-        free(tmp->next);
-        free(tmp);
+        for (node *cursor = table[i]; cursor != NULL; cursor = cursor->next);
+        {
+            tmp = cursor;
+            free(tmp);
+            return true;
+        }
     }
     return false;
 }
