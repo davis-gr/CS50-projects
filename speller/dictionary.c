@@ -25,7 +25,9 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
+    int hvalue = hash(word);
+    //Access linked list at that index in the hash table
+    //Tracverse linked list, looking for the word
     return false;
 }
 
