@@ -109,8 +109,11 @@ bool unload(void)
 //        }
         while (table[i] != NULL)
         {
-            
+            node *cursor = table[i];
+            node *tmp = cursor;
+            cursor = cursor->next;
+            free(tmp);
         }
     }
-    return false;
+    return true;
 }
