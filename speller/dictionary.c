@@ -30,9 +30,9 @@ bool check(const char *word)
     //Access linked list at that index in the hash table
     for (node *tmp = table[hvalue]; tmp != NULL; tmp = tmp->next)
     {
-        printf("%s\n", word);
+//        printf("%s\n", word);
         //printf("%s\n", tmp->word);
-        printf("%s\n", table[0]->next->word);
+//        printf("%s\n", table[0]->next->word);
         //Traverse linked list, looking for the word (strcasecmp)
         if (strcasecmp(word, tmp->word) == 0)
         {
