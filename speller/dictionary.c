@@ -77,13 +77,13 @@ bool load(const char *dictionary)
         // Insert node into hash table at that location
         if (table[hvalue] == NULL)
         {
-            table[hvalue] = n;
+            table[hvalue]->next = n;
             n->next = NULL;
         }
         else
         {
-            n = table[hvalue]->next;
-            table[hvalue] = n;
+            
+            table[hvalue]->next = n;
         }
         wordCount++;
     }
