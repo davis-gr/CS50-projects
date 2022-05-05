@@ -59,11 +59,13 @@ unsigned int hash(const char *word)
     }
     else if (strlen(word) < 5 || isalpha(word[4]) == 0)
     {
-        h = (toupper(word[0]) - 'A') * n * n * n + (toupper(word[1]) - 'A') * n * n + (toupper(word[2]) - 'A') * n + (toupper(word[3]) - 'A');
+        h = (toupper(word[0]) - 'A') * n * n * n + (toupper(word[1]) - 'A') * n * n + (toupper(word[2]) - 'A') * n +
+            (toupper(word[3]) - 'A');
     }
     else
     {
-        h = (toupper(word[0]) - 'A') * n * n * n * n + (toupper(word[1]) - 'A') * n * n * n + (toupper(word[2]) - 'A') * n * n + (toupper(word[3]) - 'A') * n + (toupper(word[4]) - 'A');
+        h = (toupper(word[0]) - 'A') * n * n * n * n + (toupper(word[1]) - 'A') * n * n * n + (toupper(word[2]) - 'A') * n * n +
+            (toupper(word[3]) - 'A') * n + (toupper(word[4]) - 'A');
     }
     return h;
 }
