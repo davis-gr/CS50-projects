@@ -52,7 +52,7 @@ unsigned int hash(const char *word)
         h = toupper(word[0]) - 'A';
     }
     else if (strlen(word) < 3 || isalpha(word[2]) == 0)
-    }
+    {
         h = (toupper(word[0]) - 'A')*n + (toupper(word[1]) - 'A');
     }
     else
