@@ -42,7 +42,7 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-// assign first 4 letters into separate buckets, after that performance improvement is marginal, but memory is huge
+// assign first 5 letters into separate buckets, after that performance improvement is marginal, but memory is huge
     int h = 0;
     int n = 26;
     if (strlen(word) < 2 || isalpha(word[1]) == 0)
