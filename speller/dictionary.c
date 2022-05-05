@@ -53,11 +53,11 @@ unsigned int hash(const char *word)
     }
     else if (strlen(word) < 3 || isalpha(word[2]) == 0)
     {
-        h = (toupper(word[0]) - 'A')*n + (toupper(word[1]) - 'A');
+        h = (toupper(word[0]) - 'A') * n + (toupper(word[1]) - 'A');
     }
     else
     {
-        h = (toupper(word[0]) - 'A')*n*n + (toupper(word[1]) - 'A')*n + (toupper(word[2]) - 'A');
+        h = (toupper(word[0]) - 'A') * n * n + (toupper(word[1]) - 'A') * n + (toupper(word[2]) - 'A');
     }
     return h;
 }
