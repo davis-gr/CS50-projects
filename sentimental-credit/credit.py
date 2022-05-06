@@ -22,4 +22,6 @@ for k in cardNumReverse[0::2]:
 sum = sumEven+sumOdd
 
 if sum % 10 == 0:
-    if (cardNumLen = 13 and 
+    if cardNumStr[0] == 4 and (cardNumLen == 13 or cardNumLen == 16):
+        print("VISA")
+    elif 
