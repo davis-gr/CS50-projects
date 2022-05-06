@@ -5,7 +5,7 @@ import sys
 import random
 
 # Number of simluations to run
-N = 1000
+N = 10
 
 
 def main():
@@ -59,10 +59,10 @@ def simulate_round(teams):
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
-    while len(winners) > 1:
+    while len(teams)>1:
         winners = simulate_round(teams)
         if len(winners) == 1:
-            #print(winners)
+            print(winners)
             return winners
         else:
             simulate_tournament(winners)
