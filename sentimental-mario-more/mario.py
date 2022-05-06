@@ -13,4 +13,4 @@ for i in range(n):
     print("  ", end='')
     print("#" * k)
     j -= 1
-    k += 1
+    k += 1cd
