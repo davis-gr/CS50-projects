@@ -1,7 +1,4 @@
-fullText = input()
-
-
-#S = sentenceCount / wordCount * 100
+fullText = input("Text: ")
 
 def count_letters(text):
     letterCount = 0
@@ -17,9 +14,11 @@ def count_words(text):
         if i.isspace() == True:
             wordCount += 1
     print(wordCount)
+    wordCount += 1
     return wordCount
 
-
-#count_sentences(fullText)
+def count_sentences(text):
+    
 
 L = count_letters(fullText) / count_words(fullText) * 100
+S = count_sentences(fullText) / count_words(fullText) * 100
