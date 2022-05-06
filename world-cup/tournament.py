@@ -5,7 +5,7 @@ import sys
 import random
 
 # Number of simluations to run
-N = 10
+N = 1000
 
 
 def main():
@@ -27,10 +27,8 @@ def main():
     # TODO: Simulate N tournaments and keep track of win counts
     for i in range(N):
         team = simulate_tournament(teams)
-        print(team)
         counts.setdefault(team, 0)
         counts[team] += 1
-    print(counts)
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
@@ -62,14 +60,10 @@ def simulate_round(teams):
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
-    winners = len(teams)
-    if winners > 1:
-        winners = simulate_round(teams)
-        if len(winners) == 1:
-            winner = winners[0]["team"]
-            return winner
-        else:
-            simulate_tournament(winners)
+    while len(teams) > 1:
+        teams = simulate_round(teams)
+    winner = teams[0]["team"]
+    return winner
 
 if __name__ == "__main__":
     main()
