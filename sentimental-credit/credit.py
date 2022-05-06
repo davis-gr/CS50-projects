@@ -1,1 +1,2 @@
-# TODO
+cardNum = get_int("Number: ")
+
