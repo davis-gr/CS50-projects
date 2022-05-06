@@ -5,8 +5,10 @@ n = get_int("Height: ")
 while n < 1 or n > 8:
     n = get_int("Height: ")
 
+i = 1
 for i in range(n):
     for j in range(n-1):
+        print(j)
         print(".", end='')
-        j -= 1
+        j = j-1
     print()
