@@ -21,13 +21,9 @@ def main():
         for row in reader:
             tdict = {}
             team = row["team"]
-            print(team)
-            tdict = team
             rating = int(row["rating"])
-            print(rating)
             tdict[team] = rating
-            print(tdict)
-            teams.append(team[rating])
+            teams.append(tdict)
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
