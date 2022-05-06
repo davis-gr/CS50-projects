@@ -7,7 +7,6 @@ while n < 1 or n > 8:
 
 i = 1
 for i in range(n):
-    for j in range(n-1, 0, -1):
-        print(".", end='')
-        j = j-1
-    print()
+    j = n-1
+    print ("." * j)
+    j = j-1
