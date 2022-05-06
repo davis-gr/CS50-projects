@@ -10,4 +10,5 @@ S = sentenceCount / wordCount * 100
 
 def count_letters(text):
     count = 0
-    
+    for i in text:
+        
