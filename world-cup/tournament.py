@@ -19,12 +19,13 @@ def main():
     with open("2018m.csv", "r") as file:
         reader = csv.DictReader(file)
         for row in reader:
-            team = row["team"]
             tdict = {}
+            team = row["team"]
             print(team)
+            tdict = team
             rating = int(row["rating"])
             print(rating)
-            tdict = team[rating]
+            tdict[team] = rating
             print(tdict)
             teams.append(team[rating])
 
