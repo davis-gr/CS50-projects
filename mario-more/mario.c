@@ -18,7 +18,7 @@ int main(void)
         //Add whitespaces at first
         for (int j = n - i; j > 0; j--)
         {
-            printf(" ");
+            printf(".");
         }
         // Add as many hashes as necessary except last one
         for (int k = 1; k < i; k++)
