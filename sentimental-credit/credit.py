@@ -8,7 +8,6 @@ cardNumLen = len(cardNumStr)
 
 sumEven = 0
 sumOdd = 0
-prodEven = 0
 
 for i in cardNumReverse[1::2]:
     intI = int(i)*2
@@ -20,4 +19,7 @@ for k in cardNumReverse[0::2]:
     intK = int(k)
     sumOdd += intK
 
-if 
+sum = sumEven+sumOdd
+
+if sum % 10 == 0:
+    if (cardNumLen = 13 and 
