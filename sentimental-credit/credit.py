@@ -24,7 +24,7 @@ sum = sumEven+sumOdd
 if sum % 10 == 0:
     if cardNumStr[0] == '4' and (cardNumLen == 13 or cardNumLen == 16):
         print("VISA")
-    elif cardNumStr[0] == '4' and (cardNumStr[1] == '4' or cardNumStr[1] == '7') and cardNumLen == 15:
+    elif cardNumStr[0] == '3' and (cardNumStr[1] == '4' or cardNumStr[1] == '7') and cardNumLen == 15:
         print("AMEX")
     elif cardNumStr[0] == '5' and (cardNumStr[1] == '1' or cardNumStr[1] == '2' or cardNumStr[1] == '3' or cardNumStr[1] == '4' or cardNumStr[1] == '5') and cardNumLen == 16:
         print("MASTERCARD")
