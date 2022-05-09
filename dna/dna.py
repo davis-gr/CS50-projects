@@ -13,8 +13,10 @@ def main():
     db = sys.argv[1]
     file = open(db, "r")
     reader = csv.DictReader(file)
-
-    print(DNAS)
+    for row in reader:
+        STR = list(row.keys())
+    
+    print(STR)
 
     # TODO: Read DNA sequence file into a variable
     seq = sys.argv[2]
@@ -22,12 +24,8 @@ def main():
         txtreader = txtfile.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-    STR = set()
-            STR.append(value)
-            longRun = longest_match(txtreader, value)
-            print(value)
-            print(longRun)
-            print(STR)
+    longRun = longest_match(txtreader, "a")
+    print(longRun)
 
     # TODO: Check database for matching profiles
 
