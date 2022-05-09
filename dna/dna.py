@@ -10,12 +10,17 @@ def main():
 
     # TODO: Read database file into a variable
     STR = []
+    DNAS = []
     db = sys.argv[1]
     file = open(db, "r")
     reader = csv.DictReader(file)
     for row in reader:
         STR = list(row.keys())
+        for value in row:
+            row[value] = row[value]
+        DNAS.append(row)
     STR.remove('name')
+    print(DNAS)
 
     # TODO: Read DNA sequence file into a variable
     seq = sys.argv[2]
@@ -30,16 +35,10 @@ def main():
     print(sequences)
 
     # TODO: Check database for matching profiles
-    file = open(db, "r")
-    reader = csv.DictReader(file)
-    for name in reader:
-        print(name)
+    for i in range(len(DNAS)):
+        print(DNAS[i])
+        if sequences 
 
-
-    #for name in reader:
-     #   for value in name:
-      #      dictvalue = name[value]
-    return
 
 
 def longest_match(sequence, subsequence):
