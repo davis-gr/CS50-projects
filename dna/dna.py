@@ -6,14 +6,15 @@ def main():
 
     # TODO: Check for command-line usage
     if len(sys.argv) < 3:
-        print("Usage: Python dna.py input.csv output.csv")
+        print("Usage: Python dna.py database.csv sequences.txt")
 
     # TODO: Read database file into a variable
-    input = sys.argv[1]
-    with open(input, "r") as file:
+    
+    db = sys.argv[1]
+    with open(db, "r") as file:
         reader = csv.DictReader(file)
-        for team in reader:
-            team["rating"] = int(team["rating"])
+        for name in reader:
+            name["AGATC"] = int(name["AGATC"])
             teams.append(team)
 
     # TODO: Read DNA sequence file into a variable
