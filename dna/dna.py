@@ -20,6 +20,9 @@ def main():
             DNAS.append(name)
 
     # TODO: Read DNA sequence file into a variable
+    seq = sys.argv[2]
+    with open(seq, "r") as txtfile:
+        txtreader = txtfile.read()
 
     # TODO: Find longest match of each STR in DNA sequence
 
