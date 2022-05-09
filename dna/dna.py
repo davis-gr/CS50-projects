@@ -18,7 +18,7 @@ def main():
             name["AATG"] = int(name["AATG"])
             name["TATC"] = int(name["TATC"])
             DNAS.append(name)
-    print(DNAS)
+
     # TODO: Read DNA sequence file into a variable
 
     # TODO: Find longest match of each STR in DNA sequence
