@@ -15,7 +15,7 @@ def main():
         reader = csv.DictReader(file)
         for name in reader:
             for value in name:
-                name[value] = int(name[value])
+                name[value] = name[value]
             DNAS.append(name)
         print(DNAS)
 
