@@ -36,7 +36,8 @@ def main():
     for i in range(len(DNAS)):
         if sequences.items() <= DNAS[i].items():
             print(DNAS[i]["name"])
-
+            return
+    print("No match")
 
 
 def longest_match(sequence, subsequence):
