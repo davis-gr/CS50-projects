@@ -18,6 +18,7 @@ def main():
             name["AATG"] = int(name["AATG"])
             name["TATC"] = int(name["TATC"])
             DNAS.append(name)
+        print(DNAS)
 
     # TODO: Read DNA sequence file into a variable
     seq = sys.argv[2]
@@ -25,6 +26,7 @@ def main():
         txtreader = txtfile.read()
 
     # TODO: Find longest match of each STR in DNA sequence
+    for i in DNAS:
     longest_match(txtreader, DNAS)
 
     # TODO: Check database for matching profiles
