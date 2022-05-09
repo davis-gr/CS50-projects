@@ -20,7 +20,6 @@ def main():
             row[value] = row[value]
         DNAS.append(row)
     STR.remove('name')
-    print(DNAS)
 
     # TODO: Read DNA sequence file into a variable
     seq = sys.argv[2]
@@ -32,12 +31,14 @@ def main():
     for i in range(len(STR)):
         longRun = longest_match(txtreader, STR[i])
         sequences[STR[i]] = longRun
-    print(sequences)
 
     # TODO: Check database for matching profiles
     for i in range(len(DNAS)):
-        print(DNAS[i])
-        
+        print(DNAS[i].items())
+        print(sequences.items())
+        if sequences.items() <= DNAS[i].items():
+            print("lol")
+
 
 
 
