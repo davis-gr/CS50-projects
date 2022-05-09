@@ -26,9 +26,10 @@ def main():
     sequences = {}
     for i in range(len(STR)):
         longRun = longest_match(txtreader, STR[i])
-        
+        sequences[STR[i]] = longRun
         print(STR[i])
         print(longRun)
+    print(sequences)
 
     # TODO: Check database for matching profiles
 
