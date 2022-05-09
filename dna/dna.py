@@ -25,8 +25,9 @@ def main():
         txtreader = txtfile.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-    #for i in DNAS:
-    longest_match(txtreader, DNAS)
+    for name in reader:
+        print(name)
+    #longest_match(txtreader, DNAS)
 
     # TODO: Check database for matching profiles
 
