@@ -9,7 +9,12 @@ def main():
         print("Usage: Python dna.py input.csv output.csv")
 
     # TODO: Read database file into a variable
-    
+    input = sys.argv[1]
+    with open(input, "r") as file:
+        reader = csv.DictReader(file)
+        for team in reader:
+            team["rating"] = int(team["rating"])
+            teams.append(team)
 
     # TODO: Read DNA sequence file into a variable
 
