@@ -27,12 +27,13 @@ def main():
     for i in range(len(STR)):
         longRun = longest_match(txtreader, STR[i])
         sequences[STR[i]] = longRun
-        print(STR[i])
-        print(longRun)
     print(sequences)
 
     # TODO: Check database for matching profiles
-
+    file = open(db, "r")
+    reader = csv.DictReader(file)
+    for name in reader:
+        print(name)
 
 
     #for name in reader:
