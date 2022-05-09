@@ -9,14 +9,15 @@ def main():
         print("Usage: Python dna.py database.csv sequences.txt")
 
     # TODO: Read database file into a variable
+    STR = []
     db = sys.argv[1]
     file = open(db, "r")
     reader = csv.DictReader(file)
-    #for name in reader:
-        #for value in name:
-        #    dictvalue = name[value]
-        #DNAS.append(name)
-    #print(DNAS)
+    for name in reader:
+        for value in name:
+            dictvalue = name[value]
+        DNAS.append(name)
+    print(DNAS)
 
     # TODO: Read DNA sequence file into a variable
     seq = sys.argv[2]
@@ -24,12 +25,12 @@ def main():
         txtreader = txtfile.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-    STR = []
-    for name in reader:
-        for value in name:
+    STR = set()
+            STR.append(value)
             longRun = longest_match(txtreader, value)
             print(value)
             print(longRun)
+            print(STR)
 
     # TODO: Check database for matching profiles
 
