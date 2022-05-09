@@ -14,9 +14,8 @@ def main():
     with open(db, "r") as file:
         reader = csv.DictReader(file)
         for name in reader:
-            name["AGATC"] = int(name["AGATC"])
-            name["AATG"] = int(name["AATG"])
-            name["TATC"] = int(name["TATC"])
+            for value in name:
+                name[value] = int(name[value])
             DNAS.append(name)
         print(DNAS)
 
@@ -26,7 +25,7 @@ def main():
         txtreader = txtfile.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-    for i in DNAS:
+    #for i in DNAS:
     longest_match(txtreader, DNAS)
 
     # TODO: Check database for matching profiles
