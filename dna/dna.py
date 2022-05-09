@@ -33,8 +33,7 @@ def main():
     file = open(db, "r")
     reader = csv.DictReader(file)
     for name in reader:
-        for value in name:
-            print(name[value])
+        print(name)
 
 
     #for name in reader:
