@@ -13,10 +13,7 @@ def main():
     db = sys.argv[1]
     file = open(db, "r")
     reader = csv.DictReader(file)
-    for name in reader:
-        for value in name:
-            dictvalue = name[value]
-        DNAS.append(name)
+
     print(DNAS)
 
     # TODO: Read DNA sequence file into a variable
@@ -34,6 +31,11 @@ def main():
 
     # TODO: Check database for matching profiles
 
+
+
+    #for name in reader:
+     #   for value in name:
+      #      dictvalue = name[value]
     return
 
 
