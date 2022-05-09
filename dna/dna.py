@@ -30,15 +30,12 @@ def main():
     sequences = {}
     for i in range(len(STR)):
         longRun = longest_match(txtreader, STR[i])
-        sequences[STR[i]] = longRun
+        sequences[STR[i]] = str(longRun)
 
     # TODO: Check database for matching profiles
     for i in range(len(DNAS)):
-        print(DNAS[i].items())
-        print(sequences.items())
         if sequences.items() <= DNAS[i].items():
-            print("lol")
-
+            print(DNAS[i]["name"])
 
 
 
