@@ -14,10 +14,10 @@ def main():
     with open(db, "r") as file:
         reader = csv.DictReader(file)
         for name in reader:
-            for value in reader:
-                name[value] = int(name[value])
+            name["AGATC"] = int(name["AGATC"])
+            name["AATG"] = int(name["AATG"])
+            name["TATC"] = int(name["TATC"])
             DNAS.append(name)
-    print(DNAS)
 
     # TODO: Read DNA sequence file into a variable
 
