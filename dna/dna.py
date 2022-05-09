@@ -24,6 +24,7 @@ def main():
         txtreader = txtfile.read()
 
     # TODO: Find longest match of each STR in DNA sequence
+    STR = []
     for name in reader:
         for value in name:
             longRun = longest_match(txtreader, value)
