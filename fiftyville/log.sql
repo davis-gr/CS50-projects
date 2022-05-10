@@ -6,8 +6,9 @@ and month = 7
 and day = 28
 and street = 'Humphrey Street';
 
+-- Get the interview transcripts that mention bakery from that day
 select * from interviews
 where year = 2021
 and month = 7
 and day = 28
-and transcript like '%bakery%
+and transcript like '%bakery%';
