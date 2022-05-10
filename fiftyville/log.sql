@@ -13,8 +13,11 @@ and month = 7
 and day = 28
 and transcript like '%bakery%';
 
--- find all car exits that happened after 10:15am
-select * from bakery_security_logs
+-- find all car exits that happened between 10:15am and 10:25am
+select license_plate from bakery_security_logs
 where year = 2021
 and month = 7
-and day = 28;
+and day = 28
+and activity = 'exit'
+and hour = 10
+and minute between 15 and 25;
