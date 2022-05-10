@@ -1,3 +1,3 @@
 select name from songs
-order by length desc
-limit 5;
+limit 5
+order by length desc;
