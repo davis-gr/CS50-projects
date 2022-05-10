@@ -84,20 +84,21 @@ and people.id in (select person_id from bank_accounts
 -- find out where Bruce escaped to
 select city from airports a
 join flights b on a.id = b.destination_airport_id
-where b.id in (
-select flights.id from flights
-join airports on flights.origin_airport_id = airports.id
-where year = 2021
-and month = 7
-and day = 29
-and airports.city = 'Fiftyville'
-order by hour, minute
-limit 1);
+where b.id in (select flights.id from flights
+                join airports on flights.origin_airport_id = airports.id
+                where year = 2021
+                and month = 7
+                and day = 29
+                and airports.city = 'Fiftyville'
+                order by hour, minute
+                limit 1);
 
 -- find out who the accomplice is
-select * from phone_calls
-where year = 2021
-and month = 7
-and day = 28
-and duration < 60
-and caller = '(367) 555-5533'
+select name from people
+where phone_number = (select receiver from phone_calls
+                        where year = 2021
+                        and month = 7
+                        and day = 28
+                        and duration < 60
+                        and caller = '(367) 555-5533') -- we just use Batman's phone number from before
+                        ;
