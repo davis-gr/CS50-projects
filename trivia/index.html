@@ -23,7 +23,21 @@
                                     document.querySelector('#result1').innerHTML = 'Incorrect!';
                                 });
                             }
-         }
+        let result = document.querySelector('#submitField');
+        result.addEventListener('click', function() {
+        let answer = document.querySelector('#inputField').value;
+        if (answer.toLowerCase() == 'bullitt')
+        {
+        answer.style.backgroundColor = 'green';
+        answer.style.color = 'white';
+        document.querySelector('#result2').innerHTML = 'Correct!';}
+        else {
+        answer.style.backgroundColor = 'red';
+        answer.style.color = 'white';
+        document.querySelector('#result2').innerHTML = 'Incorrect!';}
+    });
+
+                }
         )
         </script>
     </head>
@@ -55,20 +69,7 @@
                 <p id="result2"></p>
                 <script>
                     // TODO: Add code to check answers to questions
-                    let result = document.querySelector('#submitField');
-                        result.addEventListener('submit', function(e) {
-                            let answer = document.querySelector('#inputField').value;
-                            if (answer.toLowerCase() == 'bullitt')
-                            {
-                            answer.style.backgroundColor = 'green';
-                            answer.style.color = 'white';
-                            document.querySelector('#result2').innerHTML = 'Correct!';}
-                            else {
-                            answer.style.backgroundColor = 'red';
-                            answer.style.color = 'white';
-                            document.querySelector('#result2').innerHTML = 'Incorrect!';}
-                            e.preventDefault();
-                        });
+
                 </script>
             </div>
         </div>
