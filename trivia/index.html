@@ -8,7 +8,7 @@
         <script>
         document.addEventListener('DOMContentLoaded', function() {
         let correct = document.querySelector('.correct');
-                            correct.addEventListener('click', function onClick()
+                            correct.addEventListener('click', function()
                             {
                                 correct.style.backgroundColor = 'green';
                                 correct.style.color = 'white';
@@ -16,7 +16,7 @@
                             });
                         let incorrect = document.querySelectorAll('.incorrect');
                             for (let i = 0; i < incorrect.length; i++) {
-                                incorrect[i].addEventListener('click', function onClick()
+                                incorrect[i].addEventListener('click', function()
                                 {
                                     incorrect[i].style.backgroundColor = 'red';
                                     incorrect[i].style.color = 'white';
