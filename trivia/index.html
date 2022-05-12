@@ -6,8 +6,7 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
-            let p = document.querySelector('p');
-            p.style.visibility == 'hidden';
+
         </script>
     </head>
     <body>
@@ -42,6 +41,10 @@
                                     incorrect[i].style.color = 'white';
                                 });
                             }
+                        let p = document.getElementsByTagName("p");
+            for (let i = 0; i < p.length; i++) {
+            p[i].style.visibility == 'hidden';
+            }
                     </script>
             </div>
             <div class="section">
