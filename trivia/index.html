@@ -50,26 +50,18 @@
                 <hr>
                 <h3> Which is the best Ford Mustang special edition out there? </h3>
                 <!-- TODO: Add free response question here -->
-                <input type="text">
-                <input type="submit">
+                <input type="text" id="inputField">
+                <input type="submit" id="submitField">
                 <script>
                     // TODO: Add code to check answers to questions
-                    let correct = document.querySelector('.correct');
-                        correct.addEventListener('onSubmit', function onClick()
-                        {
+                    let result = document.querySelector('#submitField');
+                        result.addEventListener('submit', function(e) {
+                            let answer = document.querySelector('#inputField').value;
+                            while answer != 'Bullitt'
                             correct.style.backgroundColor = 'green';
                             correct.style.color = 'white';
                             document.querySelector('#result1').innerHTML = 'Correct!';
                         });
-                    let incorrect = document.querySelectorAll('.incorrect');
-                        for (let i = 0; i < incorrect.length; i++) {
-                            incorrect[i].addEventListener('click', function onClick()
-                            {
-                                incorrect[i].style.backgroundColor = 'red';
-                                incorrect[i].style.color = 'white';
-                                document.querySelector('#result1').innerHTML = 'Incorrect!';
-                            });
-                        }
                 </script>
 
             </div>
