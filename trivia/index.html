@@ -52,18 +52,25 @@
                 <!-- TODO: Add free response question here -->
                 <input type="text" id="inputField">
                 <input type="submit" id="submitField">
+
+                <p id="result2"></p>
                 <script>
                     // TODO: Add code to check answers to questions
                     let result = document.querySelector('#submitField');
                         result.addEventListener('submit', function(e) {
                             let answer = document.querySelector('#inputField').value;
-                            while (answer.toLowerCase() != 'bullitt')
-                            correct.style.backgroundColor = 'green';
-                            correct.style.color = 'white';
-                            document.querySelector('#result1').innerHTML = 'Correct!';
+                            if (answer.toLowerCase() == 'bullitt')
+                            {
+                            answer.style.backgroundColor = 'green';
+                            answer.style.color = 'white';
+                            document.querySelector('#result2').innerHTML = 'Correct!';}
+                            else {
+                            answer.style.backgroundColor = 'red';
+                            answer.style.color = 'white';
+                            document.querySelector('#result2').innerHTML = 'Incorrect!';}
+                            e.preventDefault();
                         });
                 </script>
-
             </div>
         </div>
     </body>
