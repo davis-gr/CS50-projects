@@ -25,11 +25,11 @@
                     <button class="incorrect"> Joel Embiid </button>
                     <button class="correct"> Nikola Jokic </button>
                     <script>
-                        const btn = document.getElementById('incorrect');
-                        btn.addEventListener('click', function onClick()
+                        let incorrect = document.getElementsByClassName("incorrect");
+                        incorrect.addEventListener('click', function onClick()
                         {
-                            btn.style.backgroundColor = 'red';
-                            btn.style.color = 'white';
+                            incorrect.style.backgroundColor = 'red';
+                            incorrect.style.color = 'white';
                         });
                         let btn2 = document.getElementById('correct');
                         btn2.addEventListener('click', function onClick()
