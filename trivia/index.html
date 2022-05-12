@@ -6,7 +6,24 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
-
+        document.addEventListener('DOMContentLoaded', function()
+        let correct = document.querySelector('.correct');
+                            correct.addEventListener('click', function onClick()
+                            {
+                                correct.style.backgroundColor = 'green';
+                                correct.style.color = 'white';
+                                document.querySelector('#result1').innerHTML = 'Correct!';
+                            });
+                        let incorrect = document.querySelectorAll('.incorrect');
+                            for (let i = 0; i < incorrect.length; i++) {
+                                incorrect[i].addEventListener('click', function onClick()
+                                {
+                                    incorrect[i].style.backgroundColor = 'red';
+                                    incorrect[i].style.color = 'white';
+                                    document.querySelector('#result1').innerHTML = 'Incorrect!';
+                                });
+                            }
+        )
         </script>
     </head>
     <body>
@@ -25,25 +42,6 @@
                     <button class="correct"> Nikola Jokic </button>
 
                     <p id="result1"></p>
-                    <script>
-                        // TODO: Add code to check answers to questions
-                        let correct = document.querySelector('.correct');
-                            correct.addEventListener('click', function onClick()
-                            {
-                                correct.style.backgroundColor = 'green';
-                                correct.style.color = 'white';
-                                document.querySelector('#result1').innerHTML = 'Correct!';
-                            });
-                        let incorrect = document.querySelectorAll('.incorrect');
-                            for (let i = 0; i < incorrect.length; i++) {
-                                incorrect[i].addEventListener('click', function onClick()
-                                {
-                                    incorrect[i].style.backgroundColor = 'red';
-                                    incorrect[i].style.color = 'white';
-                                    document.querySelector('#result1').innerHTML = 'Incorrect!';
-                                });
-                            }
-                    </script>
             </div>
             <div class="section">
                 <h2>Part 2: Free Response</h2>
