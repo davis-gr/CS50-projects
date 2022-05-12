@@ -20,10 +20,26 @@
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                     <h3> Who won NBA MVP award in 2022? </h3>
-                    <button> Giannis Antetokounmpo </button>
-                    <button> Devin Booker </button>
-                    <button> Joel Embiid </button>
-                    <button> Nikola Jokic </button>
+                    <button id="incorrect"> Giannis Antetokounmpo </button>
+                    <button id="incorrect"> Devin Booker </button>
+                    <button id="incorrect"> Joel Embiid </button>
+                    <button id="correct"> Nikola Jokic </button>
+                    <script>
+                        let body = document.querySelector('body');
+                        document.querySelector('#incorrect').addEventListener('click', function()
+                        {
+                            body.style.backgroundColor = 'red';
+                        });
+
+                        document.querySelector('#green').addEventListener('click', function() {
+                            body.style.backgroundColor = 'green';
+                        });
+
+                        document.querySelector('#blue').addEventListener('click', function() {
+                            body.style.backgroundColor = 'blue';
+                        });
+
+                    </script>
             </div>
 
             <div class="section">
