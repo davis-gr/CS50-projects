@@ -7,17 +7,17 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
-            let incorrect = document.getElementsByClassName("incorrect");
+            let correct = document.querySelector('.correct');
+                        correct.addEventListener('click', function onClick()
+                        {
+                            correct.style.backgroundColor = 'green';
+                            correct.style.color = 'white';
+                        });
+            let incorrect = document.querySelectorAll('.incorrect');
                         incorrect.addEventListener('click', function onClick()
                         {
                             incorrect.style.backgroundColor = 'red';
                             incorrect.style.color = 'white';
-                        });
-                        let btn2 = document.getElementById('correct');
-                        btn2.addEventListener('click', function onClick()
-                        {
-                            btn2.style.backgroundColor = 'green';
-                            btn2.style.color = 'white';
                         });
         </script>
     </head>
@@ -35,7 +35,7 @@
                     <button class="incorrect"> Giannis Antetokounmpo </button>
                     <button class="incorrect"> Devin Booker </button>
                     <button class="incorrect"> Joel Embiid </button>
-                    <button id="correct"> Nikola Jokic </button>
+                    <button class="correct"> Nikola Jokic </button>
             </div>
 
             <div class="section">
