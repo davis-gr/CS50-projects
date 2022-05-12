@@ -24,13 +24,14 @@
                     <script>
                         // TODO: Add code to check answers to questions
                         let correct = document.querySelector('.correct');
-                                    correct.addEventListener('click', function onClick()
-                                    {
-                                        correct.style.backgroundColor = 'green';
-                                        correct.style.color = 'white';
-                                    });
+                            correct.addEventListener('click', function onClick()
+                            {
+                                correct.style.backgroundColor = 'green';
+                                correct.style.color = 'white';
+                            });
                         let incorrect = document.querySelectorAll('.incorrect');
-                                    incorrect.addEventListener('click', function onClick()
+                            for (let i = 0, i < incorrect.length, i++) {
+                                incorrect[i].addEventListener('click', function onClick()
                                     {
                                         incorrect.style.backgroundColor = 'red';
                                         incorrect.style.color = 'white';
