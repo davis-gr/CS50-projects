@@ -7,6 +7,18 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
+            let incorrect = document.getElementsByClassName("incorrect");
+                        incorrect.addEventListener('click', function onClick()
+                        {
+                            incorrect.style.backgroundColor = 'red';
+                            incorrect.style.color = 'white';
+                        });
+                        let btn2 = document.getElementById('correct');
+                        btn2.addEventListener('click', function onClick()
+                        {
+                            btn2.style.backgroundColor = 'green';
+                            btn2.style.color = 'white';
+                        });
         </script>
     </head>
     <body>
@@ -24,20 +36,6 @@
                     <button class="incorrect"> Devin Booker </button>
                     <button class="incorrect"> Joel Embiid </button>
                     <button id="correct"> Nikola Jokic </button>
-                    <script>
-                        let incorrect = document.getElementsByClassName("incorrect");
-                        incorrect.addEventListener('click', function onClick()
-                        {
-                            incorrect.style.backgroundColor = 'red';
-                            incorrect.style.color = 'white';
-                        });
-                        let btn2 = document.getElementById('correct');
-                        btn2.addEventListener('click', function onClick()
-                        {
-                            btn2.style.backgroundColor = 'green';
-                            btn2.style.color = 'white';
-                        });
-                    </script>
             </div>
 
             <div class="section">
