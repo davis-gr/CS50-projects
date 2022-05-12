@@ -25,15 +25,17 @@
                     <button id="incorrect"> Joel Embiid </button>
                     <button id="correct"> Nikola Jokic </button>
                     <script>
-                        let body = document.querySelector('button');
-                        document.querySelector('#incorrect').addEventListener('click', function()
+                        const btn = document.getElementById('incorrect');
+                        btn.addEventListener('click', function(onClick)
                         {
-                            body.style.backgroundColor = 'red';
+                            btn.style.backgroundColor = 'red';
+                            btn.style.color = 'white;
                         });
-
-                        document.querySelector('#correct').addEventListener('click', function() {
-                            body.style.backgroundColor = 'green';
-                            body.style.fontColor = 'white';
+                        let btn2 = document.getElementById('correct');
+                        btn2.addEventListener('click', function(onClick)
+                        {
+                            btn2.style.backgroundColor = 'green';
+                            btn2.style.color = 'white;
                         });
                     </script>
             </div>
