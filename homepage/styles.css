@@ -38,4 +38,5 @@
 /* padding & width */
 .padding {
     padding: 50px;
+    max-width: 500px;
     }
