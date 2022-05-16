@@ -34,3 +34,8 @@
       text-align: left; /* If you want the text to be left-aligned on small screens */
     }
   }
+
+/* Navigation links */
+.padding {
+    padding: 25px;
+    }
