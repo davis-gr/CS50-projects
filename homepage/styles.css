@@ -62,7 +62,7 @@
 }
 
 .timerDisplay{
-    position: absolute;
+    position: relative;
     width: 10%;
     font-size: 40px;
     box-shadow: 0 0 20px rgba(0,139,253,0.25);
