@@ -47,15 +47,32 @@
     }
 
 .timerDisplay{
-    position: relative;
+    position: absolute;
     width: 10%;
     background: #ffffff;
-    left: 88%;
-    bottom: 88%;
+    right: 70px;
+    bottom: 70px;
     padding: 40px 0;
     font-family: 'Roboto mono',monospace;
     color: #0381bb;
     font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0,139,253,0.25);
+    }
+
+.timerText{
+    position: absolute;
+    width: 10%;
+    background: #ffffff;
+    right: 70px;
+    bottom: 70px;
+    padding: 40px 0;
+    font-family: 'Roboto mono',monospace;
+    color: #0381bb;
+    font-size: 12px;
     display: flex;
     align-items: center;
     justify-content: space-around;
