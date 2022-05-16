@@ -43,7 +43,13 @@
             }
             var cancel = setInterval(incrementSeconds, 1000);
 
-            
+            function reset()
+            {
+                let name = document.querySelector('.timerDisplay');
+                alert('Who do you think you are?');
+            }
+
+            document.querySelector('.timerDisplay').addEventListener('click', reset);
         </script>
     </body>
 </html>
