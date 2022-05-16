@@ -40,3 +40,8 @@
     padding: 50px;
     max-width: 800px;
     }
+
+.paragraph {
+    max-width: 800px;
+    padding-left: 50px;
+    }
