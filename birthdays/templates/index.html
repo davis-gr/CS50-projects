@@ -39,7 +39,7 @@
                             <td>{{ birthday["day"]|string + '/' + birthday["month"]|string }}</td>
                             <td>
                             <form action="/deregister" method="post">
-                                <input name="id" type="hidden" value="{{ birthday.id }}">
+                                <input name="id" type="hidden" value="{{ birthday["id"] }}">
                                 <input type="submit" value="Delete">
                             </td>
                         </tr>
