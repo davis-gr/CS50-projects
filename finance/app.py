@@ -146,7 +146,7 @@ def register():
             return apology("usarname already exists", 403)
 
         #TODO register user
-        db.execute("INSERT INTO users (name, day, month) VALUES(?, ?, ?)", name, day, month)
+        db.execute("INSERT INTO users (username, hash) VALUES(?, ?, ?)", name, day, month)
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
