@@ -52,13 +52,12 @@ def buy():
     if request.method == "POST":
         quotes = lookup(request.form.get("symbol"))
         sharecount = request.form.get("shares")
-        print("sharecount"+sharecount)
         if not quotes:
             return apology("invalid ticker!")
         elif not sharecount or int(sharecount) < 1:
             return apology("invalid share count!")
         else:
-            
+
             return render_template("index.html")
     else:
         return render_template("buy.html")
