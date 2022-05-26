@@ -51,7 +51,7 @@ def index():
 def buy():
     if request.method == "POST":
         quotes = lookup(request.form.get("symbol"))
-        sharecount = request.form.get("shares")
+        sharecount = int(request.form.get("shares"))
         if not quotes:
             return apology("invalid ticker!")
         elif sharecount < 1:
