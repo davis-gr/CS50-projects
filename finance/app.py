@@ -49,8 +49,14 @@ def index():
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
-    """Buy shares of stock"""
-    return render_template("buy.html")
+    if request.method == "POST":
+        quotes = lookup(request.form.get("symbol"))
+        if not quotes:
+            return apology("invalid ticker!")
+        else:
+            return render_template("quoted.html", symbol=quotes["symbol"], price=quotes["price"], name=quotes["name"])
+    else:
+        return render_template("buy.html")
 
 
 @app.route("/history")
