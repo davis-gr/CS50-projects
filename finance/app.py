@@ -103,7 +103,7 @@ def login():
         session["user_id"] = rows[0]["id"]
 
         # Redirect user to home page
-        return redirect("/")
+        return redirect("/", flash('Welcome!'))
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
@@ -169,7 +169,7 @@ def register():
         db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", request.form.get("username"), generate_password_hash(request.form.get("password")))
 
         # Redirect user to home page
-        return redirect("/")
+        return redirect("/", flash('Registered!'))
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
