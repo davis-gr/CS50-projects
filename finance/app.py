@@ -78,6 +78,18 @@ def login():
         elif not request.form.get("password"):
             return apology("must provide password", 403)
 
+        # Ensure 2nd password was submitted
+        elif not request.form.get("password2"):
+            return apology("must provide password twice", 403)
+
+        # Ensure passwords are the same
+        elif not request.form.get("password") == request.form.get("password2")
+            return apology("passwords shall match", 403)
+
+        # Ensure username not taken
+        elif not request.form.get("password") == request.form.get("password2")
+            return apology("passwords shall match", 403)
+
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
