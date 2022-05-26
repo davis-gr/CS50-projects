@@ -110,8 +110,8 @@ def logout():
 @app.route("/quote", methods=["GET", "POST"])
 @login_required
 def quote():
-    
-    return apology("TODO")
+
+    return render_template("quote.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
