@@ -147,6 +147,7 @@ def register():
 
         #TODO register user
         
+
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
 
