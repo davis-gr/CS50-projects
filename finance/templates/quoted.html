@@ -6,6 +6,6 @@
 
 {% block main %}
     <p>
-        <b>{{price}}</b> -> price of {{symbol}}: {{name}}
+        <b>{{price | usd}}</b> -> price of {{symbol}}: {{name}}
     </p>
 {% endblock %}
