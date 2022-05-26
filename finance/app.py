@@ -146,10 +146,7 @@ def register():
             return apology("usarname already exists", 403)
 
         #TODO register user
-        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", name, day, month)
-
-        # Remember which user has logged in
-        session["user_id"] = rows[0]["id"]
+        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", request.form.get("username"), generate_password_hash(request.form.get("password")))
 
         # Redirect user to home page
         return redirect("/")
