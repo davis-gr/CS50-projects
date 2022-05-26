@@ -58,7 +58,7 @@ def buy():
         elif not sharecount or int(sharecount) < 1:
             return apology("invalid share count!")
         else:
-            return render_template("quoted.html", symbol=quotes["symbol"], price=quotes["price"], name=quotes["name"])
+            return render_template("index.html")
     else:
         return render_template("buy.html")
 
