@@ -112,7 +112,7 @@ def logout():
 def quote():
     if request.method == "POST":
         lookup(request.form.get("symbol"))
-        return render_template("quoted.html")
+        return render_template("quoted.html", symbol="symbol", price=price, name="name")
     else:
         return render_template("quote.html")
 
