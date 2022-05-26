@@ -51,13 +51,13 @@ def index():
 def buy():
     if request.method == "POST":
         quotes = lookup(request.form.get("symbol"))
-        sharecount = request.form.get("shares")
+        shareCount = request.form.get("shares")
+        userCash = db.execute("SELECT cash FROM users WHERE username = ?", request.form.get("username"))
         if not quotes:
             return apology("invalid ticker!")
-        elif not sharecount or int(sharecount) < 1:
+        elif not shareCount or int(shareCount) < 1:
             return apology("invalid share count!")
         else:
-
             return render_template("index.html")
     else:
         return render_template("buy.html")
