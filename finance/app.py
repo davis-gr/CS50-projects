@@ -60,7 +60,8 @@ def buy():
         elif quotes["price"] * shareCount > userCash[0]['cash']:
             return apology("not enough $$$")
         else:
-            db.execute("INSERT INTO transactions (user_id, type, ticker, share_count, share_price, datetime) VALUES(?, "BUY", ?, ?, ?, ...)", session["user_id"], quotes["symbol"], shareCount, quotes["price"])
+            db.execute("INSERT INTO transactions (user_id, type, ticker, share_count, share_price, datetime) VALUES(?, 'BUY', ?, ?, ?, datetime('now'))", session["user_id"], quotes["symbol"], shareCount, quotes["price"])
+            db.execute("UPDATE users SET cash = ())
             return render_template("index.html")
     else:
         return render_template("buy.html")
