@@ -52,11 +52,13 @@ def buy():
     if request.method == "POST":
         quotes = lookup(request.form.get("symbol"))
         shareCount = request.form.get("shares")
-        userCash = db.execute("SELECT cash FROM users WHERE username = ?", request.form.get("username"))
+        userCash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         if not quotes:
             return apology("invalid ticker!")
         elif not shareCount or int(shareCount) < 1:
             return apology("invalid share count!")
+        elif quotes["price"] * shareCount > userCash:
+            return apology("not enough $$$")
         else:
             return render_template("index.html")
     else:
