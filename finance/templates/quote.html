@@ -7,14 +7,8 @@
 {% block main %}
     <form action="/quote" method="post">
         <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="symbol" placeholder="Username" type="text">
-        </div>
-        <div class="mb-3">
-            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
-        </div>
-        <div class="mb-3">
-            <input class="form-control mx-auto w-auto" id="password2" name="password2" placeholder="Repeat Password" type="password">
-        </div>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="symbol" placeholder="Stock ticker" type="text">
         <button class="btn btn-primary" type="submit">Register</button>
+        </div>
     </form>
 {% endblock %}
