@@ -51,8 +51,11 @@ def index():
 def buy():
     if request.method == "POST":
         quotes = lookup(request.form.get("symbol"))
+        sharecount = lookup(request.form.get("shares"))
         if not quotes:
             return apology("invalid ticker!")
+        elif sharecount < 1:
+            return apology("invalid share count!")
         else:
             return render_template("quoted.html", symbol=quotes["symbol"], price=quotes["price"], name=quotes["name"])
     else:
