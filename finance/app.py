@@ -62,7 +62,7 @@ def buy():
             remainingCash = userCash[0]['cash'] - quotes["price"] * shareCount
             db.execute("INSERT INTO transactions (user_id, type, ticker, share_count, share_price, datetime) VALUES(?, 'BUY', ?, ?, ?, datetime('now'))", session["user_id"], quotes["symbol"], shareCount, quotes["price"])
             db.execute("UPDATE users SET cash = ?", remainingCash)
-            return redirect("/")
+            return redirect("/", flash('Bought!'))
     else:
         return render_template("buy.html")
 
