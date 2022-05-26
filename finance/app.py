@@ -52,10 +52,10 @@ def buy():
     if request.method == "POST":
         quotes = lookup(request.form.get("symbol"))
         sharecount = request.form.get("shares")
-        print(sharecount)
+        print("sharecount"+sharecount)
         if not quotes:
             return apology("invalid ticker!")
-        elif sharecount < 1:
+        elif not sharecount or int(sharecount) < 1:
             return apology("invalid share count!")
         else:
             return render_template("quoted.html", symbol=quotes["symbol"], price=quotes["price"], name=quotes["name"])
