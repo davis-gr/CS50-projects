@@ -78,18 +78,6 @@ def login():
         elif not request.form.get("password"):
             return apology("must provide password", 403)
 
-        # Ensure 2nd password was submitted
-        elif not request.form.get("password2"):
-            return apology("must provide password twice", 403)
-
-        # Ensure passwords are the same
-        elif not request.form.get("password") == request.form.get("password2")
-            return apology("passwords shall match", 403)
-
-        # Ensure username not taken
-        elif not request.form.get("password") == request.form.get("password2")
-            return apology("passwords shall match", 403)
-
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
@@ -142,12 +130,22 @@ def register():
         elif not request.form.get("password"):
             return apology("must provide password", 403)
 
+        # Ensure 2nd password was submitted
+        elif not request.form.get("password2"):
+            return apology("must provide password twice", 403)
+
+        # Ensure passwords are the same
+        elif request.form.get("password") != request.form.get("password2"):
+            return apology("passwords shall match", 403)
+
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
-        # Ensure username exists and password is correct
-        if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
-            return apology("invalid username and/or password", 403)
+        # Ensure username not exists
+        if len(rows) == 1:
+            return apology("usarname already exists", 403)
+
+        #TODO register user
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
