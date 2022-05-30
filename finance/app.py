@@ -44,6 +44,7 @@ def after_request(response):
 def index():
     portfolio = db.execute("SELECT ticker, sum(share_count) as shareCount FROM transactions WHERE user_id = ? GROUP BY ticker", session["user_id"])
     currentPrices = []
+    totalValue = 0
     for stock in portfolio:
         currentPrices.append(lookup(stock["ticker"]))
         for price in currentPrices:
@@ -51,9 +52,10 @@ def index():
                 stock["name"] = price["name"]
                 stock["price"] = price["price"]
                 stock["value"] = stock["price"] * stock["shareCount"]
+                totalValue += stock["value"]
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-    total = 
-    return render_template("index.html", portfolio = portfolio, cash = cash)
+    totalValue += cash[0]["cash"]
+    return render_template("index.html", portfolio = portfolio, cash = cash, totalValue = totalValue)
 
 
 @app.route("/buy", methods=["GET", "POST"])
