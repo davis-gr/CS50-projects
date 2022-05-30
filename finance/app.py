@@ -67,7 +67,7 @@ def buy():
         userCash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         if not quotes:
             return apology("invalid ticker!")
-        elif type(shareCount) is int == False:
+        elif not isinstance(shareCount, int):
             return apology("invalid share count!")
         elif shareCount < 1:
             return apology("invalid share count!")
