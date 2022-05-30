@@ -70,7 +70,8 @@ def buy():
         elif float(shareCount) % 1 != 0:
         #elif not isinstance(shareCount, int):
             return apology("invalid share count!")
-        elif int(float(shareCount)) < 1:
+        shareCount = int(shareCount)
+        if shareCount < 1:
             return apology("invalid share count!")
         elif quotes["price"] * shareCount > userCash[0]['cash']:
             return apology("not enough $$$")
