@@ -207,7 +207,6 @@ def sell():
             if ticker in stock["ticker"]:
                 break
             return apology("invalid ticker!")
-        
         print(portfolio)
         return redirect("/", flash('Sold!'))
 
