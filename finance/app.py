@@ -163,11 +163,11 @@ def register():
             return apology("must provide password", 403)
 
         # Ensure 2nd password was submitted
-        elif not request.form.get("password2"):
+        elif not request.form.get("confirmation"):
             return apology("must provide password twice", 403)
 
         # Ensure passwords are the same
-        elif request.form.get("password") != request.form.get("password2"):
+        elif request.form.get("password") != request.form.get("confirmation"):
             return apology("passwords shall match", 403)
 
         # Query database for username
