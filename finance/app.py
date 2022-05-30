@@ -221,3 +221,12 @@ def sell():
         return redirect("/")
     else:
         return render_template("sell.html", portfolio = portfolio)
+
+@app.route("/password", methods=["GET", "POST"])
+@login_required
+def change_password():
+    if request.method == "POST":
+        
+        return redirect("/", flash('Password changed!'))
+    else:
+        return render_template("password.html")
