@@ -46,9 +46,9 @@ def index():
     print(portfolio)
     currentPrices = []
     for stock in portfolio:
-        currentPrices.append(lookup(stock["ticker"]))
+        # currentPrices.append(lookup(stock["ticker"]))
         portfolio.append(lookup(stock["ticker"]))
-    print(currentPrices)
+    print(portfolio)
 
     return render_template("index.html", portfolio = portfolio)
 
