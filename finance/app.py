@@ -67,10 +67,10 @@ def buy():
         userCash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         if not quotes:
             return apology("invalid ticker!")
-        elif shareCount % 100
-        elif not isinstance(shareCount, int):
+        elif float(shareCount) % 1 != 0:
+        #elif not isinstance(shareCount, int):
             return apology("invalid share count!")
-        elif shareCount < 1:
+        elif int(shareCount) < 1:
             return apology("invalid share count!")
         elif quotes["price"] * shareCount > userCash[0]['cash']:
             return apology("not enough $$$")
