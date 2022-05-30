@@ -248,3 +248,22 @@ def change_password():
         return redirect("/", flash('Password changed!'))
     else:
         return render_template("password.html")
+
+@app.route("/add", methods=["GET", "POST"])
+@login_required
+def add_cash():
+    if request.method == "POST":
+        if request.form.get("new_pass") != request.form.get("new_pass_confirm"):
+            return apology("passwords shall match")
+        # Query database for username
+        rows = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
+
+        # Ensure username exists and password is correct
+        if not check_password_hash(rows[0]["hash"], request.form.get("old_pass")):
+            return apology("invalid old password entered", 403)
+        elif check_password_hash(rows[0]["hash"], request.form.get("old_pass")):
+            db.execute("UPDATE users SET cash = ? WHERE id = ?", generate_password_hash(
+                request.form.get("new_pass")), session["user_id"])
+        return redirect("/", flash('Password changed!'))
+    else:
+        return render_template("add.html")
