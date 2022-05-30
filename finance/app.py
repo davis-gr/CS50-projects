@@ -46,15 +46,11 @@ def index():
     currentPrices = []
     for stock in portfolio:
         currentPrices.append(lookup(stock["ticker"]))
-
-    for stock in portfolio:
         for price in currentPrices:
             if stock["ticker"] == price["symbol"]:
                 stock["name"] = price["name"]
                 stock["price"] = price["price"]
                 stock["value"] = stock["price"] * stock["shareCount"]
-
-    print(portfolio)
 
     return render_template("index.html", portfolio = portfolio)
 
