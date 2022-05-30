@@ -11,8 +11,9 @@
         <div class="mb-3">
             <select class="form-select mx-auto w-auto" name="symbol">
                 <option disabled="" selected="">Symbol</option>
-                    <option value="BABA">BABA</option>
-                    <option value="T">T</option>
+                {% for stock in portfolio %}
+                    <option value="{{ stock["ticker"] }}">{{ stock["ticker"] }}</option>
+                {% endfor %}
             </select>
         </div>
         <div class="mb-3">
@@ -20,6 +21,5 @@
         </div>
         <button class="btn btn-primary" type="submit">Sell</button>
     </form>
-
         </main>
 {% endblock %}

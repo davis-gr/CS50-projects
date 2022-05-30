@@ -193,8 +193,7 @@ def register():
 @login_required
 def sell():
     portfolio = db.execute("SELECT ticker, sum(share_count) as shareCount FROM transactions WHERE user_id = ? GROUP BY ticker HAVING sum(share_count) > 0", session["user_id"])
-    
     if request.method == "POST":
         return redirect("/", flash('Sold!'))
     else:
-        return render_template("sell.html")
+        return render_template("sell.html", portfolio = portfolio)
