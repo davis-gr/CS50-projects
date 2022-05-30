@@ -50,7 +50,7 @@ def index():
     print(currentPrices)
 
     for stock in portfolio:
-        if 
+        if stock["ticker"] = 
 
     return render_template("index.html", portfolio = portfolio)
 
