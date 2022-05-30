@@ -19,10 +19,10 @@
         <tbody>
 {% for transaction in transactions %}
                 <tr>
-                    <td class="text-start">{{ transactions["ticker"] }}</td>
-                    <td class="text-end"></td>
-                    <td class="text-end"></td>
-                    <td class="text-end"></td>
+                    <td class="text-start">{{ transaction["ticker"] }}</td>
+                    <td class="text-end">{{ transaction["share_count"] }}</td>
+                    <td class="text-end">{{ transaction["share_price"] | usd }}</td>
+                    <td class="text-end">{{ transaction["datetime"] }}</td>
                 </tr>
 {% endfor %}
         </tbody>
