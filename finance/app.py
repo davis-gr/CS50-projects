@@ -42,7 +42,7 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    portfolio = db.execute("SELECT ticker, sum(share_count) FROM users WHERE id = ?", session["user_id"])
+    portfolio = db.execute("SELECT ticker, sum(share_count) FROM users WHERE id = ? GROUP BY ticker", session["user_id"])
     return render_template("index.html")
 
 
