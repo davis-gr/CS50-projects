@@ -43,14 +43,18 @@ def after_request(response):
 @login_required
 def index():
     portfolio = db.execute("SELECT ticker, sum(share_count) as shareCount FROM transactions WHERE user_id = ? GROUP BY ticker", session["user_id"])
-    print(portfolio)
     currentPrices = []
     for stock in portfolio:
         currentPrices.append(lookup(stock["ticker"]))
-    print(currentPrices)
 
     for stock in portfolio:
-        if stock["ticker"] = 
+        for price in currentPrices:
+            if stock["ticker"] == price["symbol"]:
+                stock["name"] = price["name"]
+                stock["price"] = price["price"]
+                stock["value"] = stock["price"] * stock["shareCount"]
+
+    print(portfolio)
 
     return render_template("index.html", portfolio = portfolio)
 
