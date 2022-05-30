@@ -197,11 +197,11 @@ def sell():
         ticker = request.form.get("symbol")
         if not ticker:
             return apology("missing ticker!")
-        elif try:
+        try:
             sellShares = int(request.form.get("shares"))
         except ValueError:
             return apology("missing share count!")
-        elif int(sellShares) < 1:
+        if int(sellShares) < 1:
             return apology("invalid share count!")
         for stock in portfolio:
             if ticker in stock["ticker"]:
