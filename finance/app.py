@@ -80,7 +80,7 @@ def buy():
             remainingCash = userCash[0]['cash'] - quotes["price"] * shareCount
             db.execute("INSERT INTO transactions (user_id, type, ticker, share_count, share_price, datetime) VALUES(?, 'BUY', ?, ?, ?, datetime('now'))", session["user_id"], quotes["symbol"], shareCount, quotes["price"])
             db.execute("UPDATE users SET cash = ? WHERE id = ?", remainingCash, session["user_id"])
-            return redirect("/", flash('Bought!'))
+            return redirect("/")
     else:
         return render_template("buy.html")
 
@@ -218,6 +218,6 @@ def sell():
         remainingCash = userCash[0]['cash'] + quotes["price"] * sellShares
         db.execute("INSERT INTO transactions (user_id, type, ticker, share_count, share_price, datetime) VALUES(?, 'SELL', ?, ?, ?, datetime('now'))", session["user_id"], quotes["symbol"], sellShares*-1, quotes["price"])
         db.execute("UPDATE users SET cash = ? WHERE id = ?", remainingCash, session["user_id"])
-        return redirect("/", flash('Sold!'))
+        return redirect("/")
     else:
         return render_template("sell.html", portfolio = portfolio)
