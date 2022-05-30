@@ -194,18 +194,19 @@ def register():
 def sell():
     portfolio = db.execute("SELECT ticker, sum(share_count) as shareCount FROM transactions WHERE user_id = ? GROUP BY ticker HAVING sum(share_count) > 0", session["user_id"])
     if request.method == "POST":
-        symbol = request.form.get("symbol")
+        quotes = lookup(request.form.get("symbol"))
         shareCount = int(request.form.get("shares"))
-        if quotes not in portfolio["ticker"]:
+        if quotes["symbol"] not in portfolio["ticker"]:
             return apology("invalid ticker!")
-        elif int(shareCount) < 1:
-            return apology("invalid share count!")
-        elif quotes["price"] * shareCount > userCash[0]['cash']:
-            return apology("not enough $$$")
-        else:
-            remainingCash = userCash[0]['cash'] - quotes["price"] * shareCount
-            db.execute("INSERT INTO transactions (user_id, type, ticker, share_count, share_price, datetime) VALUES(?, 'BUY', ?, ?, ?, datetime('now'))", session["user_id"], quotes["symbol"], shareCount, quotes["price"])
-            db.execute("UPDATE users SET cash = ? WHERE id = ?", remainingCash, session["user_id"])
-            return redirect("/", flash('Sold!'))
+
+
+
+        #elif int(shareCount) < 1:
+        #    return apology("invalid share count!")
+        #else:
+        #    remainingCash = userCash[0]['cash'] + ticker["price"] * shareCount
+        #    db.execute("INSERT INTO transactions (user_id, type, ticker, share_count, share_price, datetime) VALUES(?, 'SELL', ?, ?, ?, datetime('now'))", session["user_id"], quotes["symbol"], shareCount, quotes["price"])
+        #    db.execute("UPDATE users SET cash = ? WHERE id = ?", remainingCash, session["user_id"])
+        #    return redirect("/", flash('Sold!'))
     else:
         return render_template("sell.html", portfolio = portfolio)
