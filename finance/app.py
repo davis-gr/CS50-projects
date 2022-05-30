@@ -192,5 +192,9 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
-    """Sell shares of stock"""
-    return apology("TODO")
+
+    if request.method == "POST":
+        return redirect("/", flash('Sold!'))
+
+    else:
+        return render_template("sell.html")
