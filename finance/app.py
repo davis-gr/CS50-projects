@@ -83,8 +83,8 @@ def buy():
 @app.route("/history")
 @login_required
 def history():
-    """Show history of transactions"""
-    return apology("TODO")
+    transactions = portfolio = db.execute("SELECT ticker, sum(share_count) as shareCount FROM transactions WHERE user_id = ? GROUP BY ticker HAVING sum(share_count) > 0", session["user_id"])
+    return render_template(history.html)
 
 
 @app.route("/login", methods=["GET", "POST"])
