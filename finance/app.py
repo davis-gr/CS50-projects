@@ -195,11 +195,19 @@ def sell():
     portfolio = db.execute("SELECT ticker, sum(share_count) as shareCount FROM transactions WHERE user_id = ? GROUP BY ticker HAVING sum(share_count) > 0", session["user_id"])
     if request.method == "POST":
         ticker = request.form.get("symbol")
-        shareCount = int(request.form.get("shares"))
-        #if ticker not in portfolio["ticker"]:
-            #return apology("invalid ticker!")
+        if not ticker:
+            return apology("missing ticker!")
+        try:
+            shareCount = int(request.form.get("shares"))
+        except ValueError:
+            return apology("missing share count!")
+        if int(shareCount) < 1:
+            return apology("invalid share count!")
+        for stock in portfolio:
+            if ticker not in stock["ticker"]:
+                return apology("invalid ticker!")
         print(portfolio)
-
+        return redirect("/", flash('Sold!'))
 
 
         #elif int(shareCount) < 1:
