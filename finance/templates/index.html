@@ -20,11 +20,11 @@
        <tbody>
             {% for stock in portfolio %}
                 <tr>
-                    <td>{{ stock["ticker"] }}</td>
-                    <td>{{ stock["name"] }}</td>
-                    <td>{{ stock["shareCount"]}}</td>
-                    <td>{{ stock["price"] }}</td>
-                    <td>{{ stock["value"] }}</td>
+                    <td class="text-start">{{ stock["ticker"] }}</td>
+                    <td class="text-start">{{ stock["name"] }}</td>
+                    <td class="text-end">{{ stock["shareCount"]}}</td>
+                    <td class="text-end">{{ stock["price"] | usd }}</td>
+                    <td class="text-end">{{ stock["value"] | usd }}</td>
                 </tr>
             {% endfor %}
         </tbody>
