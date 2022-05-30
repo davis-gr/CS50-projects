@@ -207,18 +207,14 @@ def sell():
             if ticker in stock["ticker"]:
                 if sellShares > stock["shareCount"]:
                     return apology("too many shares!")
-                break
             return apology("invalid ticker!")
-
+        userCash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        remainingCash = userCash[0]['cash'] + ticker["price"] * sellShares
 
         print(portfolio)
         return redirect("/", flash('Sold!'))
 
 
-        #elif int(shareCount) < 1:
-        #    return apology("invalid share count!")
-        #else:
-        #    remainingCash = userCash[0]['cash'] + ticker["price"] * shareCount
         #    db.execute("INSERT INTO transactions (user_id, type, ticker, share_count, share_price, datetime) VALUES(?, 'SELL', ?, ?, ?, datetime('now'))", session["user_id"], quotes["symbol"], shareCount, quotes["price"])
         #    db.execute("UPDATE users SET cash = ? WHERE id = ?", remainingCash, session["user_id"])
         #    return redirect("/", flash('Sold!'))
