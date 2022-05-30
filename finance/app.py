@@ -44,7 +44,7 @@ def after_request(response):
 def index():
     portfolio = db.execute("SELECT ticker, sum(share_count) as shareCount FROM transactions WHERE user_id = ? GROUP BY ticker", session["user_id"])
     print(portfolio)
-    return render_template("index.html")
+    return render_template("index.html", portfolio = portfolio)
 
 
 @app.route("/buy", methods=["GET", "POST"])
