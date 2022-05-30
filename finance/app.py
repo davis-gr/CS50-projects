@@ -208,9 +208,10 @@ def sell():
                 if sellShares > stock["shareCount"]:
                     return apology("too many shares!")
             return apology("invalid ticker!")
+        quotes = lookup(request.form.get("symbol"))
         userCash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        remainingCash = userCash[0]['cash'] + ticker["price"] * sellShares
-
+        remainingCash = userCash[0]['cash'] + quotes["price"] * sellShares
+        db.execute("INSERT INTO transactions (user_id, type, ticker, share_count, share_price, datetime) VALUES(?, 'SELL', ?, ?, ?, datetime('now'))", session["user_id"], quotes["symbol"], sellShares*-1, quotes["price"])
         print(portfolio)
         return redirect("/", flash('Sold!'))
 
