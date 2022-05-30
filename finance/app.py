@@ -42,7 +42,8 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    portfolio = db.execute("SELECT ticker, sum(share_count) as shareCount FROM transactions WHERE user_id = ? GROUP BY ticker HAVING sum(share_count) > 0", session["user_id"])
+    portfolio = db.execute(
+        "SELECT ticker, sum(share_count) as shareCount FROM transactions WHERE user_id = ? GROUP BY ticker HAVING sum(share_count) > 0", session["user_id"])
     currentPrices = []
     totalValue = 0
     for stock in portfolio:
@@ -55,7 +56,7 @@ def index():
                 totalValue += stock["value"]
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     totalValue += cash[0]["cash"]
-    return render_template("index.html", portfolio = portfolio, cash = cash, totalValue = totalValue)
+    return render_template("index.html", portfolio=portfolio, cash=cash, totalValue=totalValue)
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -78,7 +79,8 @@ def buy():
             return apology("not enough $$$")
         else:
             remainingCash = userCash[0]['cash'] - quotes["price"] * shareCount
-            db.execute("INSERT INTO transactions (user_id, type, ticker, share_count, share_price, datetime) VALUES(?, 'BUY', ?, ?, ?, datetime('now'))", session["user_id"], quotes["symbol"], shareCount, quotes["price"])
+            db.execute("INSERT INTO transactions (user_id, type, ticker, share_count, share_price, datetime) VALUES(?, 'BUY', ?, ?, ?, datetime('now'))",
+                        session["user_id"], quotes["symbol"], shareCount, quotes["price"])
             db.execute("UPDATE users SET cash = ? WHERE id = ?", remainingCash, session["user_id"])
             return redirect("/")
     else:
@@ -88,7 +90,8 @@ def buy():
 @app.route("/history")
 @login_required
 def history():
-    transactions = db.execute("SELECT ticker, share_count, share_price, datetime FROM transactions WHERE user_id = ?", session["user_id"])
+    transactions = db.execute(
+        "SELECT ticker, share_count, share_price, datetime FROM transactions WHERE user_id = ?", session["user_id"])
     return render_template("history.html", transactions = transactions)
 
 @app.route("/login", methods=["GET", "POST"])
@@ -182,8 +185,9 @@ def register():
         if len(rows) == 1:
             return apology("username already exists")
 
-        #TODO register user
-        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", request.form.get("username"), generate_password_hash(request.form.get("password")))
+        # register user
+        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", request.form.get(
+            "username"), generate_password_hash(request.form.get("password")))
 
         # Redirect user to home page
         return redirect("/", flash('Registered!'))
@@ -196,7 +200,8 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
-    portfolio = db.execute("SELECT ticker, sum(share_count) as shareCount FROM transactions WHERE user_id = ? GROUP BY ticker HAVING sum(share_count) > 0", session["user_id"])
+    portfolio = db.execute(
+        "SELECT ticker, sum(share_count) as shareCount FROM transactions WHERE user_id = ? GROUP BY ticker HAVING sum(share_count) > 0", session["user_id"])
     if request.method == "POST":
         ticker = request.form.get("symbol")
         if not ticker:
@@ -216,24 +221,29 @@ def sell():
         quotes = lookup(request.form.get("symbol"))
         userCash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         remainingCash = userCash[0]['cash'] + quotes["price"] * sellShares
-        db.execute("INSERT INTO transactions (user_id, type, ticker, share_count, share_price, datetime) VALUES(?, 'SELL', ?, ?, ?, datetime('now'))", session["user_id"], quotes["symbol"], sellShares*-1, quotes["price"])
+        db.execute("INSERT INTO transactions (user_id, type, ticker, share_count, share_price, datetime) VALUES(?, 'SELL', ?, ?, ?, datetime('now'))",
+            session["user_id"], quotes["symbol"], sellShares*-1, quotes["price"])
         db.execute("UPDATE users SET cash = ? WHERE id = ?", remainingCash, session["user_id"])
         return redirect("/")
     else:
-        return render_template("sell.html", portfolio = portfolio)
+        return render_template("sell.html", portfolio=portfolio)
+
 
 @app.route("/password", methods=["GET", "POST"])
 @login_required
 def change_password():
     if request.method == "POST":
+        if request.form.get("new_pass") != request.form.get("new_pass_confirm"):
+            return apology("passwords shall match")
         # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        rows = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
 
         # Ensure username exists and password is correct
-        if not check_password_hash(rows[0]["hash"], request.form.get("password")):
+        if not check_password_hash(rows[0]["hash"], request.form.get("old_pass")):
             return apology("invalid old password entered", 403)
-        elif check_password_hash(rows[0]["hash"], request.form.get("password")):
-            
+        elif check_password_hash(rows[0]["hash"], request.form.get("old_pass")):
+            db.execute("UPDATE users SET hash = ? WHERE id = ?", generate_password_hash(
+                request.form.get("new_pass")), session["user_id"])
         return redirect("/", flash('Password changed!'))
     else:
         return render_template("password.html")
