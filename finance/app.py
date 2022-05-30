@@ -42,6 +42,7 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
+    userShares = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     return render_template("index.html")
 
 
