@@ -80,7 +80,7 @@ def buy():
         else:
             remainingCash = userCash[0]['cash'] - quotes["price"] * shareCount
             db.execute("INSERT INTO transactions (user_id, type, ticker, share_count, share_price, datetime) VALUES(?, 'BUY', ?, ?, ?, datetime('now'))",
-                        session["user_id"], quotes["symbol"], shareCount, quotes["price"])
+                       session["user_id"], quotes["symbol"], shareCount, quotes["price"])
             db.execute("UPDATE users SET cash = ? WHERE id = ?", remainingCash, session["user_id"])
             return redirect("/")
     else:
@@ -92,7 +92,8 @@ def buy():
 def history():
     transactions = db.execute(
         "SELECT ticker, share_count, share_price, datetime FROM transactions WHERE user_id = ?", session["user_id"])
-    return render_template("history.html", transactions = transactions)
+    return render_template("history.html", transactions=transactions)
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
