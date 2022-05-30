@@ -204,8 +204,10 @@ def sell():
         if int(shareCount) < 1:
             return apology("invalid share count!")
         for stock in portfolio:
-            if ticker not in stock["ticker"]:
-                return apology("invalid ticker!")
+            if ticker in stock["ticker"]:
+                break
+            return apology("invalid ticker!")
+        
         print(portfolio)
         return redirect("/", flash('Sold!'))
 
