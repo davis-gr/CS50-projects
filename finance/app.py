@@ -63,7 +63,7 @@ def index():
 def buy():
     if request.method == "POST":
         quotes = lookup(request.form.get("symbol"))
-        shareCount = int(request.form.get("shares"))
+        shareCount = request.form.get("shares")
         userCash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         if not quotes:
             return apology("invalid ticker!")
