@@ -63,15 +63,16 @@ def index():
 def buy():
     if request.method == "POST":
         quotes = lookup(request.form.get("symbol"))
-        shareCount = request.form.get("shares")
+        try:
+            shareCount = float(request.form.get("shares"))
+        except ValueError:
+            return apology("invalid share count!")
         userCash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         if not quotes:
             return apology("invalid ticker!")
-        elif float(shareCount) % 1 != 0:
+        elif shareCount % 1 != 0:
             return apology("invalid share count!")
-        else:
-            buyShares = int(shareCount)
-        if buyShares < 1:
+        elif shareCount < 1:
             return apology("invalid share count!")
         elif quotes["price"] * shareCount > userCash[0]['cash']:
             return apology("not enough $$$")
