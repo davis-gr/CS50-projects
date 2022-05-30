@@ -194,11 +194,11 @@ def register():
 def sell():
     portfolio = db.execute("SELECT ticker, sum(share_count) as shareCount FROM transactions WHERE user_id = ? GROUP BY ticker HAVING sum(share_count) > 0", session["user_id"])
     if request.method == "POST":
-        quotes = lookup(request.form.get("symbol"))
+        symbol = request.form.get("symbol")
         shareCount = int(request.form.get("shares"))
-        if not quotes:
+        if quotes not in portfolio["ticker"]:
             return apology("invalid ticker!")
-        elif not shareCount or int(shareCount) < 1:
+        elif int(shareCount) < 1:
             return apology("invalid share count!")
         elif quotes["price"] * shareCount > userCash[0]['cash']:
             return apology("not enough $$$")
@@ -206,7 +206,6 @@ def sell():
             remainingCash = userCash[0]['cash'] - quotes["price"] * shareCount
             db.execute("INSERT INTO transactions (user_id, type, ticker, share_count, share_price, datetime) VALUES(?, 'BUY', ?, ?, ?, datetime('now'))", session["user_id"], quotes["symbol"], shareCount, quotes["price"])
             db.execute("UPDATE users SET cash = ? WHERE id = ?", remainingCash, session["user_id"])
-            return redirect("/", flash('Bought!'))
-        return redirect("/", flash('Sold!'))
+            return redirect("/", flash('Sold!'))
     else:
         return render_template("sell.html", portfolio = portfolio)
