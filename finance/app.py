@@ -42,7 +42,7 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    portfolio = db.execute("SELECT ticker, sum(share_count) as shareCount FROM transactions WHERE user_id = ? GROUP BY ticker", session["user_id"])
+    portfolio = db.execute("SELECT ticker, sum(share_count) as shareCount FROM transactions WHERE user_id = ? GROUP BY ticker HAVING sum(share_count) > 0", session["user_id"])
     currentPrices = []
     totalValue = 0
     for stock in portfolio:
@@ -192,6 +192,8 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
+    portfolio = db.execute("SELECT ticker, sum(share_count) as shareCount FROM transactions WHERE user_id = ? GROUP BY ticker HAVING sum(share_count) > 0", session["user_id"])
+    
     if request.method == "POST":
         return redirect("/", flash('Sold!'))
     else:
