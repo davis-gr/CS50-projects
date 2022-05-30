@@ -68,10 +68,10 @@ def buy():
         if not quotes:
             return apology("invalid ticker!")
         elif float(shareCount) % 1 != 0:
-        #elif not isinstance(shareCount, int):
             return apology("invalid share count!")
-        shareCount = int(shareCount)
-        if shareCount < 1:
+        else:
+            buyShares = int(shareCount)
+        if buyShares < 1:
             return apology("invalid share count!")
         elif quotes["price"] * shareCount > userCash[0]['cash']:
             return apology("not enough $$$")
