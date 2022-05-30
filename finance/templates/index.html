@@ -18,22 +18,12 @@
             </tr>
         </thead>
        <tbody>
+            {% for stock in portfolio %}
                 <tr>
-                    <td class="text-start">ATVI</td>
-                    <td class="text-start">Activision Blizzard Inc</td>
-                    <td class="text-end">1</td>
-                    <td class="text-end">$77.71</td>
-                    <td class="text-end">$77.71</td>
+                    <td>{{ stock['ticker'] }}</td>
+                    <td>{{ stock["shareCount"]}}</td>
                 </tr>
-
-                <tr>
-                    <td class="text-start">BABA</td>
-                    <td class="text-start">Alibaba Group Holding Ltd - ADR</td>
-                    <td class="text-end">10</td>
-                    <td class="text-end">$82.31</td>
-                    <td class="text-end">$823.10</td>
-                </tr>
-
+            {% endfor %}
         </tbody>
         <tfoot>
             <tr>
