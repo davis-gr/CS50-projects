@@ -194,10 +194,11 @@ def register():
 def sell():
     portfolio = db.execute("SELECT ticker, sum(share_count) as shareCount FROM transactions WHERE user_id = ? GROUP BY ticker HAVING sum(share_count) > 0", session["user_id"])
     if request.method == "POST":
-        quotes = lookup(request.form.get("symbol"))
+        ticker = request.form.get("symbol")
         shareCount = int(request.form.get("shares"))
-        if quotes["symbol"] not in portfolio["ticker"]:
-            return apology("invalid ticker!")
+        #if ticker not in portfolio["ticker"]:
+            #return apology("invalid ticker!")
+        print(portfolio)
 
 
 
