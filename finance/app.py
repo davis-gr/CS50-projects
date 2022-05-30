@@ -52,7 +52,7 @@ def index():
                 stock["price"] = price["price"]
                 stock["value"] = stock["price"] * stock["shareCount"]
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-
+    print(cash)
     return render_template("index.html", portfolio = portfolio, cash = cash)
 
 
