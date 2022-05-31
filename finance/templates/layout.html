@@ -63,27 +63,27 @@
             {% block main %}{% endblock %}
         </main>
 
-        <script>
-            function getParameter(parameterName)
-            {
-                let parameters = new URLSearchParams(window.location.search);
-                return parameters.get(parameterName);
-            }
-            document.getElementById("buysymbol").value = getParameter("symbol");
-
-            function selectElement(id, valueToSelect)
-            {
-                let element = document.getElementById(id);
-                element.value = valueToSelect;
-            }
-
-            selectElement("sellsymbol", getParameter("symbol"));
-        </script>
-
         <footer class="mb-5 small text-center text-muted">
             Data provided by <a href="https://iexcloud.io/">IEX</a>
         </footer>
 
     </body>
+
+    <script>
+        function getParameter(parameterName)
+        {
+            let parameters = new URLSearchParams(window.location.search);
+            return parameters.get(parameterName);
+        }
+        document.getElementById("buysymbol").value = getParameter("symbol");
+
+        function selectElement(id, valueToSelect)
+        {
+            let element = document.getElementById(id);
+            element.value = valueToSelect;
+        }
+
+        selectElement("sellsymbol", getParameter("symbol"));
+    </script>
 
 </html>
