@@ -62,3 +62,22 @@ def lookup(symbol):
 def usd(value):
     """Format value as USD."""
     return f"${value:,.2f}"
+
+def password_validate(password):
+    length = 0
+    upper = 0
+    lower = 0
+    numbers = 0
+    for i in password:
+        length += 1
+        if i.isupper():
+            upper += 1
+        elif i.islower():
+            lower += 1
+        elif i.isnumeric():
+            numbers += 1
+    print(length)
+    if length < 8 or upper == 0 or lower == 0 or numbers == 0:
+        return 10
+    else:
+        return

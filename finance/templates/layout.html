@@ -63,6 +63,15 @@
             {% block main %}{% endblock %}
         </main>
 
+        <script>
+            function getParameter(parameterName)
+            {
+                let parameters = new URLSearchParams(window.location.search);
+                return parameters.get(parameterName);
+            }
+            document.getElementById("buysymbol").value = getParameter("symbol");
+        </script>
+
         <footer class="mb-5 small text-center text-muted">
             Data provided by <a href="https://iexcloud.io/">IEX</a>
         </footer>

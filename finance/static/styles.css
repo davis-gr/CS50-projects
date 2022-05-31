@@ -21,3 +21,12 @@ nav .navbar-brand .green
 {
     color: #2e944b;
 }
+
+.zeromargin
+{
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+    font-size: small;
+    display: inline-block;
+ }

@@ -6,7 +6,7 @@ from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, login_required, lookup, usd
+from helpers import apology, login_required, lookup, usd, password_validate
 
 # Configure application
 app = Flask(__name__)
@@ -179,6 +179,11 @@ def register():
         elif request.form.get("password") != request.form.get("confirmation"):
             return apology("passwords shall match")
 
+        # Ensure password matches safety criteria
+        password = request.form.get("password")
+        if password_validate(password) == 10:
+            return apology("password too weak")
+
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
@@ -234,11 +239,13 @@ def sell():
 @login_required
 def change_password():
     if request.method == "POST":
-        if request.form.get("new_pass") != request.form.get("new_pass_confirm"):
+        password = request.form.get("new_pass")
+        if password_validate(password) == 10:
+            return apology("password too weak")
+        elif request.form.get("new_pass") != request.form.get("new_pass_confirm"):
             return apology("passwords shall match")
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
-
         # Ensure username exists and password is correct
         if not check_password_hash(rows[0]["hash"], request.form.get("old_pass")):
             return apology("invalid old password entered", 403)

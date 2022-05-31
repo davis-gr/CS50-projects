@@ -12,6 +12,8 @@
             <tr>
                 <th class="text-start">Symbol</th>
                 <th class="text-start">Name</th>
+                <th class="text-start">Buy</th>
+                <th class="text-start">Sell</th>
                 <th class="text-end">Shares</th>
                 <th class="text-end">Price</th>
                 <th class="text-end">TOTAL</th>
@@ -22,6 +24,8 @@
                 <tr>
                     <td class="text-start">{{ stock["ticker"] }}</td>
                     <td class="text-start">{{ stock["name"] }}</td>
+                    <form action = "/buy"><td class="text-start"><button class="btn btn-primary" name="symbol" type="submit" value="{{ stock["ticker"] }}">Buy</button></td></form>
+                    <form action = "/sell"><td class="text-start"><button class="btn btn-primary" name="symbol" type="submit" value="{{ stock["ticker"] }}">Sell</button></td></form>
                     <td class="text-end">{{ stock["shareCount"]}}</td>
                     <td class="text-end">{{ stock["price"] | usd }}</td>
                     <td class="text-end">{{ stock["value"] | usd }}</td>
