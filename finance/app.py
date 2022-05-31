@@ -219,9 +219,6 @@ def sell():
         if int(sellShares) < 1:
             return apology("invalid share count!")
         for stock in portfolio:
-            print(portfolio)
-            print(ticker)
-            print(stock["ticker"])
             if ticker in stock["ticker"]:
                 if sellShares > stock["shareCount"]:
                     return apology("too many shares!")
