@@ -258,6 +258,7 @@ def change_password():
     else:
         return render_template("password.html")
 
+
 @app.route("/add", methods=["GET", "POST"])
 @login_required
 def add_cash():

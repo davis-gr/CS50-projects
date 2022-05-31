@@ -63,6 +63,7 @@ def usd(value):
     """Format value as USD."""
     return f"${value:,.2f}"
 
+
 def password_validate(password):
     length = 0
     upper = 0
