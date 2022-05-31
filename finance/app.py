@@ -224,9 +224,7 @@ def sell():
             if ticker == stock["ticker"]:
                 if sellShares > stock["shareCount"]:
                     return apology("too many shares!")
-                continue
-            else:
-                return apology("invalid ticker!")
+        # return apology("invalid ticker!")
         quotes = lookup(request.form.get("symbol"))
         userCash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         remainingCash = userCash[0]['cash'] + quotes["price"] * sellShares
