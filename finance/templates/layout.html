@@ -83,7 +83,8 @@
             element.value = valueToSelect;
         }
 
-        selectElement("sellsymbol", getParameter("symbol"));
+        // selectElement("sellsymbol", getParameter("symbol"));
+        document.getElementById("sellsymbol").value = getParameter("symbol");
     </script>
 
 </html>
