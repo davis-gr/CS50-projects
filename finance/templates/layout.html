@@ -83,7 +83,9 @@
             element.value = valueToSelect;
         }
 
-        setTimeout(selectElement("sellsymbol", getParameter("symbol")), 10000);
+        setTimeout(function()
+        {selectElement("sellsymbol", getParameter("symbol"))},
+         10000);
     </script>
 
 </html>
