@@ -22,14 +22,5 @@
         <button class="btn btn-primary" type="submit">Sell</button>
     </form>
         </main>
+
 {% endblock %}
-
-<script>
-function selectElement(id, valueToSelect)
-{
-    let element = document.getElementById(id);
-    element.value = valueToSelect;
-}
-
-selectElement("sellsymbol", getParameter("symbol"));
-</script>

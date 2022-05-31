@@ -70,6 +70,14 @@
                 return parameters.get(parameterName);
             }
             document.getElementById("buysymbol").value = getParameter("symbol");
+
+            function selectElement(id, valueToSelect)
+            {
+                let element = document.getElementById(id);
+                element.value = valueToSelect;
+            }
+
+            selectElement("sellsymbol", getParameter("symbol"));
         </script>
 
         <footer class="mb-5 small text-center text-muted">
