@@ -218,13 +218,14 @@ def sell():
             return apology("missing share count!")
         if int(sellShares) < 1:
             return apology("invalid share count!")
+        exists = False
         for stock in portfolio:
-            print(ticker)
-            print(stock["ticker"])
             if ticker == stock["ticker"]:
+                exists = True
                 if sellShares > stock["shareCount"]:
                     return apology("too many shares!")
-        # return apology("invalid ticker!")
+        if exists == False:
+            return apology("invalid ticker!")
         quotes = lookup(request.form.get("symbol"))
         userCash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         remainingCash = userCash[0]['cash'] + quotes["price"] * sellShares
