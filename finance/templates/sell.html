@@ -9,7 +9,7 @@
 
     <form action="/sell" method="post">
         <div class="mb-3">
-            <select class="form-select mx-auto w-auto" name="symbol" id="sellsymbol">
+            <select class="form-select mx-auto w-auto" name="symbol" id="symbol">
                 <option disabled="" selected="">Symbol</option>
                 {% for stock in portfolio %}
                     <option value="{{ stock["ticker"] }}">{{ stock["ticker"] }}</option>
